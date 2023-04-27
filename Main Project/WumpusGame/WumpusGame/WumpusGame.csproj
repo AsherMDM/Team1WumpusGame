@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{EF57CB55-6A1D-4B9F-B9CC-162400D6F14C}</ProjectGuid>
+    <ProjectGuid>{97A29E28-423D-44C3-A9CB-E5C84FF47965}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Team1WumpusGame</RootNamespace>
-    <AssemblyName>Team1WumpusGame</AssemblyName>
+    <RootNamespace>WumpusGame</RootNamespace>
+    <AssemblyName>WumpusGame</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

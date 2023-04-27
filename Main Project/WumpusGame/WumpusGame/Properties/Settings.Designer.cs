@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Team1WumpusGame.Properties
+namespace WumpusGame.Properties
 {
 
 

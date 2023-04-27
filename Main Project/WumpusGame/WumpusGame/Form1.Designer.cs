@@ -1,4 +1,4 @@
-﻿namespace Team1WumpusGame
+﻿namespace WumpusGame
 {
     partial class Form1
     {
