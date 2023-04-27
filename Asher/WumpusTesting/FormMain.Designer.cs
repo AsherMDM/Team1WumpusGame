@@ -33,6 +33,7 @@
             this.listBoxObjects = new System.Windows.Forms.ListBox();
             this.groupBoxObjects = new System.Windows.Forms.GroupBox();
             this.outputInfoBox = new System.Windows.Forms.RichTextBox();
+            this.labelTest = new System.Windows.Forms.Label();
             this.groupBoxObjects.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -96,19 +97,30 @@
             this.outputInfoBox.Text = "";
             this.outputInfoBox.TextChanged += new System.EventHandler(this.richTextBoxInfo_TextChanged);
             // 
-            // Form1
+            // labelTest
+            // 
+            this.labelTest.AutoSize = true;
+            this.labelTest.Location = new System.Drawing.Point(462, 185);
+            this.labelTest.Name = "labelTest";
+            this.labelTest.Size = new System.Drawing.Size(35, 13);
+            this.labelTest.TabIndex = 5;
+            this.labelTest.Text = "label1";
+            // 
+            // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.labelTest);
             this.Controls.Add(this.outputInfoBox);
             this.Controls.Add(this.groupBoxObjects);
             this.ForeColor = System.Drawing.Color.White;
-            this.Name = "Form1";
+            this.Name = "FormMain";
             this.Text = "Wumpus testing";
             this.groupBoxObjects.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -119,6 +131,7 @@
         private System.Windows.Forms.ListBox listBoxObjects;
         private System.Windows.Forms.GroupBox groupBoxObjects;
         private System.Windows.Forms.RichTextBox outputInfoBox;
+        private System.Windows.Forms.Label labelTest;
     }
 }
 
