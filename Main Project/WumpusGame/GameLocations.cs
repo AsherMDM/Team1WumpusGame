@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WumpusGame
 {
-    internal class GameLocationsStub
+    internal class GameLocations
     {
     }
 }
