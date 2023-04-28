@@ -13,9 +13,9 @@ namespace WumpusGame
 
         }
 
-        // public GraphicalInterface LaunchGame()
+       // public GraphicalInterface StartGame()
        // {
-            
+       //     return 
        // }
     }
 }
