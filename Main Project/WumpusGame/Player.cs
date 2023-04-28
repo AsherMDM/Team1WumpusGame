@@ -8,6 +8,11 @@ namespace WumpusGame
 {
     internal class Player
     {
+        public Player()
+        {
+
+        }
+
 
     }
 }
