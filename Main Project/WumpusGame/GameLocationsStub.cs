@@ -8,6 +8,5 @@ namespace WumpusGame
 {
     internal class GameLocationsStub
     {
-
     }
 }
