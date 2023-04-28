@@ -10,7 +10,7 @@ namespace WumpusGame
     {
         public TriviaBoard(int randomNumber)
         {
-            //usses a random number to cycle through questions in a dictionary defined below
+            //uses a random number to cycle through questions in a dictionary defined below
         }
 
         Dictionary<String, String> Question = new Dictionary<string, string>()
