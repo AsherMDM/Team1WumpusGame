@@ -8,5 +8,10 @@ namespace WumpusGame
 {
     internal class GameLocations
     {
+        public GameLocations()
+        {
+
+        }
+
     }
 }
