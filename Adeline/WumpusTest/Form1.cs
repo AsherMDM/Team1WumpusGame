@@ -14,16 +14,8 @@ namespace WumpusTest
     {
         public Form1()
         {
-
             InitializeComponent();
             Cave myCave = new Cave();
-
-
-        }
-
-        private void richTextBoxCaves_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
