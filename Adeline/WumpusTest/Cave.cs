@@ -1,27 +1,54 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace WumpusTest
 {
-    // Array of list to store room connections
-    private List<int>[] adjacent = new List<int>[30];
-
+   
     public class Cave
     {
+        // Array of list to store room connections
+        List<int>[] adjacent = new List<int>[30];
+
         public Cave()
+        {
+            ReadFromFile();
+        }
+        public void ReadFromFile()
         {
             // read the file that stores the room connections
             // store it into the Array of list
-        } 
+            StreamReader sr = new StreamReader("MapOfCave.txt");
+            string input = sr.ReadLine();
+            while (input != null)
+            {
+                string[] data = input.Split(',');
+                int index = int.Parse(data[0]);
 
+                adjacent[index - 1] = new List<int>();
+
+                for (int i = 1; i <= data.GetUpperBound(0); i++)
+                {
+                    adjacent[index - 1].Add(int.Parse(data[i]));
+                }
+                
+                Console.WriteLine(data[0]);
+                input = sr.ReadLine();
+            }
+            sr.Close();
+
+
+        }
+        
         public List<int> get_possible_moves(int currentRoom)
         {
             // find adjacent rooms for currentRoom
             // return list of adjacent rooms
-            
+            return (null);
         }
 
     }
