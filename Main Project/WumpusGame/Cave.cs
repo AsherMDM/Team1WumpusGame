@@ -16,13 +16,6 @@ namespace WumpusTest
             // read the file that stores the room connections
             // store it into the Array of list
         } 
-        public void ReadFromFile()
-        {
-            StreamReader sr = new StreamReader("MapofCave.txt");
-            string caves = sr.ReadLine();
-            sdfdghjklk
-            
-        }
 
         public List<int> get_possible_moves(int currentRoom)
         {
