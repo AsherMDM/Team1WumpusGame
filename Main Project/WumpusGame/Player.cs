@@ -19,6 +19,7 @@ namespace WumpusGame
 
         public int[] GetInventory()
         {
+            // called by gamecontrol
             // Returns an array of the amounts of all objects in players inv
             // arrowsCount, goldCoinsCount
             return { 1, 2 }
@@ -27,20 +28,25 @@ namespace WumpusGame
         public void UpdateArrowAmount(int update)
         {
             // Updates Arrow Amount
+            // called by gamecontrol
         }
 
         public void UpdateCoinAmount(int update)
         {
             // Updates Coin Amount
+            // called by gamecontrol
         }
 
         public void ShootArrow(int cave, )
         {
             // SHoots arrow
+            // called by gamecontrol
         }
 
         public int CalculateScore()
         {
             //Calculates Final Score
+            // called by gamecontrol
         }
+    }
 }

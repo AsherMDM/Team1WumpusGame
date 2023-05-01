@@ -13,5 +13,32 @@ namespace WumpusGame
 
         }
 
+        int wumpusLocation = 1;
+        int[] batLocations = { 1, 2, 3 };
+        int[] pitLocations = { 1, 2, 3, 4 };
+
+        public int GenerateWumpusLocation()
+        {
+            // called by gamecontrol
+            return wumpusLocation;
+        }
+
+        public int[] GenerateBatLocations()
+        {
+            // called by gamecontrol
+            return batLocations;
+        }
+
+        public int[] GeneratePitLocations()
+        {
+            // called by gamecontrol
+            return pitLocations;
+        }
+
+        public int MoveWumpus()
+        {
+            // called by gamecontrol
+            return wumpusLocation;
+        }
     }
 }

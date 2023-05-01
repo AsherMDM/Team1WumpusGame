@@ -33,6 +33,8 @@
             this.listBoxObjects = new System.Windows.Forms.ListBox();
             this.groupBoxObjects = new System.Windows.Forms.GroupBox();
             this.outputInfoBox = new System.Windows.Forms.RichTextBox();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.labelWarnings = new System.Windows.Forms.Label();
             this.groupBoxObjects.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -96,12 +98,31 @@
             this.outputInfoBox.Text = "";
             this.outputInfoBox.TextChanged += new System.EventHandler(this.richTextBoxInfo_TextChanged);
             // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(585, 113);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(100, 96);
+            this.richTextBox1.TabIndex = 5;
+            this.richTextBox1.Text = "";
+            // 
+            // labelWarnings
+            // 
+            this.labelWarnings.AutoSize = true;
+            this.labelWarnings.Location = new System.Drawing.Point(424, 67);
+            this.labelWarnings.Name = "labelWarnings";
+            this.labelWarnings.Size = new System.Drawing.Size(52, 13);
+            this.labelWarnings.TabIndex = 6;
+            this.labelWarnings.Text = "Warnings";
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.labelWarnings);
+            this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.outputInfoBox);
             this.Controls.Add(this.groupBoxObjects);
             this.ForeColor = System.Drawing.Color.White;
@@ -109,6 +130,7 @@
             this.Text = "Wumpus testing";
             this.groupBoxObjects.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -119,6 +141,8 @@
         private System.Windows.Forms.ListBox listBoxObjects;
         private System.Windows.Forms.GroupBox groupBoxObjects;
         private System.Windows.Forms.RichTextBox outputInfoBox;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.Label labelWarnings;
     }
 }
 
