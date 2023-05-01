@@ -12,9 +12,27 @@ namespace WumpusTest
 {
     public partial class Form1 : Form
     {
+        Cave cave;
         public Form1()
         {
             InitializeComponent();
+            cave = new Cave();
         }
+
+        private void buttonCalculate_Click(object sender, EventArgs e)
+        {
+            int currentRoom = int.Parse(textBoxRoomNumber.Text);
+
+            List<int> possibleMoves = new List<int>();
+            possibleMoves = cave.get_possible_moves(currentRoom);
+
+            string ToPrint = "";
+            for (int i = 0; i < possibleMoves.Count; i++)
+            {
+                ToPrint = ToPrint + possibleMoves[i].ToString() + ",";
+            }
+            richTextBoxAdjacentRooms.Text = ToPrint;
+        }
+
     }
 }
