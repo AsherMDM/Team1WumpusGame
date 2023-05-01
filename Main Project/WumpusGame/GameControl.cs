@@ -45,23 +45,24 @@ namespace WumpusGame
 
         public Cave adjacentCaves(Cave cave)
         {
-            //validate user input from player
+            //see adjacent caves
         }
 
         public Cave visitedCaves(Cave cave)
         {
-            //validate user input from player
+            //see visited saves
         }
 
         public Cave currentCave(Cave cave)
         {
-
+            //see current caves
         }
 
-        public void ValidateUseInputInterface(GraphicalInterface @interface)
+        public Cave seeAdjacentCaves(Cave cave)
         {
-
+            //see hazards in adjacent caves
         }
+
 
     }
 }
