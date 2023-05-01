@@ -10,7 +10,6 @@ namespace WumpusGame
     {
         public bool currentState { get; set; }
         public int HighScore { get; set; }
-        Cave cavedjkweh jf = new caes() 
 
         public GameControl()
         {
@@ -26,43 +25,57 @@ namespace WumpusGame
         public void displaySplashscreen()
         {
             //displays splashscreen
+            SplashScreen splashScreen = new SplashScreen();
+            splashScreen.ShowDialog();
         }
 
         public int displayHighScore(int high)
         {
             //displays high score
+            textBoxHighScore.Text = high.ToString();
             return high;
         }
 
-        public Cave avaliavleCaves(Cave cave)
+        public int[] availableCaves(Cave cave)
         {
             //see available caved
+            int[] availableCaves = cave.adjacentCaves[];
+            return availableCaves[];
         }
 
-        public Cave nonAvailableCaves(Cave cave)
+        public int[] nonAvailableCaves(Cave cave)
         {
             //see non availavle caves
+            int[] nonAvailableCaves = cave.nonAvailableCaves;
+            return nonAvailableCaves[]; 
         }
 
-        public Cave adjacentCaves(Cave cave)
+        public int[] adjacentCaves(Cave cave)
         {
             //see adjacent caves
+            int[] adjacentCaves = cave.adjacentCaves;
+            return adjacentCaves[];
         }
 
-        public Cave visitedCaves(Cave cave)
+        public int[] visitedCaves(Cave cave)
         {
             //see visited saves
+            int[] visitedCaves = cave.visitedCaves; 
+            return visitedCaves[];
         }
 
-        public Cave currentCave(Cave cave)
+        public int[] currentCave(Cave cave)
         {
             //see current caves
+            int[] currentCave = cave.currentCave[];
+            return currentCave;
         }
 
-        public Cave seeAdjacentCaves(Cave cave)
+        public int[] seeAdjacentCaves(Cave cave)
         {
             //see hazards in adjacent caves
-
+            int[] seeAdjacentCaves = cave.AdjacentCaves;
+            return seeAdjacentCaves;
         }
 
 
