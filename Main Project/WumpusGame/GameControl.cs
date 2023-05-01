@@ -10,6 +10,7 @@ namespace WumpusGame
     {
         public bool currentState { get; set; }
         public int HighScore { get; set; }
+        Cave cavedjkweh jf = new caes() 
 
         public GameControl()
         {
@@ -38,7 +39,7 @@ namespace WumpusGame
             //see available caved
         }
 
-        public Cave nonAvailableSaves(Cave cave)
+        public Cave nonAvailableCaves(Cave cave)
         {
             //see non availavle caves
         }
@@ -61,6 +62,7 @@ namespace WumpusGame
         public Cave seeAdjacentCaves(Cave cave)
         {
             //see hazards in adjacent caves
+
         }
 
 

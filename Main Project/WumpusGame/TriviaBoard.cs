@@ -15,12 +15,13 @@ namespace WumpusGame
 
         Dictionary<String, String> Question = new Dictionary<string, string>()
         {
-
+            { }
         };
 
         public Dictionary AskQuestion(int randomNumber, Dictionary dictionary)
         {
             //asks a question by looping through the dictionary and asking a question and then returning an answer
+            
             return dictionary(randomNumber);
         }
     }
