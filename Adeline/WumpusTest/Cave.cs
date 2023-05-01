@@ -35,18 +35,31 @@ namespace WumpusTest
                 {
                     adjacent[index - 1].Add(int.Parse(data[i]));
                 }
-
-                Console.WriteLine(data[0]);
+                
+                //Console.WriteLine(data[0]);
                 input = sr.ReadLine();
             }
             sr.Close();
         }
-        
+
         public List<int> get_possible_moves(int currentRoom)
         {
-            // find adjacent rooms for currentRoom
-            // return list of adjacent rooms
-            return (null);
+            // find adjacent rooms for currentRoom 
+            List<int> possibleMoves;
+            try
+            {
+                possibleMoves = adjacent[currentRoom - 1];
+
+                // return list of adjacent rooms
+                return possibleMoves;
+            }
+            catch
+            {
+                MessageBox.Show("Current room has to be within 30", "Alert");
+                possibleMoves = new List<int>(); // return empty list
+                return possibleMoves;
+            }            
+
         }
 
     }
