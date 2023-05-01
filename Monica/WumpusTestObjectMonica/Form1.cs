@@ -23,5 +23,6 @@ namespace WumpusTestObjectMonica
         {
             ui = new GraphicalInterface();
         }
+
     }
 }
