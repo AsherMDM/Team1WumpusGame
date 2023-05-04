@@ -22,7 +22,7 @@ namespace WumpusTest
         {
             // read the file that stores the room connections
             // store room into the Array of list
-            StreamReader sr = new StreamReader("MapOfCave.txt");
+            StreamReader sr = new StreamReader("MapOfCave");
             string input = sr.ReadLine();
             while (input != null)
             {

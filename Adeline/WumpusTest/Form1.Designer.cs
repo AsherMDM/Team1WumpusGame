@@ -36,33 +36,37 @@
             // 
             // richTextBoxAdjacentRooms
             // 
-            this.richTextBoxAdjacentRooms.Location = new System.Drawing.Point(90, 103);
+            this.richTextBoxAdjacentRooms.Location = new System.Drawing.Point(40, 56);
+            this.richTextBoxAdjacentRooms.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.richTextBoxAdjacentRooms.Name = "richTextBoxAdjacentRooms";
-            this.richTextBoxAdjacentRooms.Size = new System.Drawing.Size(198, 126);
+            this.richTextBoxAdjacentRooms.Size = new System.Drawing.Size(133, 83);
             this.richTextBoxAdjacentRooms.TabIndex = 0;
             this.richTextBoxAdjacentRooms.Text = "";
             // 
             // textBoxRoomNumber
             // 
-            this.textBoxRoomNumber.Location = new System.Drawing.Point(448, 100);
+            this.textBoxRoomNumber.Location = new System.Drawing.Point(279, 54);
+            this.textBoxRoomNumber.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBoxRoomNumber.Name = "textBoxRoomNumber";
-            this.textBoxRoomNumber.Size = new System.Drawing.Size(160, 26);
+            this.textBoxRoomNumber.Size = new System.Drawing.Size(59, 20);
             this.textBoxRoomNumber.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(330, 103);
+            this.label1.Location = new System.Drawing.Point(200, 56);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(109, 20);
+            this.label1.Size = new System.Drawing.Size(72, 13);
             this.label1.TabIndex = 2;
             this.label1.Text = "Current Room";
             // 
             // buttonCalculate
             // 
-            this.buttonCalculate.Location = new System.Drawing.Point(353, 178);
+            this.buttonCalculate.Location = new System.Drawing.Point(215, 105);
+            this.buttonCalculate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonCalculate.Name = "buttonCalculate";
-            this.buttonCalculate.Size = new System.Drawing.Size(184, 68);
+            this.buttonCalculate.Size = new System.Drawing.Size(123, 44);
             this.buttonCalculate.TabIndex = 3;
             this.buttonCalculate.Text = "Calculate Adjacent Rooms";
             this.buttonCalculate.UseVisualStyleBackColor = true;
@@ -70,15 +74,16 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(401, 217);
             this.Controls.Add(this.buttonCalculate);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxRoomNumber);
             this.Controls.Add(this.richTextBoxAdjacentRooms);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "CaveTestForm";
             this.ResumeLayout(false);
             this.PerformLayout();
 
