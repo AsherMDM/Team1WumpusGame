@@ -18,6 +18,9 @@ namespace WumpusTesting
             InitializeComponent();
         }
 
+        Player player = new Player();
+        GameLocations gameLocations = new GameLocations();
+
         private void richTextBoxInfo_TextChanged(object sender, EventArgs e)
         {
             outputInfoBox.SelectionStart = outputInfoBox.Text.Length;
@@ -46,14 +49,49 @@ namespace WumpusTesting
             }
         }
 
-        private void buttonCreateAllObjects_Click(object sender, EventArgs e)
+        private void buttonGetWarnings_Click(object sender, EventArgs e)
         {
-            Player player = new Player();
-            outputInfoBox.Text += "Created player object\n";
+            // Adjacent caves
+            string[] strings = textBoxNearbyCaves.Text.Split(',');
+            int[] caves = new int[3] { 99, 99, 99 };
+            int i = 0;
+            foreach (string s in strings)
+            {
+                caves[i] = int.Parse(s);
+                i++;
+            }
 
-            GameLocations gameLocations = new GameLocations();
-            outputInfoBox.Text += "Created gameLocations Object\n";
+            // Bats
+            strings = textBoxBatLocs.Text.Split(',');
+            int[] bats = new int[3] { 0, 0, 0 };
+            i = 0;
+            foreach (string s in strings)
+            {
+                bats[i] = int.Parse(s);
+                i++;
+            }
+
+            // pits
+            strings = textBoxBatLocs.Text.Split(',');
+            int[] pits = new int[3] { 0, 0, 0 };
+            i = 0;
+            foreach (string s in strings)
+            {
+                pits[i] = int.Parse(s);
+                i++;
+            }
+
+            //wumpus 
+            int wumpus = int.Parse(textBoxWumpusLoc.Text);
+
+
+            richTextBoxWarnings.Text = gameLocations.findAdjacentHazards(caves, bats, pits, wumpus);
         }
 
+        private void buttonGetPlayerLocation_Click(object sender, EventArgs e)
+        {
+            player.MovePlayer(int.Parse(textBoxPlayerLocationInput.Text));
+            textBoxPlayerCurrentLocation.Text = player.GetPlayerLocation().ToString();
+        }
     }
 }
