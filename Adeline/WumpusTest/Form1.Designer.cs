@@ -1,6 +1,6 @@
 ﻿namespace WumpusTest
 {
-    partial class Form1
+    partial class CaveTestForm
     {
         /// <summary>
         /// Required designer variable.
@@ -39,6 +39,7 @@
             this.richTextBoxAdjacentRooms.Location = new System.Drawing.Point(40, 56);
             this.richTextBoxAdjacentRooms.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.richTextBoxAdjacentRooms.Name = "richTextBoxAdjacentRooms";
+            this.richTextBoxAdjacentRooms.ReadOnly = true;
             this.richTextBoxAdjacentRooms.Size = new System.Drawing.Size(133, 83);
             this.richTextBoxAdjacentRooms.TabIndex = 0;
             this.richTextBoxAdjacentRooms.Text = "";
@@ -72,7 +73,7 @@
             this.buttonCalculate.UseVisualStyleBackColor = true;
             this.buttonCalculate.Click += new System.EventHandler(this.buttonCalculate_Click);
             // 
-            // Form1
+            // CaveTestForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -82,7 +83,8 @@
             this.Controls.Add(this.textBoxRoomNumber);
             this.Controls.Add(this.richTextBoxAdjacentRooms);
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.Name = "Form1";
+            this.Name = "CaveTestForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CaveTestForm";
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace WumpusTest
 {
-    public partial class Form1 : Form
+    public partial class CaveTestForm : Form
     {
         Cave cave;
-        public Form1()
+        public CaveTestForm()
         {
             InitializeComponent();
             cave = new Cave();
