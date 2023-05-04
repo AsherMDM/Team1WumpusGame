@@ -33,7 +33,7 @@
             // 
             // ConstructorButton
             // 
-            this.ConstructorButton.Location = new System.Drawing.Point(31, 57);
+            this.ConstructorButton.Location = new System.Drawing.Point(341, 142);
             this.ConstructorButton.Name = "ConstructorButton";
             this.ConstructorButton.Size = new System.Drawing.Size(167, 69);
             this.ConstructorButton.TabIndex = 0;
@@ -49,6 +49,7 @@
             this.Controls.Add(this.ConstructorButton);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
 
         }

@@ -22,5 +22,10 @@ namespace WumpusTest
             TriviaBoard Board = new TriviaBoard();
             GameControl control = new GameControl();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

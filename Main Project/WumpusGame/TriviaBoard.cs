@@ -28,13 +28,40 @@ namespace WumpusGame
             {"What is Mr. Donelly's genetic hair colour? A. Blue B. Black C. Red D. Blonde ", "C" },
             {"When was the last time Tottenham Hotspur won a trophy? A. Never B. 1963 C. Today D. 2008", "D"},
             {"What is the highest amount of runs scored in the second innings of an ODI cricket match? A. 437 B. 436 C. 438 D. None of the Above ", "C" },
+            {"What is: ↑↑↓↓←→←→BA A. A bunch of characters B. The Konami Code C. The nearest path to the Wumpus D. Stairway to Heaven", "B" },
+            {"Karate is a martial art from A. China B. India C. Okinawa D. Saudi Arabia", "C" },
+            {"Who is the highest scoring player for Chelsea FC A. Didier Drogba B. Frank Lampard C. Son Heung-Min D. Hidetoshi Nakata", "B" },
+            {"What Pokemon type was the move Curse in the game 'Pokemon Diamond' A. Ghost B. ??? C. Water D. Dark", "B" },
+            {"What language is this game coded in? A. C B. C++ C. C# D. C-- ", "C" },
+            {"What country is Samsung Corporation headquartered in? A. Japan B. South Korea C. North Korea D. West Korea", "B"},
+            {"What is the largest ethnic group in the United Arab Emirates? A. Arabs B. Indians C. Filipinos D. Chinese ", "B" },
+            {"What country acheieved 4th Place in the 2002 World Cup? A. England B. Brazil C. Turkey D. South Korea", "D" },
+            {"The answer to this trivia question is the first letter of the name of this video: https://www.youtube.com/watch?v=dQw4w9WgXcQ ", "N" },
+            {"How many squares are on a chess board? A. 30 B. 89 C. 23 D. 64", "D" },
+            {"Is Taiwan a country? A. Yes B. No C. Maybe D. It is now!!! (This is a joke, please dont cancel me)", "B" },
+            {"When was the War of 1812? A. 1813 B. 1811 C. 1812 D. 18", "C" },
+            {"In Greek Mythology, Poseidon is the God of the A. Sea B. Land C. Earth D. Gods", "A" },
+            {"How do you spell colour A. Color B. Colour C. coloor D. All of the Above", "B" },
+            {"Did Asher lose a chess game on the 2nd of May, 2023 A. ??? B. Yes C. Maybe D. No, Asher never loses", "B"  },
+            {"In the game of Go, does Black or White move first? A. Blue B. Green C. Black D. White", "C" },
+            {"Is Adeline contemplating life right now due to her maths homework? A. yes B. (Click A) C. (Click A) D. No ", "A"},
+            {"Is this the last question? A. Yes B. No C. Maybe", "C" },
+
         };
 
         public Dictionary AskQuestion(int randomNumber, Dictionary dictionary)
         {
             //asks a question by looping through the dictionary and asking a question and then returning an answer
-            
-            return dictionary(randomNumber);
+            int rn = randomNumber;
+            for(int i = 0; i < dictionary.length; i++)
+            {
+                if(i == rn)
+                {
+                    return dictionary(i);
+                    dictionary.Remove(i);
+                }
+            }
+           
         }
     }
 }
