@@ -14,14 +14,17 @@ namespace WumpusTesting
 
         }
 
+        Random rnd = new Random();
+
         int wumpusLocation = 1;
         int[] batLocations = { 5, 2, 3 };
         int[] pitLocations = { 1, 2, 6, 4 };
 
-        public int GenerateWumpusLocation()
+        public void GenerateWumpusLocation()
         {
             // called by gamecontrol
-            return wumpusLocation;
+            int i = rnd.Next(1, 30);
+            wumpusLocation = i;
         }
 
         public int[] GenerateBatLocations()
