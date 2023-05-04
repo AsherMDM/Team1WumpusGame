@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace WumpusTesting
 {
@@ -13,14 +14,17 @@ namespace WumpusTesting
 
         }
 
-        int wumpusLocation = 1;
-        int[] batLocations = { 1, 2, 3 };
-        int[] pitLocations = { 1, 2, 3, 4 };
+        Random rnd = new Random();
 
-        public int GenerateWumpusLocation()
+        int wumpusLocation = 1;
+        int[] batLocations = { 5, 2, 3 };
+        int[] pitLocations = { 1, 2, 6, 4 };
+
+        public void GenerateWumpusLocation()
         {
             // called by gamecontrol
-            return wumpusLocation;
+            int i = rnd.Next(1, 30);
+            wumpusLocation = i;
         }
 
         public int[] GenerateBatLocations()
@@ -39,6 +43,45 @@ namespace WumpusTesting
         {
             // called by gamecontrol
             return wumpusLocation;
+        }
+
+        public string findAdjacentHazards(int[] adjacentCaves, int[] batLocs, int []pitLocs, int wumpusLoc)
+        {
+            string warnings = "";
+            
+
+            foreach (int cave in adjacentCaves)
+            {
+                //bats
+                foreach (int caveBat in batLocs)
+                {
+                    if (caveBat == cave)
+                    {
+                        warnings += "Bats nearby.\n";
+                    }
+                }
+
+                //pits
+                foreach (int cavePit in pitLocs)
+                {
+                    if (cavePit == cave)
+                    {
+                        warnings += "Pit nearby.\n";
+                    }
+                }
+
+                if (cave == wumpusLoc)
+                {
+                    warnings += "Wumpus nearby.\n";
+                }
+            }
+
+            return warnings;
+        }
+        
+        public void findCurrentHazards()
+        {
+
         }
     }
 }

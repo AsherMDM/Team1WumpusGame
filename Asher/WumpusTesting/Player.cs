@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WumpusTesting
 {
-    internal class Player
+    public class Player
     {
         public Player()
         {
@@ -16,6 +16,7 @@ namespace WumpusTesting
         //arrows coins
         int[] inventory = { 3, 10 };
         int turnAmount = 0;
+        int playerLocation = 1;
 
         public int[] GetInventory()
         {
@@ -48,6 +49,16 @@ namespace WumpusTesting
             //Calculates Final Score
             // called by gamecontrol
             return 0;
+        }
+
+        public int GetPlayerLocation()
+        {
+            return playerLocation;
+        }
+
+        public void MovePlayer(int newLocation)
+        {
+            playerLocation = newLocation;
         }
     }
 }
