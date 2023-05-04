@@ -21,7 +21,7 @@ namespace WumpusTest
         {
             if (i == randomNumber)
             {
-                return dictionary;
+                //return dictionary["kd"];
             }
         }
         return null;
