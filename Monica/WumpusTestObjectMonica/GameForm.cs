@@ -12,42 +12,64 @@ namespace WumpusTestObjectMonica
 {
     public partial class GameForm : Form
     {
+        GraphicalInterface ui;
         public GameForm()
         {
             InitializeComponent();
-            // call pretty much all the other objects to get info to start game; current cave, connected rooms, inventory, etc
+            ui = new GraphicalInterface();
+            //labelCurrentCave.Text = ui.GetCave();
+
         }
 
         private void buttonShootArrows_Click(object sender, EventArgs e)
         {
-            // will shoot the arrows into the selected room, will prompt another box asking which room to shoot arrows into
-            // calls player object to see how many arrows are in the inventory and to subtract one when shooting arrow
             
         }
 
         private void buttonBuyArrows_Click(object sender, EventArgs e)
         {
-            // calls trivia object and loads trivia screen, if successful update player inventory in player object
+            ui.BuyArrows();
             
         }
 
         private void buttonCave1_Click(object sender, EventArgs e)
         {
-            // call gamelocations and game control, move player to connected cave to button
-            // call cave object to display new connected caves to current one, update current cave label
-            // call player object to update player inventory (coins)
+            int newRoom = int.Parse(buttonCave1.Text);
+
+            int[] adjCaves = ui.DisplayAdjacentCaves(newRoom);
+
+            buttonCave1.Text = adjCaves[0].ToString();
+            labelCurrentCave.Text = newRoom.ToString();
         }
 
         private void buttonCave2_Click(object sender, EventArgs e)
         {
-            // same as the other cave button
+            int newRoom = int.Parse(buttonCave1.Text);
+
+            int[] adjCaves = ui.DisplayAdjacentCaves(newRoom);
+
+            buttonCave2.Text = adjCaves[1].ToString();
+            labelCurrentCave.Text = newRoom.ToString();
 
         }
 
         private void buttonCave3_Click(object sender, EventArgs e)
         {
-            // same as the other cave button
+            int newRoom = int.Parse(buttonCave1.Text);
+
+            int[] adjCaves = ui.DisplayAdjacentCaves(newRoom);
+
+            buttonCave3.Text = adjCaves[2].ToString();
+            labelCurrentCave.Text = newRoom.ToString();
         }
-        
+
+        private void buttonWarnings_Click(object sender, EventArgs e)
+        {
+            bool[] warnings = { checkBox1.Checked, checkBox2.Checked, checkBox3.Checked };
+
+            labelBatWarning.Visible = warnings[0];
+            labelPitWarning.Visible = warnings[1];
+            labelWumpusWarning.Visible = warnings[2];
+        }   
     }
 }
