@@ -15,8 +15,13 @@ namespace WumpusTest
         {
             // read the file that stores the room connections
             // store it into the Array of list
+            get_possible_moves()
         } 
-
+        /// <summary>
+        /// hi this is my function
+        /// </summary>
+        /// <param name="currentRoom"></param>
+        /// <returns></returns>
         public List<int> get_possible_moves(int currentRoom)
         {
             // find adjacent rooms for currentRoom
