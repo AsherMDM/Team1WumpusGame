@@ -33,6 +33,10 @@
             this.textBoxAnswer = new System.Windows.Forms.TextBox();
             this.listBoxQuestion = new System.Windows.Forms.ListBox();
             this.labelQuestion = new System.Windows.Forms.Label();
+            this.labelAnswer1 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // ConstructorButton
@@ -75,15 +79,55 @@
             this.labelQuestion.AutoSize = true;
             this.labelQuestion.Location = new System.Drawing.Point(320, 205);
             this.labelQuestion.Name = "labelQuestion";
-            this.labelQuestion.Size = new System.Drawing.Size(35, 13);
+            this.labelQuestion.Size = new System.Drawing.Size(58, 13);
             this.labelQuestion.TabIndex = 5;
-            this.labelQuestion.Text = "label1";
+            this.labelQuestion.Text = "Question 1";
+            // 
+            // labelAnswer1
+            // 
+            this.labelAnswer1.AutoSize = true;
+            this.labelAnswer1.Location = new System.Drawing.Point(320, 244);
+            this.labelAnswer1.Name = "labelAnswer1";
+            this.labelAnswer1.Size = new System.Drawing.Size(51, 13);
+            this.labelAnswer1.TabIndex = 6;
+            this.labelAnswer1.Text = "Answer 1";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(320, 283);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(51, 13);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Answer 2";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(320, 320);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(51, 13);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Answer 3";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(320, 356);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(51, 13);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "Answer 4";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.labelAnswer1);
             this.Controls.Add(this.labelQuestion);
             this.Controls.Add(this.listBoxQuestion);
             this.Controls.Add(this.textBoxAnswer);
@@ -104,6 +148,10 @@
         private System.Windows.Forms.TextBox textBoxAnswer;
         private System.Windows.Forms.ListBox listBoxQuestion;
         private System.Windows.Forms.Label labelQuestion;
+        private System.Windows.Forms.Label labelAnswer1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }
 

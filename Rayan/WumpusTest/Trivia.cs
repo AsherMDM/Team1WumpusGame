@@ -4,24 +4,40 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
+using System.Drawing.Drawing2D;
 
 namespace WumpusTest
 {
     public class Trivia
     {
+        string[] data;
         List<Question> _questions = new List<Question>();
         int counter = -1;
         public Trivia() { 
-            Question q1 = new Question("How old am I ?", "3", "7", "your mother", "16", "D");
-            Question q2 = new Question("What is the chemical formula for Carbonic Acid?", "A", "Y2", "H2CO3", "A", "C");
-            Question q3 = new Question("Is going to work on a Sunday illegal in Fiji?", "Maybe", "?????", "Yes", "No ", "C");
-            Question q4 = new Question("When was the Commonwealth of Australia federated?", "01 January, 1901", "01 January, 1903", "01 January 1899", "All of the Above", "A");
-            Question q5 = new Question("Who won the 1999 Champions League Final?", "Seattle Mariners", "AC Milan", "Barcelona", "Manchester United", "D");
-            Question q6 = new Question("Solve: ∫ln x + 3 dx", "All of the Above", "x^2 + 3x + C", "xln|x| + 2x + C", "dad", "C");
+            
+
+            //for(int i = 0; i <= 30; i++)
+            //{
+                ReadFromFile();
+            //}  
 
             //What is the chemical formula for Carbonic Acid?, A. A, B.Y2, C.H2CO3, D.A ", "C" },);
+        }
 
-            _questions.Add(q1);
+        private void ReadFromFile()
+        {
+            StreamReader sr = new StreamReader("Questions.txt");
+            string line = sr.ReadLine();
+            while(line != null)
+            {
+                data = line.Split(',');
+                Question q = new Question(data[0], data[1], data[2], data[3], data[4], data[5]);
+                _questions.Add(q);
+                line = sr.ReadLine();
+            }
+            sr.Close();
+            //return data;
         }
 
 
