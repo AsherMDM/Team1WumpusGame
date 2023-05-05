@@ -85,13 +85,38 @@ namespace WumpusTesting
             int wumpus = int.Parse(textBoxWumpusLoc.Text);
 
 
-            richTextBoxWarnings.Text = gameLocations.findAdjacentHazards(caves, bats, pits, wumpus);
+            labelBats.Visible = gameLocations.findAdjacentHazards(caves, bats, pits, wumpus)[0];
+            labelPits.Visible = gameLocations.findAdjacentHazards(caves, bats, pits, wumpus)[1];
+            labelWumpus.Visible = gameLocations.findAdjacentHazards(caves, bats, pits, wumpus)[2];
         }
 
         private void buttonGetPlayerLocation_Click(object sender, EventArgs e)
         {
             player.MovePlayer(int.Parse(textBoxPlayerLocationInput.Text));
             textBoxPlayerCurrentLocation.Text = player.GetPlayerLocation().ToString();
+        }
+
+        private void textBoxInvModifyAmount_Click(object sender, EventArgs e)
+        {
+            textBoxInvModifyAmount.Clear();
+            textBoxInvModifyAmount.ForeColor = Color.Black;
+        }
+
+        private void buttonGetInventory_Click(object sender, EventArgs e)
+        {
+            int[] inv = player.GetInventory();
+            textBoxArrows.Text = inv[0].ToString();
+            textBoxCoins.Text = inv[1].ToString();
+        }
+
+        private void buttonUpdateArrows_Click(object sender, EventArgs e)
+        {
+            player.UpdateArrowAmount(int.Parse(textBoxInvModifyAmount.Text));
+        }
+
+        private void buttonUpdateCoins_Click(object sender, EventArgs e)
+        {
+            player.UpdateCoinAmount(int.Parse(textBoxInvModifyAmount.Text));
         }
     }
 }

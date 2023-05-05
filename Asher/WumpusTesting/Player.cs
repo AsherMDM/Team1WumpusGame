@@ -30,12 +30,14 @@ namespace WumpusTesting
         {
             // Updates Arrow Amount
             // called by gamecontrol
+            inventory[0] += update;
         }
 
         public void UpdateCoinAmount(int update)
         {
             // Updates Coin Amount
             // called by gamecontrol
+            inventory[1] += update;
         }
 
         public void ShootArrow(int cave)
