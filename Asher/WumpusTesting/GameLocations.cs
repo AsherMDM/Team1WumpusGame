@@ -45,9 +45,9 @@ namespace WumpusTesting
             return wumpusLocation;
         }
 
-        public string findAdjacentHazards(int[] adjacentCaves, int[] batLocs, int []pitLocs, int wumpusLoc)
+        public bool[] findAdjacentHazards(int[] adjacentCaves, int[] batLocs, int []pitLocs, int wumpusLoc)
         {
-            string warnings = "";
+            bool[] warnings = new bool[3] { false, false, false };
             
 
             foreach (int cave in adjacentCaves)
@@ -57,7 +57,7 @@ namespace WumpusTesting
                 {
                     if (caveBat == cave)
                     {
-                        warnings += "Bats nearby.\n";
+                        warnings[0] = true;
                     }
                 }
 
@@ -66,13 +66,13 @@ namespace WumpusTesting
                 {
                     if (cavePit == cave)
                     {
-                        warnings += "Pit nearby.\n";
+                        warnings[1] = true;
                     }
                 }
 
                 if (cave == wumpusLoc)
                 {
-                    warnings += "Wumpus nearby.\n";
+                    warnings[2] = true;
                 }
             }
 

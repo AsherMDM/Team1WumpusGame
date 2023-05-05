@@ -33,8 +33,6 @@
             this.listBoxObjects = new System.Windows.Forms.ListBox();
             this.groupBoxObjects = new System.Windows.Forms.GroupBox();
             this.outputInfoBox = new System.Windows.Forms.RichTextBox();
-            this.richTextBoxWarnings = new System.Windows.Forms.RichTextBox();
-            this.labelWarnings = new System.Windows.Forms.Label();
             this.buttonGetWarnings = new System.Windows.Forms.Button();
             this.textBoxNearbyCaves = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -48,7 +46,25 @@
             this.label5 = new System.Windows.Forms.Label();
             this.textBoxPlayerLocationInput = new System.Windows.Forms.TextBox();
             this.textBoxPlayerCurrentLocation = new System.Windows.Forms.TextBox();
+            this.labelWumpus = new System.Windows.Forms.Label();
+            this.labelBats = new System.Windows.Forms.Label();
+            this.labelPits = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.textBoxInvModifyAmount = new System.Windows.Forms.TextBox();
+            this.buttonUpdateCoins = new System.Windows.Forms.Button();
+            this.buttonUpdateArrows = new System.Windows.Forms.Button();
+            this.buttonGetInventory = new System.Windows.Forms.Button();
+            this.textBoxCoins = new System.Windows.Forms.TextBox();
+            this.textBoxArrows = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.groupBoxObjects.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonCreateSelectedObject
@@ -90,7 +106,7 @@
             this.groupBoxObjects.Controls.Add(this.buttonCreateSelectedObject);
             this.groupBoxObjects.Controls.Add(this.listBoxObjects);
             this.groupBoxObjects.Controls.Add(this.buttonCreateAllObjects);
-            this.groupBoxObjects.Location = new System.Drawing.Point(488, 507);
+            this.groupBoxObjects.Location = new System.Drawing.Point(1250, -51);
             this.groupBoxObjects.Name = "groupBoxObjects";
             this.groupBoxObjects.Size = new System.Drawing.Size(284, 94);
             this.groupBoxObjects.TabIndex = 3;
@@ -104,38 +120,18 @@
             this.outputInfoBox.BackColor = System.Drawing.Color.DimGray;
             this.outputInfoBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.outputInfoBox.ForeColor = System.Drawing.Color.White;
-            this.outputInfoBox.Location = new System.Drawing.Point(71, 477);
+            this.outputInfoBox.Location = new System.Drawing.Point(71, 700);
             this.outputInfoBox.Name = "outputInfoBox";
             this.outputInfoBox.Size = new System.Drawing.Size(411, 124);
             this.outputInfoBox.TabIndex = 4;
             this.outputInfoBox.Text = "";
             this.outputInfoBox.TextChanged += new System.EventHandler(this.richTextBoxInfo_TextChanged);
             // 
-            // richTextBoxWarnings
-            // 
-            this.richTextBoxWarnings.BackColor = System.Drawing.Color.White;
-            this.richTextBoxWarnings.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.richTextBoxWarnings.Location = new System.Drawing.Point(23, 32);
-            this.richTextBoxWarnings.Name = "richTextBoxWarnings";
-            this.richTextBoxWarnings.ReadOnly = true;
-            this.richTextBoxWarnings.Size = new System.Drawing.Size(154, 109);
-            this.richTextBoxWarnings.TabIndex = 5;
-            this.richTextBoxWarnings.Text = "";
-            // 
-            // labelWarnings
-            // 
-            this.labelWarnings.AutoSize = true;
-            this.labelWarnings.Location = new System.Drawing.Point(20, 16);
-            this.labelWarnings.Name = "labelWarnings";
-            this.labelWarnings.Size = new System.Drawing.Size(52, 13);
-            this.labelWarnings.TabIndex = 6;
-            this.labelWarnings.Text = "Warnings";
-            // 
             // buttonGetWarnings
             // 
             this.buttonGetWarnings.BackColor = System.Drawing.Color.White;
             this.buttonGetWarnings.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.buttonGetWarnings.Location = new System.Drawing.Point(23, 147);
+            this.buttonGetWarnings.Location = new System.Drawing.Point(234, 107);
             this.buttonGetWarnings.Name = "buttonGetWarnings";
             this.buttonGetWarnings.Size = new System.Drawing.Size(154, 38);
             this.buttonGetWarnings.TabIndex = 7;
@@ -147,7 +143,7 @@
             // 
             this.textBoxNearbyCaves.BackColor = System.Drawing.Color.White;
             this.textBoxNearbyCaves.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.textBoxNearbyCaves.Location = new System.Drawing.Point(197, 32);
+            this.textBoxNearbyCaves.Location = new System.Drawing.Point(108, 19);
             this.textBoxNearbyCaves.Name = "textBoxNearbyCaves";
             this.textBoxNearbyCaves.Size = new System.Drawing.Size(100, 20);
             this.textBoxNearbyCaves.TabIndex = 8;
@@ -157,7 +153,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(194, 55);
+            this.label1.Location = new System.Drawing.Point(13, 22);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(74, 13);
             this.label1.TabIndex = 9;
@@ -167,7 +163,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(194, 94);
+            this.label2.Location = new System.Drawing.Point(13, 61);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(71, 13);
             this.label2.TabIndex = 11;
@@ -177,7 +173,7 @@
             // 
             this.textBoxBatLocs.BackColor = System.Drawing.Color.White;
             this.textBoxBatLocs.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.textBoxBatLocs.Location = new System.Drawing.Point(197, 71);
+            this.textBoxBatLocs.Location = new System.Drawing.Point(108, 58);
             this.textBoxBatLocs.Name = "textBoxBatLocs";
             this.textBoxBatLocs.Size = new System.Drawing.Size(100, 20);
             this.textBoxBatLocs.TabIndex = 10;
@@ -187,7 +183,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(194, 133);
+            this.label3.Location = new System.Drawing.Point(13, 100);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(63, 13);
             this.label3.TabIndex = 13;
@@ -197,7 +193,7 @@
             // 
             this.textBoxPitLocs.BackColor = System.Drawing.Color.White;
             this.textBoxPitLocs.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.textBoxPitLocs.Location = new System.Drawing.Point(197, 110);
+            this.textBoxPitLocs.Location = new System.Drawing.Point(108, 97);
             this.textBoxPitLocs.Name = "textBoxPitLocs";
             this.textBoxPitLocs.Size = new System.Drawing.Size(100, 20);
             this.textBoxPitLocs.TabIndex = 12;
@@ -207,7 +203,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(194, 170);
+            this.label4.Location = new System.Drawing.Point(13, 137);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(89, 13);
             this.label4.TabIndex = 15;
@@ -217,7 +213,7 @@
             // 
             this.textBoxWumpusLoc.BackColor = System.Drawing.Color.White;
             this.textBoxWumpusLoc.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.textBoxWumpusLoc.Location = new System.Drawing.Point(197, 147);
+            this.textBoxWumpusLoc.Location = new System.Drawing.Point(108, 134);
             this.textBoxWumpusLoc.Name = "textBoxWumpusLoc";
             this.textBoxWumpusLoc.Size = new System.Drawing.Size(100, 20);
             this.textBoxWumpusLoc.TabIndex = 14;
@@ -227,7 +223,7 @@
             // 
             this.buttonGetPlayerLocation.BackColor = System.Drawing.Color.White;
             this.buttonGetPlayerLocation.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.buttonGetPlayerLocation.Location = new System.Drawing.Point(23, 227);
+            this.buttonGetPlayerLocation.Location = new System.Drawing.Point(15, 19);
             this.buttonGetPlayerLocation.Name = "buttonGetPlayerLocation";
             this.buttonGetPlayerLocation.Size = new System.Drawing.Size(154, 38);
             this.buttonGetPlayerLocation.TabIndex = 16;
@@ -239,7 +235,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(194, 250);
+            this.label5.Location = new System.Drawing.Point(186, 42);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(76, 13);
             this.label5.TabIndex = 18;
@@ -249,7 +245,7 @@
             // 
             this.textBoxPlayerLocationInput.BackColor = System.Drawing.Color.White;
             this.textBoxPlayerLocationInput.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.textBoxPlayerLocationInput.Location = new System.Drawing.Point(197, 227);
+            this.textBoxPlayerLocationInput.Location = new System.Drawing.Point(189, 19);
             this.textBoxPlayerLocationInput.Name = "textBoxPlayerLocationInput";
             this.textBoxPlayerLocationInput.Size = new System.Drawing.Size(100, 20);
             this.textBoxPlayerLocationInput.TabIndex = 17;
@@ -257,39 +253,200 @@
             // 
             // textBoxPlayerCurrentLocation
             // 
-            this.textBoxPlayerCurrentLocation.Location = new System.Drawing.Point(23, 271);
+            this.textBoxPlayerCurrentLocation.Location = new System.Drawing.Point(15, 63);
             this.textBoxPlayerCurrentLocation.Name = "textBoxPlayerCurrentLocation";
             this.textBoxPlayerCurrentLocation.ReadOnly = true;
             this.textBoxPlayerCurrentLocation.Size = new System.Drawing.Size(274, 20);
             this.textBoxPlayerCurrentLocation.TabIndex = 19;
+            // 
+            // labelWumpus
+            // 
+            this.labelWumpus.AutoSize = true;
+            this.labelWumpus.ForeColor = System.Drawing.Color.Black;
+            this.labelWumpus.Location = new System.Drawing.Point(246, 26);
+            this.labelWumpus.Name = "labelWumpus";
+            this.labelWumpus.Size = new System.Drawing.Size(86, 13);
+            this.labelWumpus.TabIndex = 20;
+            this.labelWumpus.Text = "Wumpus Nearby";
+            // 
+            // labelBats
+            // 
+            this.labelBats.AutoSize = true;
+            this.labelBats.ForeColor = System.Drawing.Color.Black;
+            this.labelBats.Location = new System.Drawing.Point(246, 53);
+            this.labelBats.Name = "labelBats";
+            this.labelBats.Size = new System.Drawing.Size(65, 13);
+            this.labelBats.TabIndex = 21;
+            this.labelBats.Text = "Bats Nearby";
+            // 
+            // labelPits
+            // 
+            this.labelPits.AutoSize = true;
+            this.labelPits.ForeColor = System.Drawing.Color.Black;
+            this.labelPits.Location = new System.Drawing.Point(246, 80);
+            this.labelPits.Name = "labelPits";
+            this.labelPits.Size = new System.Drawing.Size(61, 13);
+            this.labelPits.TabIndex = 23;
+            this.labelPits.Text = "Pits Nearby";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.buttonGetWarnings);
+            this.groupBox1.Controls.Add(this.labelPits);
+            this.groupBox1.Controls.Add(this.textBoxNearbyCaves);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.labelBats);
+            this.groupBox1.Controls.Add(this.textBoxBatLocs);
+            this.groupBox1.Controls.Add(this.labelWumpus);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.textBoxPitLocs);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.textBoxWumpusLoc);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Location = new System.Drawing.Point(23, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(407, 167);
+            this.groupBox1.TabIndex = 24;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Warnings";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.buttonGetPlayerLocation);
+            this.groupBox2.Controls.Add(this.textBoxPlayerLocationInput);
+            this.groupBox2.Controls.Add(this.textBoxPlayerCurrentLocation);
+            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Location = new System.Drawing.Point(23, 185);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(305, 97);
+            this.groupBox2.TabIndex = 25;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Player Location";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.textBoxInvModifyAmount);
+            this.groupBox3.Controls.Add(this.buttonUpdateCoins);
+            this.groupBox3.Controls.Add(this.buttonUpdateArrows);
+            this.groupBox3.Controls.Add(this.buttonGetInventory);
+            this.groupBox3.Controls.Add(this.textBoxCoins);
+            this.groupBox3.Controls.Add(this.textBoxArrows);
+            this.groupBox3.Controls.Add(this.label7);
+            this.groupBox3.Controls.Add(this.label6);
+            this.groupBox3.Location = new System.Drawing.Point(22, 288);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(348, 133);
+            this.groupBox3.TabIndex = 26;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Inventory";
+            // 
+            // textBoxInvModifyAmount
+            // 
+            this.textBoxInvModifyAmount.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.textBoxInvModifyAmount.Location = new System.Drawing.Point(176, 85);
+            this.textBoxInvModifyAmount.Name = "textBoxInvModifyAmount";
+            this.textBoxInvModifyAmount.Size = new System.Drawing.Size(142, 20);
+            this.textBoxInvModifyAmount.TabIndex = 7;
+            this.textBoxInvModifyAmount.Text = "How much to change it...";
+            this.textBoxInvModifyAmount.Click += new System.EventHandler(this.textBoxInvModifyAmount_Click);
+            // 
+            // buttonUpdateCoins
+            // 
+            this.buttonUpdateCoins.Location = new System.Drawing.Point(176, 54);
+            this.buttonUpdateCoins.Name = "buttonUpdateCoins";
+            this.buttonUpdateCoins.Size = new System.Drawing.Size(142, 23);
+            this.buttonUpdateCoins.TabIndex = 6;
+            this.buttonUpdateCoins.Text = "Update Coins";
+            this.buttonUpdateCoins.UseVisualStyleBackColor = true;
+            this.buttonUpdateCoins.Click += new System.EventHandler(this.buttonUpdateCoins_Click);
+            // 
+            // buttonUpdateArrows
+            // 
+            this.buttonUpdateArrows.Location = new System.Drawing.Point(176, 28);
+            this.buttonUpdateArrows.Name = "buttonUpdateArrows";
+            this.buttonUpdateArrows.Size = new System.Drawing.Size(142, 23);
+            this.buttonUpdateArrows.TabIndex = 5;
+            this.buttonUpdateArrows.Text = "Update Arrows";
+            this.buttonUpdateArrows.UseVisualStyleBackColor = true;
+            this.buttonUpdateArrows.Click += new System.EventHandler(this.buttonUpdateArrows_Click);
+            // 
+            // buttonGetInventory
+            // 
+            this.buttonGetInventory.Location = new System.Drawing.Point(28, 82);
+            this.buttonGetInventory.Name = "buttonGetInventory";
+            this.buttonGetInventory.Size = new System.Drawing.Size(142, 23);
+            this.buttonGetInventory.TabIndex = 4;
+            this.buttonGetInventory.Text = "Get Inventory";
+            this.buttonGetInventory.UseVisualStyleBackColor = true;
+            this.buttonGetInventory.Click += new System.EventHandler(this.buttonGetInventory_Click);
+            // 
+            // textBoxCoins
+            // 
+            this.textBoxCoins.Location = new System.Drawing.Point(70, 56);
+            this.textBoxCoins.Name = "textBoxCoins";
+            this.textBoxCoins.ReadOnly = true;
+            this.textBoxCoins.Size = new System.Drawing.Size(100, 20);
+            this.textBoxCoins.TabIndex = 3;
+            // 
+            // textBoxArrows
+            // 
+            this.textBoxArrows.Location = new System.Drawing.Point(70, 30);
+            this.textBoxArrows.Name = "textBoxArrows";
+            this.textBoxArrows.ReadOnly = true;
+            this.textBoxArrows.Size = new System.Drawing.Size(100, 20);
+            this.textBoxArrows.TabIndex = 2;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(25, 59);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(33, 13);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "Coins";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(25, 33);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(39, 13);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Arrows";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.Red;
+            this.label8.Location = new System.Drawing.Point(1276, 56);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(223, 25);
+            this.label8.TabIndex = 27;
+            this.label8.Text = "DOES NOT WORK ^";
             // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.textBoxPlayerCurrentLocation);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBoxPlayerLocationInput);
-            this.Controls.Add(this.buttonGetPlayerLocation);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBoxWumpusLoc);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBoxPitLocs);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBoxBatLocs);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBoxNearbyCaves);
-            this.Controls.Add(this.buttonGetWarnings);
-            this.Controls.Add(this.labelWarnings);
-            this.Controls.Add(this.richTextBoxWarnings);
+            this.ClientSize = new System.Drawing.Size(1235, 673);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.outputInfoBox);
             this.Controls.Add(this.groupBoxObjects);
-            this.ForeColor = System.Drawing.Color.White;
+            this.ForeColor = System.Drawing.Color.Black;
             this.Name = "FormMain";
             this.Text = "Wumpus testing";
             this.groupBoxObjects.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -302,8 +459,6 @@
         private System.Windows.Forms.ListBox listBoxObjects;
         private System.Windows.Forms.GroupBox groupBoxObjects;
         private System.Windows.Forms.RichTextBox outputInfoBox;
-        private System.Windows.Forms.RichTextBox richTextBoxWarnings;
-        private System.Windows.Forms.Label labelWarnings;
         private System.Windows.Forms.Button buttonGetWarnings;
         private System.Windows.Forms.TextBox textBoxNearbyCaves;
         private System.Windows.Forms.Label label1;
@@ -317,6 +472,21 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBoxPlayerLocationInput;
         private System.Windows.Forms.TextBox textBoxPlayerCurrentLocation;
+        private System.Windows.Forms.Label labelWumpus;
+        private System.Windows.Forms.Label labelBats;
+        private System.Windows.Forms.Label labelPits;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Button buttonUpdateArrows;
+        private System.Windows.Forms.Button buttonGetInventory;
+        private System.Windows.Forms.TextBox textBoxCoins;
+        private System.Windows.Forms.TextBox textBoxArrows;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox textBoxInvModifyAmount;
+        private System.Windows.Forms.Button buttonUpdateCoins;
     }
 }
 

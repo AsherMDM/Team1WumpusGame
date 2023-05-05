@@ -13,6 +13,9 @@ namespace WumpusTestObjectMonica
     public partial class GameForm : Form
     {
         GraphicalInterface ui;
+        public int currentarrows = 1;
+        public int currentcoins = 0;
+
         public GameForm()
         {
             InitializeComponent();
@@ -23,13 +26,16 @@ namespace WumpusTestObjectMonica
 
         private void buttonShootArrows_Click(object sender, EventArgs e)
         {
-            
+            ui.ShootArrows();
+            currentarrows--;
+            labelArrows.Text = "Arrows: " + currentarrows.ToString();
         }
 
         private void buttonBuyArrows_Click(object sender, EventArgs e)
         {
-            ui.BuyArrows();
-            
+            currentarrows = ui.BuyArrows(currentarrows);
+            labelArrows.Text = "Arrows: " + currentarrows;
+
         }
 
         private void buttonCave1_Click(object sender, EventArgs e)
@@ -40,6 +46,8 @@ namespace WumpusTestObjectMonica
 
             buttonCave1.Text = adjCaves[0].ToString();
             labelCurrentCave.Text = newRoom.ToString();
+            currentcoins++;
+            labelCoins.Text = "Coins: " + currentcoins.ToString();
         }
 
         private void buttonCave2_Click(object sender, EventArgs e)
@@ -50,7 +58,8 @@ namespace WumpusTestObjectMonica
 
             buttonCave2.Text = adjCaves[1].ToString();
             labelCurrentCave.Text = newRoom.ToString();
-
+            currentcoins++;
+            labelCoins.Text = "Coins: " + currentcoins.ToString();
         }
 
         private void buttonCave3_Click(object sender, EventArgs e)
@@ -61,6 +70,8 @@ namespace WumpusTestObjectMonica
 
             buttonCave3.Text = adjCaves[2].ToString();
             labelCurrentCave.Text = newRoom.ToString();
+            currentcoins++;
+            labelCoins.Text = "Coins: " + currentcoins.ToString();
         }
 
         private void buttonWarnings_Click(object sender, EventArgs e)

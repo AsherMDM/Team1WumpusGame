@@ -41,6 +41,8 @@
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.labelArrows = new System.Windows.Forms.Label();
+            this.labelCoins = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // buttonShootArrows
@@ -169,11 +171,31 @@
             this.checkBox3.TabIndex = 12;
             this.checkBox3.UseVisualStyleBackColor = true;
             // 
+            // labelArrows
+            // 
+            this.labelArrows.AutoSize = true;
+            this.labelArrows.Location = new System.Drawing.Point(257, 219);
+            this.labelArrows.Name = "labelArrows";
+            this.labelArrows.Size = new System.Drawing.Size(51, 13);
+            this.labelArrows.TabIndex = 13;
+            this.labelArrows.Text = "Arrows: 1";
+            // 
+            // labelCoins
+            // 
+            this.labelCoins.AutoSize = true;
+            this.labelCoins.Location = new System.Drawing.Point(257, 245);
+            this.labelCoins.Name = "labelCoins";
+            this.labelCoins.Size = new System.Drawing.Size(45, 13);
+            this.labelCoins.TabIndex = 14;
+            this.labelCoins.Text = "Coins: 0";
+            // 
             // GameForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(642, 322);
+            this.Controls.Add(this.labelCoins);
+            this.Controls.Add(this.labelArrows);
             this.Controls.Add(this.checkBox3);
             this.Controls.Add(this.checkBox2);
             this.Controls.Add(this.checkBox1);
@@ -209,5 +231,7 @@
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.Label labelArrows;
+        private System.Windows.Forms.Label labelCoins;
     }
 }
