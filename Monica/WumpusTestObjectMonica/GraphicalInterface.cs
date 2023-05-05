@@ -31,7 +31,7 @@ namespace WumpusTestObjectMonica
 
             //gc let me know if hit wumpus
 
-            bool shotWumpus = false;
+            bool shotWumpus = true;
             if (shotWumpus) MessageBox.Show("Killed wumpus");
             else MessageBox.Show("missed");
             //return false;

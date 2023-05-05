@@ -13,6 +13,8 @@ namespace WumpusTestObjectMonica
     public partial class GameForm : Form
     {
         GraphicalInterface ui;
+        public int currentarrows = 1;
+
         public GameForm()
         {
             InitializeComponent();
@@ -23,13 +25,16 @@ namespace WumpusTestObjectMonica
 
         private void buttonShootArrows_Click(object sender, EventArgs e)
         {
-            
+            ui.ShootArrows();
+            currentarrows--;
+            labelArrows.Text = "Arrows: " + currentarrows.ToString();
         }
 
         private void buttonBuyArrows_Click(object sender, EventArgs e)
         {
-            ui.BuyArrows();
-            
+            currentarrows = ui.BuyArrows(currentarrows);
+            labelArrows.Text = "Arrows: " + currentarrows;
+
         }
 
         private void buttonCave1_Click(object sender, EventArgs e)
