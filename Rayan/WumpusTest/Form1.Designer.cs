@@ -32,6 +32,7 @@
             this.buttonAskQuestion = new System.Windows.Forms.Button();
             this.textBoxAnswer = new System.Windows.Forms.TextBox();
             this.listBoxQuestion = new System.Windows.Forms.ListBox();
+            this.labelQuestion = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // ConstructorButton
@@ -69,11 +70,21 @@
             this.listBoxQuestion.Size = new System.Drawing.Size(120, 95);
             this.listBoxQuestion.TabIndex = 4;
             // 
+            // labelQuestion
+            // 
+            this.labelQuestion.AutoSize = true;
+            this.labelQuestion.Location = new System.Drawing.Point(320, 205);
+            this.labelQuestion.Name = "labelQuestion";
+            this.labelQuestion.Size = new System.Drawing.Size(35, 13);
+            this.labelQuestion.TabIndex = 5;
+            this.labelQuestion.Text = "label1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.labelQuestion);
             this.Controls.Add(this.listBoxQuestion);
             this.Controls.Add(this.textBoxAnswer);
             this.Controls.Add(this.buttonAskQuestion);
@@ -92,6 +103,7 @@
         private System.Windows.Forms.Button buttonAskQuestion;
         private System.Windows.Forms.TextBox textBoxAnswer;
         private System.Windows.Forms.ListBox listBoxQuestion;
+        private System.Windows.Forms.Label labelQuestion;
     }
 }
 
