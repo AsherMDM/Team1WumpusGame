@@ -85,6 +85,10 @@
     <Content Include="MapOfCave.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="MapOfCave2.txt" />
+    <Content Include="MapOfCave3.txt" />
+    <Content Include="MapOfCave4.txt" />
+    <Content Include="MapOfCave5.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

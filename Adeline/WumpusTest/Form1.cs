@@ -21,18 +21,77 @@ namespace WumpusTest
 
         private void buttonCalculate_Click(object sender, EventArgs e)
         {
-            int currentRoom = int.Parse(textBoxRoomNumber.Text);
-
-            List<int> possibleMoves = new List<int>();
-            possibleMoves = cave.get_possible_moves(currentRoom);
-
-            string ToPrint = "";
-            for (int i = 0; i < possibleMoves.Count; i++)
+            if (comboBoxChooseMap.SelectedIndex == 0)
             {
-                ToPrint = ToPrint + possibleMoves[i].ToString() + ",";
-            }
-            richTextBoxAdjacentRooms.Text = ToPrint;
-        }
+                int currentRoom = int.Parse(textBoxRoomNumber.Text);
 
+                List<int> possibleMoves = new List<int>();
+                possibleMoves = cave.get_possible_movesCave1(currentRoom);
+
+                string ToPrint = "";
+                for (int i = 0; i < possibleMoves.Count; i++)
+                {
+                    ToPrint = ToPrint + possibleMoves[i].ToString() + ",";
+                }
+                richTextBoxAdjacentRooms.Text = ToPrint;
+            }
+            else if (comboBoxChooseMap.SelectedIndex == 1)
+            {
+                int currentRoom = int.Parse(textBoxRoomNumber.Text);
+
+                List<int> possibleMoves = new List<int>();
+                possibleMoves = cave.get_possible_movesCave2(currentRoom);
+
+                string ToPrint = "";
+                for (int i = 0; i < possibleMoves.Count; i++)
+                {
+                    ToPrint = ToPrint + possibleMoves[i].ToString() + ",";
+                }
+                richTextBoxAdjacentRooms.Text = ToPrint;
+            }
+            else if (comboBoxChooseMap.SelectedIndex == 2)
+            {
+                int currentRoom = int.Parse(textBoxRoomNumber.Text);
+
+                List<int> possibleMoves = new List<int>();
+                possibleMoves = cave.get_possible_movesCave3(currentRoom);
+
+                string ToPrint = "";
+                for (int i = 0; i < possibleMoves.Count; i++)
+                {
+                    ToPrint = ToPrint + possibleMoves[i].ToString() + ",";
+                }
+                richTextBoxAdjacentRooms.Text = ToPrint;
+            }
+            else if (comboBoxChooseMap.SelectedIndex == 3)
+            {
+                int currentRoom = int.Parse(textBoxRoomNumber.Text);
+
+                List<int> possibleMoves = new List<int>();
+                possibleMoves = cave.get_possible_movesCave4(currentRoom);
+
+                string ToPrint = "";
+                for (int i = 0; i < possibleMoves.Count; i++)
+                {
+                    ToPrint = ToPrint + possibleMoves[i].ToString() + ",";
+                }
+                richTextBoxAdjacentRooms.Text = ToPrint;
+            }
+            else if (comboBoxChooseMap.SelectedIndex == 4)
+            {
+
+                int currentRoom = int.Parse(textBoxRoomNumber.Text);
+
+                List<int> possibleMoves = new List<int>();
+                possibleMoves = cave.get_possible_movesCave5(currentRoom);
+
+                string ToPrint = "";
+                for (int i = 0; i < possibleMoves.Count; i++)
+                {
+                    ToPrint = ToPrint + possibleMoves[i].ToString() + ",";
+                }
+                richTextBoxAdjacentRooms.Text = ToPrint;
+            }
+        }
     }
 }

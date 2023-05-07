@@ -38,38 +38,34 @@
             // 
             // richTextBoxAdjacentRooms
             // 
-            this.richTextBoxAdjacentRooms.Location = new System.Drawing.Point(40, 56);
-            this.richTextBoxAdjacentRooms.Margin = new System.Windows.Forms.Padding(2);
+            this.richTextBoxAdjacentRooms.Location = new System.Drawing.Point(60, 86);
             this.richTextBoxAdjacentRooms.Name = "richTextBoxAdjacentRooms";
             this.richTextBoxAdjacentRooms.ReadOnly = true;
-            this.richTextBoxAdjacentRooms.Size = new System.Drawing.Size(133, 83);
+            this.richTextBoxAdjacentRooms.Size = new System.Drawing.Size(198, 126);
             this.richTextBoxAdjacentRooms.TabIndex = 0;
             this.richTextBoxAdjacentRooms.Text = "";
             // 
             // textBoxRoomNumber
             // 
-            this.textBoxRoomNumber.Location = new System.Drawing.Point(279, 54);
-            this.textBoxRoomNumber.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxRoomNumber.Location = new System.Drawing.Point(418, 83);
             this.textBoxRoomNumber.Name = "textBoxRoomNumber";
-            this.textBoxRoomNumber.Size = new System.Drawing.Size(59, 20);
+            this.textBoxRoomNumber.Size = new System.Drawing.Size(86, 26);
             this.textBoxRoomNumber.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(200, 56);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(300, 86);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(72, 13);
+            this.label1.Size = new System.Drawing.Size(109, 20);
             this.label1.TabIndex = 2;
             this.label1.Text = "Current Room";
             // 
             // buttonCalculate
             // 
-            this.buttonCalculate.Location = new System.Drawing.Point(215, 105);
-            this.buttonCalculate.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonCalculate.Location = new System.Drawing.Point(320, 162);
             this.buttonCalculate.Name = "buttonCalculate";
-            this.buttonCalculate.Size = new System.Drawing.Size(123, 44);
+            this.buttonCalculate.Size = new System.Drawing.Size(184, 68);
             this.buttonCalculate.TabIndex = 3;
             this.buttonCalculate.Text = "Calculate Adjacent Rooms";
             this.buttonCalculate.UseVisualStyleBackColor = true;
@@ -85,32 +81,33 @@
             "Cave 3",
             "Cave 4",
             "Cave 5"});
-            this.comboBoxChooseMap.Location = new System.Drawing.Point(101, 180);
+            this.comboBoxChooseMap.Location = new System.Drawing.Point(152, 277);
+            this.comboBoxChooseMap.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.comboBoxChooseMap.Name = "comboBoxChooseMap";
-            this.comboBoxChooseMap.Size = new System.Drawing.Size(152, 21);
+            this.comboBoxChooseMap.Size = new System.Drawing.Size(226, 28);
             this.comboBoxChooseMap.TabIndex = 4;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 183);
+            this.label2.Location = new System.Drawing.Point(18, 282);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 13);
+            this.label2.Size = new System.Drawing.Size(99, 20);
             this.label2.TabIndex = 5;
             this.label2.Text = "Choose Map";
             // 
             // CaveTestForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(401, 217);
+            this.ClientSize = new System.Drawing.Size(602, 334);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.comboBoxChooseMap);
             this.Controls.Add(this.buttonCalculate);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxRoomNumber);
             this.Controls.Add(this.richTextBoxAdjacentRooms);
-            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "CaveTestForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CaveTestForm";
