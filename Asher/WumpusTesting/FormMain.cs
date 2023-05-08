@@ -72,7 +72,7 @@ namespace WumpusTesting
             }
 
             // pits
-            strings = textBoxBatLocs.Text.Split(',');
+            strings = textBoxPitLocs.Text.Split(',');
             int[] pits = new int[3] { 0, 0, 0 };
             i = 0;
             foreach (string s in strings)
