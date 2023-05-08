@@ -43,8 +43,9 @@ namespace WumpusTest
 
         public Question GetQuestion()
         {
-            counter++;
-            return _questions[counter];
+            Random randint = new Random();
+            int rnd = randint.Next(1,30);
+            return _questions[rnd];
         }
     }
 }
