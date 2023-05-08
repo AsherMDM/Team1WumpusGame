@@ -53,7 +53,7 @@ namespace WumpusTest
         //    {"Which one of these is a K-Drama? A. Zootopia B. One Piece C. Dae Jang Geum D. Yeh Deewani Hey Jeewani", "C" }
         //};
 
-
+        string CorrectAnswer;
         private void ConstructorButton_Click(object sender, EventArgs e)
         {
             TriviaBoard Board = new TriviaBoard();
@@ -73,6 +73,30 @@ namespace WumpusTest
             //listBoxQuestion.Items.Add(tb.AskQuestion(randint, Question));
             Question q = trivia.GetQuestion();
             labelQuestion.Text = q.Ques;
+            labelAnswer1.Text = q.Answer1;
+            labelAnswer2.Text = q.Answer2;
+            labelAnswer3.Text = q.Answer3;
+            labelAnswer4.Text = q.Answer4;
+            CorrectAnswer = q.CorrectAnswer;
+
+
+        }
+
+        private void textBoxAnswer_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonSubmitAnswer_Click(object sender, EventArgs e)
+        {
+            if (textBoxAnswer.Text == CorrectAnswer)
+            {
+                labelCorrect.Text = "Correct!";
+            }
+            else
+            {
+                labelCorrect.Text = "Incorrect!";
+            }
         }
     }
 }

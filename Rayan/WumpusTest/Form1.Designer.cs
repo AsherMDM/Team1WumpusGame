@@ -34,9 +34,12 @@
             this.listBoxQuestion = new System.Windows.Forms.ListBox();
             this.labelQuestion = new System.Windows.Forms.Label();
             this.labelAnswer1 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.labelAnswer2 = new System.Windows.Forms.Label();
+            this.labelAnswer3 = new System.Windows.Forms.Label();
+            this.labelAnswer4 = new System.Windows.Forms.Label();
+            this.labelYourAnswer = new System.Windows.Forms.Label();
+            this.labelCorrect = new System.Windows.Forms.Label();
+            this.buttonSubmitAnswer = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // ConstructorButton
@@ -61,10 +64,11 @@
             // 
             // textBoxAnswer
             // 
-            this.textBoxAnswer.Location = new System.Drawing.Point(526, 140);
+            this.textBoxAnswer.Location = new System.Drawing.Point(526, 198);
             this.textBoxAnswer.Name = "textBoxAnswer";
             this.textBoxAnswer.Size = new System.Drawing.Size(188, 20);
             this.textBoxAnswer.TabIndex = 3;
+            this.textBoxAnswer.TextChanged += new System.EventHandler(this.textBoxAnswer_TextChanged);
             // 
             // listBoxQuestion
             // 
@@ -79,9 +83,9 @@
             this.labelQuestion.AutoSize = true;
             this.labelQuestion.Location = new System.Drawing.Point(320, 205);
             this.labelQuestion.Name = "labelQuestion";
-            this.labelQuestion.Size = new System.Drawing.Size(58, 13);
+            this.labelQuestion.Size = new System.Drawing.Size(41, 13);
             this.labelQuestion.TabIndex = 5;
-            this.labelQuestion.Text = "Question 1";
+            this.labelQuestion.Text = "Correct";
             // 
             // labelAnswer1
             // 
@@ -92,41 +96,72 @@
             this.labelAnswer1.TabIndex = 6;
             this.labelAnswer1.Text = "Answer 1";
             // 
-            // label1
+            // labelAnswer2
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(320, 283);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 13);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Answer 2";
+            this.labelAnswer2.AutoSize = true;
+            this.labelAnswer2.Location = new System.Drawing.Point(320, 283);
+            this.labelAnswer2.Name = "labelAnswer2";
+            this.labelAnswer2.Size = new System.Drawing.Size(51, 13);
+            this.labelAnswer2.TabIndex = 7;
+            this.labelAnswer2.Text = "Answer 2";
             // 
-            // label2
+            // labelAnswer3
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(320, 320);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 13);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Answer 3";
+            this.labelAnswer3.AutoSize = true;
+            this.labelAnswer3.Location = new System.Drawing.Point(320, 320);
+            this.labelAnswer3.Name = "labelAnswer3";
+            this.labelAnswer3.Size = new System.Drawing.Size(51, 13);
+            this.labelAnswer3.TabIndex = 8;
+            this.labelAnswer3.Text = "Answer 3";
             // 
-            // label3
+            // labelAnswer4
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(320, 356);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(51, 13);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "Answer 4";
+            this.labelAnswer4.AutoSize = true;
+            this.labelAnswer4.Location = new System.Drawing.Point(320, 356);
+            this.labelAnswer4.Name = "labelAnswer4";
+            this.labelAnswer4.Size = new System.Drawing.Size(51, 13);
+            this.labelAnswer4.TabIndex = 9;
+            this.labelAnswer4.Text = "Answer 4";
+            // 
+            // labelYourAnswer
+            // 
+            this.labelYourAnswer.AutoSize = true;
+            this.labelYourAnswer.Location = new System.Drawing.Point(523, 147);
+            this.labelYourAnswer.Name = "labelYourAnswer";
+            this.labelYourAnswer.Size = new System.Drawing.Size(67, 13);
+            this.labelYourAnswer.TabIndex = 10;
+            this.labelYourAnswer.Text = "Your Answer";
+            // 
+            // labelCorrect
+            // 
+            this.labelCorrect.AutoSize = true;
+            this.labelCorrect.Location = new System.Drawing.Point(523, 356);
+            this.labelCorrect.Name = "labelCorrect";
+            this.labelCorrect.Size = new System.Drawing.Size(51, 13);
+            this.labelCorrect.TabIndex = 11;
+            this.labelCorrect.Text = "Answer 4";
+            // 
+            // buttonSubmitAnswer
+            // 
+            this.buttonSubmitAnswer.Location = new System.Drawing.Point(514, 73);
+            this.buttonSubmitAnswer.Name = "buttonSubmitAnswer";
+            this.buttonSubmitAnswer.Size = new System.Drawing.Size(145, 23);
+            this.buttonSubmitAnswer.TabIndex = 12;
+            this.buttonSubmitAnswer.Text = "buttonSubmitAnswer";
+            this.buttonSubmitAnswer.UseVisualStyleBackColor = true;
+            this.buttonSubmitAnswer.Click += new System.EventHandler(this.buttonSubmitAnswer_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.buttonSubmitAnswer);
+            this.Controls.Add(this.labelCorrect);
+            this.Controls.Add(this.labelYourAnswer);
+            this.Controls.Add(this.labelAnswer4);
+            this.Controls.Add(this.labelAnswer3);
+            this.Controls.Add(this.labelAnswer2);
             this.Controls.Add(this.labelAnswer1);
             this.Controls.Add(this.labelQuestion);
             this.Controls.Add(this.listBoxQuestion);
@@ -149,9 +184,12 @@
         private System.Windows.Forms.ListBox listBoxQuestion;
         private System.Windows.Forms.Label labelQuestion;
         private System.Windows.Forms.Label labelAnswer1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label labelAnswer2;
+        private System.Windows.Forms.Label labelAnswer3;
+        private System.Windows.Forms.Label labelAnswer4;
+        private System.Windows.Forms.Label labelYourAnswer;
+        private System.Windows.Forms.Label labelCorrect;
+        private System.Windows.Forms.Button buttonSubmitAnswer;
     }
 }
 
