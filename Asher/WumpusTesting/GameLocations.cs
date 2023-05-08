@@ -17,8 +17,8 @@ namespace WumpusTesting
         Random rnd = new Random();
 
         int wumpusLocation = 1;
-        int[] batLocations = { 5, 2, 3 };
-        int[] pitLocations = { 1, 2, 6, 4 };
+        int[] batLocations = { 0, 0, 0 };
+        int[] pitLocations = { 0, 0, 0, 0 };
 
         public void GenerateWumpusLocation()
         {
@@ -27,13 +27,33 @@ namespace WumpusTesting
             wumpusLocation = i;
         }
 
-        public int[] GenerateBatLocations()
+        public int GetWumpusLocation()
+        {
+            // called by gamecontrol
+            return wumpusLocation;
+        }
+
+        public void GenerateBatLocations()
+        {
+            // called by gamecontrol
+            batLocations[0] = rnd.Next(1, 30);
+            batLocations[1] = rnd.Next(1, 30);
+            batLocations[2] = rnd.Next(1, 30);
+        }
+        public int[] GetBatLocations()
         {
             // called by gamecontrol
             return batLocations;
         }
 
-        public int[] GeneratePitLocations()
+        public void GeneratePitLocations()
+        {
+            // called by gamecontrol
+            pitLocations[0] = rnd.Next(1, 30);
+            pitLocations[1] = rnd.Next(1, 30);
+            pitLocations[2] = rnd.Next(1, 30);
+        }
+        public int[] GetPitLocations()
         {
             // called by gamecontrol
             return pitLocations;
@@ -79,9 +99,33 @@ namespace WumpusTesting
             return warnings;
         }
         
-        public void findCurrentHazards()
+        public bool[] findCurrentHazards(int cave, int[] batLocs, int[] pitLocs, int wumpusLoc)
         {
+            bool[] warnings = new bool[3] { false, false, false };
 
+            foreach (int caveBat in batLocs)
+            {
+                if (caveBat == cave)
+                {
+                    warnings[0] = true;
+                }
+            }
+
+            //pits
+            foreach (int cavePit in pitLocs)
+            {
+                if (cavePit == cave)
+                {
+                    warnings[1] = true;
+                }
+            }
+
+            if (cave == wumpusLoc)
+            {
+                warnings[2] = true;
+            }
+
+            return warnings;
         }
     }
 }

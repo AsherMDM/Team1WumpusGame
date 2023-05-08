@@ -92,7 +92,6 @@ namespace WumpusTesting
 
         private void buttonGetPlayerLocation_Click(object sender, EventArgs e)
         {
-            player.MovePlayer(int.Parse(textBoxPlayerLocationInput.Text));
             textBoxPlayerCurrentLocation.Text = player.GetPlayerLocation().ToString();
         }
 
@@ -117,6 +116,55 @@ namespace WumpusTesting
         private void buttonUpdateCoins_Click(object sender, EventArgs e)
         {
             player.UpdateCoinAmount(int.Parse(textBoxInvModifyAmount.Text));
+        }
+
+        private void buttonMovePlayer_Click(object sender, EventArgs e)
+        {
+            player.MovePlayer(int.Parse(textBoxPlayerLocationInput.Text));
+        }
+
+        private void buttonShootArrow_Click(object sender, EventArgs e)
+        {
+            int cave = int.Parse(textBoxArrowShotLoc.Text);
+            int wumpusLoc = int.Parse(textBoxWumpusLoc.Text);
+            if (player.ShootArrow(cave, wumpusLoc))
+            {
+                textBoxArrowShotOutcome.Text = "Hit Wumpus";
+            }
+            else
+            {
+                textBoxArrowShotOutcome.Text = "Missed";
+            }
+        }
+
+        private void buttonGenerateWumpusLoc_Click(object sender, EventArgs e)
+        {
+            gameLocations.GenerateWumpusLocation();
+            textBoxWumpusLoc.Text = gameLocations.GetWumpusLocation().ToString();
+        }
+
+        private void buttonGenerateBatsLocs_Click(object sender, EventArgs e)
+        {
+            gameLocations.GenerateBatLocations();
+            string s = "";
+            foreach ( int i in gameLocations.GetBatLocations())
+            {
+                s += i.ToString() + ",";
+            }
+            s = s.Remove(s.Length - 1);
+            textBoxBatLocs.Text = s;
+        }
+
+        private void buttonGeneratePitsLoc_Click(object sender, EventArgs e)
+        {
+            gameLocations.GeneratePitLocations();
+            string s = "";
+            foreach (int i in gameLocations.GetPitLocations())
+            {
+                s += i.ToString() + ",";
+            }
+            s = s.Remove(s.Length - 1);
+            textBoxPitLocs.Text = s;
         }
     }
 }

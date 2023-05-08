@@ -51,6 +51,8 @@
             this.labelPits = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.buttonMovePlayer = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.textBoxInvModifyAmount = new System.Windows.Forms.TextBox();
             this.buttonUpdateCoins = new System.Windows.Forms.Button();
@@ -61,10 +63,21 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.buttonShootArrow = new System.Windows.Forms.Button();
+            this.textBoxArrowShotOutcome = new System.Windows.Forms.TextBox();
+            this.textBoxArrowShotLoc = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.buttonGeneratePitsLoc = new System.Windows.Forms.Button();
+            this.buttonGenerateBatsLocs = new System.Windows.Forms.Button();
+            this.buttonGenerateWumpusLoc = new System.Windows.Forms.Button();
             this.groupBoxObjects.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonCreateSelectedObject
@@ -225,7 +238,7 @@
             this.buttonGetPlayerLocation.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.buttonGetPlayerLocation.Location = new System.Drawing.Point(15, 19);
             this.buttonGetPlayerLocation.Name = "buttonGetPlayerLocation";
-            this.buttonGetPlayerLocation.Size = new System.Drawing.Size(154, 38);
+            this.buttonGetPlayerLocation.Size = new System.Drawing.Size(114, 33);
             this.buttonGetPlayerLocation.TabIndex = 16;
             this.buttonGetPlayerLocation.Text = "Get Player Location";
             this.buttonGetPlayerLocation.UseVisualStyleBackColor = false;
@@ -235,7 +248,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(186, 42);
+            this.label5.Location = new System.Drawing.Point(135, 16);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(76, 13);
             this.label5.TabIndex = 18;
@@ -245,19 +258,20 @@
             // 
             this.textBoxPlayerLocationInput.BackColor = System.Drawing.Color.White;
             this.textBoxPlayerLocationInput.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.textBoxPlayerLocationInput.Location = new System.Drawing.Point(189, 19);
+            this.textBoxPlayerLocationInput.Location = new System.Drawing.Point(138, 77);
             this.textBoxPlayerLocationInput.Name = "textBoxPlayerLocationInput";
-            this.textBoxPlayerLocationInput.Size = new System.Drawing.Size(100, 20);
+            this.textBoxPlayerLocationInput.Size = new System.Drawing.Size(114, 20);
             this.textBoxPlayerLocationInput.TabIndex = 17;
             this.textBoxPlayerLocationInput.Text = "5";
             // 
             // textBoxPlayerCurrentLocation
             // 
-            this.textBoxPlayerCurrentLocation.Location = new System.Drawing.Point(15, 63);
+            this.textBoxPlayerCurrentLocation.Location = new System.Drawing.Point(138, 32);
             this.textBoxPlayerCurrentLocation.Name = "textBoxPlayerCurrentLocation";
             this.textBoxPlayerCurrentLocation.ReadOnly = true;
-            this.textBoxPlayerCurrentLocation.Size = new System.Drawing.Size(274, 20);
+            this.textBoxPlayerCurrentLocation.Size = new System.Drawing.Size(114, 20);
             this.textBoxPlayerCurrentLocation.TabIndex = 19;
+            this.textBoxPlayerCurrentLocation.Text = "1";
             // 
             // labelWumpus
             // 
@@ -312,16 +326,38 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label9);
+            this.groupBox2.Controls.Add(this.buttonMovePlayer);
             this.groupBox2.Controls.Add(this.buttonGetPlayerLocation);
+            this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.textBoxPlayerLocationInput);
             this.groupBox2.Controls.Add(this.textBoxPlayerCurrentLocation);
-            this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Location = new System.Drawing.Point(23, 185);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(305, 97);
+            this.groupBox2.Size = new System.Drawing.Size(264, 111);
             this.groupBox2.TabIndex = 25;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Player Location";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.ForeColor = System.Drawing.Color.Black;
+            this.label9.Location = new System.Drawing.Point(135, 61);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(55, 13);
+            this.label9.TabIndex = 29;
+            this.label9.Text = "Move to...";
+            // 
+            // buttonMovePlayer
+            // 
+            this.buttonMovePlayer.Location = new System.Drawing.Point(15, 61);
+            this.buttonMovePlayer.Name = "buttonMovePlayer";
+            this.buttonMovePlayer.Size = new System.Drawing.Size(114, 36);
+            this.buttonMovePlayer.TabIndex = 28;
+            this.buttonMovePlayer.Text = "Move Player";
+            this.buttonMovePlayer.UseVisualStyleBackColor = true;
+            this.buttonMovePlayer.Click += new System.EventHandler(this.buttonMovePlayer_Click);
             // 
             // groupBox3
             // 
@@ -333,7 +369,7 @@
             this.groupBox3.Controls.Add(this.textBoxArrows);
             this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.Controls.Add(this.label6);
-            this.groupBox3.Location = new System.Drawing.Point(22, 288);
+            this.groupBox3.Location = new System.Drawing.Point(23, 302);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(348, 133);
             this.groupBox3.TabIndex = 26;
@@ -425,12 +461,104 @@
             this.label8.TabIndex = 27;
             this.label8.Text = "DOES NOT WORK ^";
             // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.buttonShootArrow);
+            this.groupBox4.Controls.Add(this.textBoxArrowShotOutcome);
+            this.groupBox4.Controls.Add(this.textBoxArrowShotLoc);
+            this.groupBox4.Controls.Add(this.label10);
+            this.groupBox4.Location = new System.Drawing.Point(436, 12);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(242, 93);
+            this.groupBox4.TabIndex = 28;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Shoot Arrow";
+            // 
+            // buttonShootArrow
+            // 
+            this.buttonShootArrow.Location = new System.Drawing.Point(130, 48);
+            this.buttonShootArrow.Name = "buttonShootArrow";
+            this.buttonShootArrow.Size = new System.Drawing.Size(100, 23);
+            this.buttonShootArrow.TabIndex = 3;
+            this.buttonShootArrow.Text = "Shoot Arrow";
+            this.buttonShootArrow.UseVisualStyleBackColor = true;
+            this.buttonShootArrow.Click += new System.EventHandler(this.buttonShootArrow_Click);
+            // 
+            // textBoxArrowShotOutcome
+            // 
+            this.textBoxArrowShotOutcome.Location = new System.Drawing.Point(14, 51);
+            this.textBoxArrowShotOutcome.Name = "textBoxArrowShotOutcome";
+            this.textBoxArrowShotOutcome.ReadOnly = true;
+            this.textBoxArrowShotOutcome.Size = new System.Drawing.Size(100, 20);
+            this.textBoxArrowShotOutcome.TabIndex = 2;
+            this.textBoxArrowShotOutcome.Text = "Hit or Missed";
+            // 
+            // textBoxArrowShotLoc
+            // 
+            this.textBoxArrowShotLoc.Location = new System.Drawing.Point(130, 24);
+            this.textBoxArrowShotLoc.Name = "textBoxArrowShotLoc";
+            this.textBoxArrowShotLoc.Size = new System.Drawing.Size(100, 20);
+            this.textBoxArrowShotLoc.TabIndex = 1;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(11, 27);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(113, 13);
+            this.label10.TabIndex = 0;
+            this.label10.Text = "Cave to shoot arrow in";
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.buttonGeneratePitsLoc);
+            this.groupBox5.Controls.Add(this.buttonGenerateBatsLocs);
+            this.groupBox5.Controls.Add(this.buttonGenerateWumpusLoc);
+            this.groupBox5.Location = new System.Drawing.Point(297, 185);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(133, 114);
+            this.groupBox5.TabIndex = 29;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Generate Locations";
+            // 
+            // buttonGeneratePitsLoc
+            // 
+            this.buttonGeneratePitsLoc.Location = new System.Drawing.Point(19, 78);
+            this.buttonGeneratePitsLoc.Name = "buttonGeneratePitsLoc";
+            this.buttonGeneratePitsLoc.Size = new System.Drawing.Size(95, 23);
+            this.buttonGeneratePitsLoc.TabIndex = 33;
+            this.buttonGeneratePitsLoc.Text = "Pits";
+            this.buttonGeneratePitsLoc.UseVisualStyleBackColor = true;
+            this.buttonGeneratePitsLoc.Click += new System.EventHandler(this.buttonGeneratePitsLoc_Click);
+            // 
+            // buttonGenerateBatsLocs
+            // 
+            this.buttonGenerateBatsLocs.Location = new System.Drawing.Point(19, 49);
+            this.buttonGenerateBatsLocs.Name = "buttonGenerateBatsLocs";
+            this.buttonGenerateBatsLocs.Size = new System.Drawing.Size(95, 23);
+            this.buttonGenerateBatsLocs.TabIndex = 32;
+            this.buttonGenerateBatsLocs.Text = "Bats";
+            this.buttonGenerateBatsLocs.UseVisualStyleBackColor = true;
+            this.buttonGenerateBatsLocs.Click += new System.EventHandler(this.buttonGenerateBatsLocs_Click);
+            // 
+            // buttonGenerateWumpusLoc
+            // 
+            this.buttonGenerateWumpusLoc.Location = new System.Drawing.Point(19, 20);
+            this.buttonGenerateWumpusLoc.Name = "buttonGenerateWumpusLoc";
+            this.buttonGenerateWumpusLoc.Size = new System.Drawing.Size(95, 23);
+            this.buttonGenerateWumpusLoc.TabIndex = 31;
+            this.buttonGenerateWumpusLoc.Text = "Wumpus";
+            this.buttonGenerateWumpusLoc.UseVisualStyleBackColor = true;
+            this.buttonGenerateWumpusLoc.Click += new System.EventHandler(this.buttonGenerateWumpusLoc_Click);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(1235, 673);
+            this.Controls.Add(this.groupBox5);
+            this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -447,6 +575,9 @@
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -487,6 +618,17 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textBoxInvModifyAmount;
         private System.Windows.Forms.Button buttonUpdateCoins;
+        private System.Windows.Forms.Button buttonMovePlayer;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Button buttonShootArrow;
+        private System.Windows.Forms.TextBox textBoxArrowShotOutcome;
+        private System.Windows.Forms.TextBox textBoxArrowShotLoc;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.Button buttonGenerateWumpusLoc;
+        private System.Windows.Forms.Button buttonGenerateBatsLocs;
+        private System.Windows.Forms.Button buttonGeneratePitsLoc;
     }
 }
 
