@@ -47,18 +47,11 @@ namespace WumpusTesting
             if (cave == wumpusLoc)
             {
                 return true;
-            } 
+            }
             else
             {
                 return false;
             }
-        }
-
-        public int CalculateScore()
-        {
-            //Calculates Final Score
-            // called by gamecontrol
-            return 0;
         }
 
         public int GetPlayerLocation()
@@ -69,6 +62,19 @@ namespace WumpusTesting
         public void MovePlayer(int newLocation)
         {
             playerLocation = newLocation;
+            turnAmount++;
+        }
+        public int CalculateScore(bool win)
+        {
+            //Calculates Final Score
+            // called by gamecontrol
+            // 100 - number of turns + gold coins + (5 * Arrows) + 50 ( if won )
+            int score = 100 - turnAmount + inventory[1] + (5 * inventory[0]);
+            if (win)
+            {
+                score += 50;
+            }
+            return score;
         }
     }
 }
