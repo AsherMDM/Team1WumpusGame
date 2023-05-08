@@ -40,10 +40,18 @@ namespace WumpusTesting
             inventory[1] += update;
         }
 
-        public void ShootArrow(int cave)
+        public bool ShootArrow(int cave, int wumpusLoc)
         {
             // SHoots arrow
             // called by gamecontrol
+            if (cave == wumpusLoc)
+            {
+                return true;
+            } 
+            else
+            {
+                return false;
+            }
         }
 
         public int CalculateScore()
