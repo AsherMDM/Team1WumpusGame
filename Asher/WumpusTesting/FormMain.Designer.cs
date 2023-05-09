@@ -77,7 +77,7 @@
             this.comboBoxWin = new System.Windows.Forms.ComboBox();
             this.buttonGetScore = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.groupBoxObjects.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -140,7 +140,7 @@
             this.outputInfoBox.BackColor = System.Drawing.Color.DimGray;
             this.outputInfoBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.outputInfoBox.ForeColor = System.Drawing.Color.White;
-            this.outputInfoBox.Location = new System.Drawing.Point(71, 700);
+            this.outputInfoBox.Location = new System.Drawing.Point(71, 335);
             this.outputInfoBox.Name = "outputInfoBox";
             this.outputInfoBox.Size = new System.Drawing.Size(411, 124);
             this.outputInfoBox.TabIndex = 4;
@@ -341,7 +341,7 @@
             this.groupBox2.Controls.Add(this.textBoxPlayerCurrentLocation);
             this.groupBox2.Location = new System.Drawing.Point(23, 185);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(264, 111);
+            this.groupBox2.Size = new System.Drawing.Size(264, 114);
             this.groupBox2.TabIndex = 25;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Player Location";
@@ -376,9 +376,9 @@
             this.groupBox3.Controls.Add(this.textBoxArrows);
             this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.Controls.Add(this.label6);
-            this.groupBox3.Location = new System.Drawing.Point(23, 302);
+            this.groupBox3.Location = new System.Drawing.Point(436, 194);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(348, 133);
+            this.groupBox3.Size = new System.Drawing.Size(323, 105);
             this.groupBox3.TabIndex = 26;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Inventory";
@@ -386,7 +386,7 @@
             // textBoxInvModifyAmount
             // 
             this.textBoxInvModifyAmount.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.textBoxInvModifyAmount.Location = new System.Drawing.Point(176, 85);
+            this.textBoxInvModifyAmount.Location = new System.Drawing.Point(167, 76);
             this.textBoxInvModifyAmount.Name = "textBoxInvModifyAmount";
             this.textBoxInvModifyAmount.Size = new System.Drawing.Size(142, 20);
             this.textBoxInvModifyAmount.TabIndex = 7;
@@ -395,7 +395,7 @@
             // 
             // buttonUpdateCoins
             // 
-            this.buttonUpdateCoins.Location = new System.Drawing.Point(176, 54);
+            this.buttonUpdateCoins.Location = new System.Drawing.Point(167, 45);
             this.buttonUpdateCoins.Name = "buttonUpdateCoins";
             this.buttonUpdateCoins.Size = new System.Drawing.Size(142, 23);
             this.buttonUpdateCoins.TabIndex = 6;
@@ -405,7 +405,7 @@
             // 
             // buttonUpdateArrows
             // 
-            this.buttonUpdateArrows.Location = new System.Drawing.Point(176, 28);
+            this.buttonUpdateArrows.Location = new System.Drawing.Point(167, 19);
             this.buttonUpdateArrows.Name = "buttonUpdateArrows";
             this.buttonUpdateArrows.Size = new System.Drawing.Size(142, 23);
             this.buttonUpdateArrows.TabIndex = 5;
@@ -415,7 +415,7 @@
             // 
             // buttonGetInventory
             // 
-            this.buttonGetInventory.Location = new System.Drawing.Point(28, 82);
+            this.buttonGetInventory.Location = new System.Drawing.Point(19, 73);
             this.buttonGetInventory.Name = "buttonGetInventory";
             this.buttonGetInventory.Size = new System.Drawing.Size(142, 23);
             this.buttonGetInventory.TabIndex = 4;
@@ -425,7 +425,7 @@
             // 
             // textBoxCoins
             // 
-            this.textBoxCoins.Location = new System.Drawing.Point(70, 56);
+            this.textBoxCoins.Location = new System.Drawing.Point(61, 47);
             this.textBoxCoins.Name = "textBoxCoins";
             this.textBoxCoins.ReadOnly = true;
             this.textBoxCoins.Size = new System.Drawing.Size(100, 20);
@@ -433,7 +433,7 @@
             // 
             // textBoxArrows
             // 
-            this.textBoxArrows.Location = new System.Drawing.Point(70, 30);
+            this.textBoxArrows.Location = new System.Drawing.Point(61, 21);
             this.textBoxArrows.Name = "textBoxArrows";
             this.textBoxArrows.ReadOnly = true;
             this.textBoxArrows.Size = new System.Drawing.Size(100, 20);
@@ -442,7 +442,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(25, 59);
+            this.label7.Location = new System.Drawing.Point(16, 50);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(33, 13);
             this.label7.TabIndex = 1;
@@ -451,7 +451,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(25, 33);
+            this.label6.Location = new System.Drawing.Point(16, 24);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(39, 13);
             this.label6.TabIndex = 0;
@@ -610,22 +610,21 @@
             this.label12.TabIndex = 1;
             this.label12.Text = "Did the player win?";
             // 
-            // label11
+            // richTextBox1
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(436, 191);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(313, 13);
-            this.label11.TabIndex = 31;
-            this.label11.Text = "Will generate the score based on inv and amount of times moved";
+            this.richTextBox1.Location = new System.Drawing.Point(626, 111);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(133, 77);
+            this.richTextBox1.TabIndex = 31;
+            this.richTextBox1.Text = "Will generate the score based on inv and amount of times moved";
             // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(1235, 673);
-            this.Controls.Add(this.label11);
+            this.ClientSize = new System.Drawing.Size(768, 308);
+            this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
@@ -704,9 +703,9 @@
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.ComboBox comboBoxWin;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox textBoxScore;
         private System.Windows.Forms.Button buttonGetScore;
+        private System.Windows.Forms.RichTextBox richTextBox1;
     }
 }
 
