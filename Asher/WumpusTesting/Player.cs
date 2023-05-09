@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WumpusTesting
 {
-    public class Player
+    internal class Player
     {
         public Player()
         {
@@ -44,6 +44,7 @@ namespace WumpusTesting
         {
             // SHoots arrow
             // called by gamecontrol
+            inventory[0]--;
             if (cave == wumpusLoc)
             {
                 return true;

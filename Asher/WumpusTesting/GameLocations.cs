@@ -18,7 +18,7 @@ namespace WumpusTesting
 
         int wumpusLocation = 1;
         int[] batLocations = { 0, 0, 0 };
-        int[] pitLocations = { 0, 0, 0, 0 };
+        int[] pitLocations = { 0, 0, 0 };
 
         public void GenerateWumpusLocation()
         {
