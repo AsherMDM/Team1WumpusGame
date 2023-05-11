@@ -6,23 +6,7 @@ using System.Threading.Tasks;
 
 namespace WumpusGame
 {
-    public class Question
+    internal class Question
     {
-        public string Ques { get; set; }
-        public string Answer1 { get; set; }
-        public string Answer2 { get; set; }
-        public string Answer3 { get; set; }
-        public string Answer4 { get; set; }
-        public string CorrectAnswer { get; set; }
-
-        public Question(string ques, string answer1, string answer2, string answer3, string answer4, string correctAnswer)
-        {
-            Ques = ques;
-            Answer1 = answer1;
-            Answer2 = answer2;
-            Answer3 = answer3;
-            Answer4 = answer4;
-            CorrectAnswer = correctAnswer;
-        }
     }
 }
