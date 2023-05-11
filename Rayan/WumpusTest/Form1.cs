@@ -13,6 +13,7 @@ namespace WumpusTest
     public partial class Form1 : Form
     {
         Trivia trivia = new Trivia();
+        int correct = 0;
         public Form1()
         {
             InitializeComponent();
@@ -71,6 +72,13 @@ namespace WumpusTest
             //int randint = random.Next(0, Question.Count);
             //TriviaBoard tb = new TriviaBoard();
             //listBoxQuestion.Items.Add(tb.AskQuestion(randint, Question));
+            AskQuestion();
+
+
+        }
+
+        private void AskQuestion()
+        {
             Question q = trivia.GetQuestion();
             labelQuestion.Text = q.Ques;
             labelAnswer1.Text = q.Answer1;
@@ -78,8 +86,6 @@ namespace WumpusTest
             labelAnswer3.Text = q.Answer3;
             labelAnswer4.Text = q.Answer4;
             CorrectAnswer = q.CorrectAnswer;
-
-
         }
 
         private void textBoxAnswer_TextChanged(object sender, EventArgs e)
@@ -92,10 +98,19 @@ namespace WumpusTest
             if (textBoxAnswer.Text.ToUpper() == CorrectAnswer.ToUpper())
             {
                 labelCorrect.Text = "Correct!";
+                correct += 1;
+                AskQuestion();
             }
             else
             {
                 labelCorrect.Text = "Incorrect!";
+                AskQuestion();
+            }
+
+            if(correct == 3)
+            {
+                MessageBox.Show("Congrats, you survived!");
+                Application.Exit();
             }
         }
 
