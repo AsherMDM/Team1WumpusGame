@@ -31,7 +31,6 @@
             this.ConstructorButton = new System.Windows.Forms.Button();
             this.buttonAskQuestion = new System.Windows.Forms.Button();
             this.textBoxAnswer = new System.Windows.Forms.TextBox();
-            this.listBoxQuestion = new System.Windows.Forms.ListBox();
             this.labelQuestion = new System.Windows.Forms.Label();
             this.labelAnswer1 = new System.Windows.Forms.Label();
             this.labelAnswer2 = new System.Windows.Forms.Label();
@@ -70,18 +69,10 @@
             this.textBoxAnswer.TabIndex = 3;
             this.textBoxAnswer.TextChanged += new System.EventHandler(this.textBoxAnswer_TextChanged);
             // 
-            // listBoxQuestion
-            // 
-            this.listBoxQuestion.FormattingEnabled = true;
-            this.listBoxQuestion.Location = new System.Drawing.Point(82, 137);
-            this.listBoxQuestion.Name = "listBoxQuestion";
-            this.listBoxQuestion.Size = new System.Drawing.Size(120, 95);
-            this.listBoxQuestion.TabIndex = 4;
-            // 
             // labelQuestion
             // 
             this.labelQuestion.AutoSize = true;
-            this.labelQuestion.Location = new System.Drawing.Point(277, 205);
+            this.labelQuestion.Location = new System.Drawing.Point(26, 38);
             this.labelQuestion.Name = "labelQuestion";
             this.labelQuestion.Size = new System.Drawing.Size(41, 13);
             this.labelQuestion.TabIndex = 5;
@@ -90,16 +81,17 @@
             // labelAnswer1
             // 
             this.labelAnswer1.AutoSize = true;
-            this.labelAnswer1.Location = new System.Drawing.Point(277, 245);
+            this.labelAnswer1.Location = new System.Drawing.Point(26, 169);
             this.labelAnswer1.Name = "labelAnswer1";
             this.labelAnswer1.Size = new System.Drawing.Size(51, 13);
             this.labelAnswer1.TabIndex = 6;
             this.labelAnswer1.Text = "Answer 1";
+            this.labelAnswer1.Click += new System.EventHandler(this.labelAnswer1_Click);
             // 
             // labelAnswer2
             // 
             this.labelAnswer2.AutoSize = true;
-            this.labelAnswer2.Location = new System.Drawing.Point(277, 282);
+            this.labelAnswer2.Location = new System.Drawing.Point(26, 237);
             this.labelAnswer2.Name = "labelAnswer2";
             this.labelAnswer2.Size = new System.Drawing.Size(51, 13);
             this.labelAnswer2.TabIndex = 7;
@@ -108,7 +100,7 @@
             // labelAnswer3
             // 
             this.labelAnswer3.AutoSize = true;
-            this.labelAnswer3.Location = new System.Drawing.Point(277, 315);
+            this.labelAnswer3.Location = new System.Drawing.Point(26, 314);
             this.labelAnswer3.Name = "labelAnswer3";
             this.labelAnswer3.Size = new System.Drawing.Size(51, 13);
             this.labelAnswer3.TabIndex = 8;
@@ -117,7 +109,7 @@
             // labelAnswer4
             // 
             this.labelAnswer4.AutoSize = true;
-            this.labelAnswer4.Location = new System.Drawing.Point(277, 356);
+            this.labelAnswer4.Location = new System.Drawing.Point(26, 395);
             this.labelAnswer4.Name = "labelAnswer4";
             this.labelAnswer4.Size = new System.Drawing.Size(18, 13);
             this.labelAnswer4.TabIndex = 9;
@@ -164,7 +156,6 @@
             this.Controls.Add(this.labelAnswer2);
             this.Controls.Add(this.labelAnswer1);
             this.Controls.Add(this.labelQuestion);
-            this.Controls.Add(this.listBoxQuestion);
             this.Controls.Add(this.textBoxAnswer);
             this.Controls.Add(this.buttonAskQuestion);
             this.Controls.Add(this.ConstructorButton);
@@ -181,7 +172,6 @@
         private System.Windows.Forms.Button ConstructorButton;
         private System.Windows.Forms.Button buttonAskQuestion;
         private System.Windows.Forms.TextBox textBoxAnswer;
-        private System.Windows.Forms.ListBox listBoxQuestion;
         private System.Windows.Forms.Label labelQuestion;
         private System.Windows.Forms.Label labelAnswer1;
         private System.Windows.Forms.Label labelAnswer2;

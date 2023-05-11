@@ -89,7 +89,7 @@ namespace WumpusTest
 
         private void buttonSubmitAnswer_Click(object sender, EventArgs e)
         {
-            if (textBoxAnswer.Text == CorrectAnswer)
+            if (textBoxAnswer.Text.ToUpper() == CorrectAnswer.ToUpper())
             {
                 labelCorrect.Text = "Correct!";
             }
@@ -97,6 +97,11 @@ namespace WumpusTest
             {
                 labelCorrect.Text = "Incorrect!";
             }
+        }
+
+        private void labelAnswer1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
