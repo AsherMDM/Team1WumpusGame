@@ -61,7 +61,7 @@
             // labelQuestion
             // 
             this.labelQuestion.AutoSize = true;
-            this.labelQuestion.Location = new System.Drawing.Point(26, 38);
+            this.labelQuestion.Location = new System.Drawing.Point(26, 9);
             this.labelQuestion.Name = "labelQuestion";
             this.labelQuestion.Size = new System.Drawing.Size(41, 13);
             this.labelQuestion.TabIndex = 5;
@@ -70,7 +70,7 @@
             // labelAnswer1
             // 
             this.labelAnswer1.AutoSize = true;
-            this.labelAnswer1.Location = new System.Drawing.Point(26, 169);
+            this.labelAnswer1.Location = new System.Drawing.Point(26, 281);
             this.labelAnswer1.Name = "labelAnswer1";
             this.labelAnswer1.Size = new System.Drawing.Size(51, 13);
             this.labelAnswer1.TabIndex = 6;
@@ -80,7 +80,7 @@
             // labelAnswer2
             // 
             this.labelAnswer2.AutoSize = true;
-            this.labelAnswer2.Location = new System.Drawing.Point(26, 237);
+            this.labelAnswer2.Location = new System.Drawing.Point(26, 323);
             this.labelAnswer2.Name = "labelAnswer2";
             this.labelAnswer2.Size = new System.Drawing.Size(51, 13);
             this.labelAnswer2.TabIndex = 7;
@@ -89,7 +89,7 @@
             // labelAnswer3
             // 
             this.labelAnswer3.AutoSize = true;
-            this.labelAnswer3.Location = new System.Drawing.Point(26, 314);
+            this.labelAnswer3.Location = new System.Drawing.Point(26, 356);
             this.labelAnswer3.Name = "labelAnswer3";
             this.labelAnswer3.Size = new System.Drawing.Size(51, 13);
             this.labelAnswer3.TabIndex = 8;
@@ -98,7 +98,7 @@
             // labelAnswer4
             // 
             this.labelAnswer4.AutoSize = true;
-            this.labelAnswer4.Location = new System.Drawing.Point(26, 395);
+            this.labelAnswer4.Location = new System.Drawing.Point(26, 372);
             this.labelAnswer4.Name = "labelAnswer4";
             this.labelAnswer4.Size = new System.Drawing.Size(18, 13);
             this.labelAnswer4.TabIndex = 9;
