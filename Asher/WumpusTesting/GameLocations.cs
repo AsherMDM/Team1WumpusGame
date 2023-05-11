@@ -58,10 +58,10 @@ namespace WumpusTesting
             return wumpusLocation;
         }
 
-        public bool[] findAdjacentHazards(int[] adjacentCaves, int[] batLocs, int []pitLocs, int wumpusLoc)
+        public bool[] findAdjacentHazards(int[] adjacentCaves, int[] batLocs, int[] pitLocs, int wumpusLoc)
         {
             bool[] warnings = new bool[3] { false, false, false };
-            
+
 
             foreach (int cave in adjacentCaves)
             {
@@ -89,7 +89,7 @@ namespace WumpusTesting
 
             return warnings;
         }
-        
+
         public bool[] findCurrentHazards(int cave, int[] batLocs, int[] pitLocs, int wumpusLoc)
         {
             bool[] warnings = new bool[3] { false, false, false };
