@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ConstructorButton = new System.Windows.Forms.Button();
             this.buttonAskQuestion = new System.Windows.Forms.Button();
             this.textBoxAnswer = new System.Windows.Forms.TextBox();
             this.labelQuestion = new System.Windows.Forms.Label();
@@ -40,16 +39,6 @@
             this.labelCorrect = new System.Windows.Forms.Label();
             this.buttonSubmitAnswer = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // ConstructorButton
-            // 
-            this.ConstructorButton.Location = new System.Drawing.Point(298, 27);
-            this.ConstructorButton.Name = "ConstructorButton";
-            this.ConstructorButton.Size = new System.Drawing.Size(167, 69);
-            this.ConstructorButton.TabIndex = 0;
-            this.ConstructorButton.Text = "Constructor Button";
-            this.ConstructorButton.UseVisualStyleBackColor = true;
-            this.ConstructorButton.Click += new System.EventHandler(this.ConstructorButton_Click);
             // 
             // buttonAskQuestion
             // 
@@ -158,7 +147,6 @@
             this.Controls.Add(this.labelQuestion);
             this.Controls.Add(this.textBoxAnswer);
             this.Controls.Add(this.buttonAskQuestion);
-            this.Controls.Add(this.ConstructorButton);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -168,8 +156,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button ConstructorButton;
         private System.Windows.Forms.Button buttonAskQuestion;
         private System.Windows.Forms.TextBox textBoxAnswer;
         private System.Windows.Forms.Label labelQuestion;
