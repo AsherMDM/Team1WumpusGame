@@ -166,5 +166,19 @@ namespace WumpusTesting
             s = s.Remove(s.Length - 1);
             textBoxPitLocs.Text = s;
         }
+
+        private void buttonGetScore_Click(object sender, EventArgs e)
+        {
+            bool win;
+            if (comboBoxWin.SelectedIndex == 0)
+            {
+                win = true;
+            } 
+            else
+            {
+                win = false;
+            }
+            textBoxScore.Text = player.CalculateScore(win).ToString();
+        }
     }
 }
