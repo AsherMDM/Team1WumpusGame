@@ -22,46 +22,39 @@ namespace WumpusTesting
 
         public void GenerateWumpusLocation()
         {
-            // called by gamecontrol
             int i = rnd.Next(1, 30);
             wumpusLocation = i;
         }
 
         public int GetWumpusLocation()
         {
-            // called by gamecontrol
             return wumpusLocation;
         }
 
         public void GenerateBatLocations()
         {
-            // called by gamecontrol
             batLocations[0] = rnd.Next(1, 30);
             batLocations[1] = rnd.Next(1, 30);
             batLocations[2] = rnd.Next(1, 30);
         }
         public int[] GetBatLocations()
         {
-            // called by gamecontrol
             return batLocations;
         }
 
         public void GeneratePitLocations()
         {
-            // called by gamecontrol
             pitLocations[0] = rnd.Next(1, 30);
             pitLocations[1] = rnd.Next(1, 30);
             pitLocations[2] = rnd.Next(1, 30);
         }
         public int[] GetPitLocations()
         {
-            // called by gamecontrol
             return pitLocations;
         }
 
         public int MoveWumpus()
         {
-            // called by gamecontrol
             return wumpusLocation;
         }
 
@@ -72,7 +65,6 @@ namespace WumpusTesting
 
             foreach (int cave in adjacentCaves)
             {
-                //bats
                 foreach (int caveBat in batLocs)
                 {
                     if (caveBat == cave)
@@ -81,7 +73,6 @@ namespace WumpusTesting
                     }
                 }
 
-                //pits
                 foreach (int cavePit in pitLocs)
                 {
                     if (cavePit == cave)
@@ -111,7 +102,6 @@ namespace WumpusTesting
                 }
             }
 
-            //pits
             foreach (int cavePit in pitLocs)
             {
                 if (cavePit == cave)
