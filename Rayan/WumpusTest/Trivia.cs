@@ -13,7 +13,6 @@ namespace WumpusTest
     {
         string[] data;
         List<Question> _questions = new List<Question>();
-        int counter = -1;
         public Trivia() { 
             
 
