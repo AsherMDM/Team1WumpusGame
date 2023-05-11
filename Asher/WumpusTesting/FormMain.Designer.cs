@@ -32,7 +32,6 @@
             this.buttonCreateAllObjects = new System.Windows.Forms.Button();
             this.listBoxObjects = new System.Windows.Forms.ListBox();
             this.groupBoxObjects = new System.Windows.Forms.GroupBox();
-            this.outputInfoBox = new System.Windows.Forms.RichTextBox();
             this.buttonGetWarnings = new System.Windows.Forms.Button();
             this.textBoxNearbyCaves = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -96,7 +95,6 @@
             this.buttonCreateSelectedObject.TabIndex = 0;
             this.buttonCreateSelectedObject.Text = "Create Selected Object";
             this.buttonCreateSelectedObject.UseVisualStyleBackColor = false;
-            this.buttonCreateSelectedObject.Click += new System.EventHandler(this.buttonCreateSelectedObject_Click);
             // 
             // buttonCreateAllObjects
             // 
@@ -133,19 +131,6 @@
             this.groupBoxObjects.TabStop = false;
             this.groupBoxObjects.Text = "Objects";
             this.groupBoxObjects.Visible = false;
-            // 
-            // outputInfoBox
-            // 
-            this.outputInfoBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.outputInfoBox.BackColor = System.Drawing.Color.DimGray;
-            this.outputInfoBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.outputInfoBox.ForeColor = System.Drawing.Color.White;
-            this.outputInfoBox.Location = new System.Drawing.Point(71, 335);
-            this.outputInfoBox.Name = "outputInfoBox";
-            this.outputInfoBox.Size = new System.Drawing.Size(411, 124);
-            this.outputInfoBox.TabIndex = 4;
-            this.outputInfoBox.Text = "";
-            this.outputInfoBox.TextChanged += new System.EventHandler(this.richTextBoxInfo_TextChanged);
             // 
             // buttonGetWarnings
             // 
@@ -324,7 +309,7 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.textBoxWumpusLoc);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Location = new System.Drawing.Point(23, 12);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(407, 167);
             this.groupBox1.TabIndex = 24;
@@ -339,7 +324,7 @@
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.textBoxPlayerLocationInput);
             this.groupBox2.Controls.Add(this.textBoxPlayerCurrentLocation);
-            this.groupBox2.Location = new System.Drawing.Point(23, 185);
+            this.groupBox2.Location = new System.Drawing.Point(12, 185);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(264, 114);
             this.groupBox2.TabIndex = 25;
@@ -376,7 +361,7 @@
             this.groupBox3.Controls.Add(this.textBoxArrows);
             this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.Controls.Add(this.label6);
-            this.groupBox3.Location = new System.Drawing.Point(436, 194);
+            this.groupBox3.Location = new System.Drawing.Point(425, 194);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(323, 105);
             this.groupBox3.TabIndex = 26;
@@ -474,7 +459,7 @@
             this.groupBox4.Controls.Add(this.textBoxArrowShotOutcome);
             this.groupBox4.Controls.Add(this.textBoxArrowShotLoc);
             this.groupBox4.Controls.Add(this.label10);
-            this.groupBox4.Location = new System.Drawing.Point(436, 12);
+            this.groupBox4.Location = new System.Drawing.Point(425, 12);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(242, 93);
             this.groupBox4.TabIndex = 28;
@@ -521,7 +506,7 @@
             this.groupBox5.Controls.Add(this.buttonGeneratePitsLoc);
             this.groupBox5.Controls.Add(this.buttonGenerateBatsLocs);
             this.groupBox5.Controls.Add(this.buttonGenerateWumpusLoc);
-            this.groupBox5.Location = new System.Drawing.Point(297, 185);
+            this.groupBox5.Location = new System.Drawing.Point(286, 185);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(133, 114);
             this.groupBox5.TabIndex = 29;
@@ -564,7 +549,7 @@
             this.groupBox6.Controls.Add(this.comboBoxWin);
             this.groupBox6.Controls.Add(this.buttonGetScore);
             this.groupBox6.Controls.Add(this.label12);
-            this.groupBox6.Location = new System.Drawing.Point(436, 109);
+            this.groupBox6.Location = new System.Drawing.Point(425, 109);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(184, 79);
             this.groupBox6.TabIndex = 30;
@@ -612,7 +597,7 @@
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(626, 111);
+            this.richTextBox1.Location = new System.Drawing.Point(615, 111);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(133, 77);
             this.richTextBox1.TabIndex = 31;
@@ -623,7 +608,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(768, 308);
+            this.ClientSize = new System.Drawing.Size(761, 308);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox5);
@@ -632,7 +617,6 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.outputInfoBox);
             this.Controls.Add(this.groupBoxObjects);
             this.ForeColor = System.Drawing.Color.Black;
             this.Name = "FormMain";
@@ -660,7 +644,6 @@
         private System.Windows.Forms.Button buttonCreateAllObjects;
         private System.Windows.Forms.ListBox listBoxObjects;
         private System.Windows.Forms.GroupBox groupBoxObjects;
-        private System.Windows.Forms.RichTextBox outputInfoBox;
         private System.Windows.Forms.Button buttonGetWarnings;
         private System.Windows.Forms.TextBox textBoxNearbyCaves;
         private System.Windows.Forms.Label label1;
