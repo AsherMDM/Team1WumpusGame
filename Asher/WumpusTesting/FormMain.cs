@@ -16,6 +16,7 @@ namespace WumpusTesting
         public FormMain()
         {
             InitializeComponent();
+            comboBoxWin.SelectedIndex = 0;
         }
 
         Player player = new Player();
@@ -102,10 +103,12 @@ namespace WumpusTesting
             if (player.ShootArrow(cave, wumpusLoc))
             {
                 textBoxArrowShotOutcome.Text = "Hit Wumpus";
+                comboBoxWin.SelectedIndex = 0;
             }
             else
             {
                 textBoxArrowShotOutcome.Text = "Missed";
+                comboBoxWin.SelectedIndex = 1;
             }
         }
 

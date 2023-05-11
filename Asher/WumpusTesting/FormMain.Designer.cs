@@ -254,7 +254,6 @@
             this.textBoxPlayerLocationInput.Name = "textBoxPlayerLocationInput";
             this.textBoxPlayerLocationInput.Size = new System.Drawing.Size(114, 20);
             this.textBoxPlayerLocationInput.TabIndex = 17;
-            this.textBoxPlayerLocationInput.Text = "5";
             // 
             // textBoxPlayerCurrentLocation
             // 
@@ -375,7 +374,7 @@
             this.textBoxInvModifyAmount.Name = "textBoxInvModifyAmount";
             this.textBoxInvModifyAmount.Size = new System.Drawing.Size(142, 20);
             this.textBoxInvModifyAmount.TabIndex = 7;
-            this.textBoxInvModifyAmount.Text = "How much to change it...";
+            this.textBoxInvModifyAmount.Text = "How much to change it by...";
             this.textBoxInvModifyAmount.Click += new System.EventHandler(this.textBoxInvModifyAmount_Click);
             // 
             // buttonUpdateCoins
@@ -601,7 +600,7 @@
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(133, 77);
             this.richTextBox1.TabIndex = 31;
-            this.richTextBox1.Text = "Will generate the score based on inv and amount of times moved";
+            this.richTextBox1.Text = "100 - number of turns + gold coins + ( 5 * Arrows) + 50 ( if won )";
             // 
             // FormMain
             // 
