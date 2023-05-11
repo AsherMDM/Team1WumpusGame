@@ -10,34 +10,31 @@ namespace WumpusGame
     {
         public TriviaBoard()
         {
-            ReadFromFile();
-        }
-
-
-
-        private void ReadFromFile()
-        {
-            StreamReader sr = new StreamReader("Questions.txt");
-            string line = sr.ReadLine();
-            while (line != null)
+            //uses a random number to cycle through questions in a dictionary defined below
+            public int rn { get; set; }
+            public Dictionary<string, string> Question = new Dictionary<string, string>()
             {
-                data = line.Split(',');
-                Question q = new Question(data[0], data[1], data[2], data[3], data[4], data[5]);
-                _questions.Add(q);
-                line = sr.ReadLine();
+
             }
-            sr.Close();
-            //return data;
-
-
         }
 
-        public Question GetQuestion()
+        public Dictionary<string, string> AskQuestion(int randomNumber, Dictionary dictionary)
         {
-            Random randint = new Random();
-            int rnd = randint.Next(1, 30);
-            return _questions[rnd];
+            //asks a question by looping through the dictionary and asking a question and then returning an answer
+            rn = randomNumber;
+            Question = dictionary;
+            for (int i = 0; i < dictionary.length; i++)
+            {
+                if (i == rn)
+                {
+                    return dictionary(i);
+                    dictionary.Remove(i);
+                }
+            }
+
         }
+
+
 
     }
 }
