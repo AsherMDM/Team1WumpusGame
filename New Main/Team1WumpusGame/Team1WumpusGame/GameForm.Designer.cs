@@ -44,8 +44,8 @@
             this.labelPitWarning = new System.Windows.Forms.Label();
             this.textBoxShootArrowLocation = new System.Windows.Forms.TextBox();
             this.labelWumpusWarning = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.labelCoins = new System.Windows.Forms.Label();
+            this.labelArrows = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBuyArrows)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxShootArrows)).BeginInit();
@@ -125,6 +125,7 @@
             this.pictureBoxExit.Size = new System.Drawing.Size(100, 50);
             this.pictureBoxExit.TabIndex = 4;
             this.pictureBoxExit.TabStop = false;
+            this.pictureBoxExit.Click += new System.EventHandler(this.pictureBoxExit_Click);
             // 
             // pictureBoxGame
             // 
@@ -208,27 +209,27 @@
             this.labelWumpusWarning.TabIndex = 13;
             this.labelWumpusWarning.Text = "I smell a wumpus";
             // 
-            // label7
+            // labelCoins
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("MS Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label7.Location = new System.Drawing.Point(439, 257);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(42, 13);
-            this.label7.TabIndex = 14;
-            this.label7.Text = "Coins";
+            this.labelCoins.AutoSize = true;
+            this.labelCoins.Font = new System.Drawing.Font("MS Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCoins.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.labelCoins.Location = new System.Drawing.Point(439, 257);
+            this.labelCoins.Name = "labelCoins";
+            this.labelCoins.Size = new System.Drawing.Size(42, 13);
+            this.labelCoins.TabIndex = 14;
+            this.labelCoins.Text = "Coins";
             // 
-            // label8
+            // labelArrows
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("MS Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label8.Location = new System.Drawing.Point(439, 285);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(49, 13);
-            this.label8.TabIndex = 15;
-            this.label8.Text = "Arrows";
+            this.labelArrows.AutoSize = true;
+            this.labelArrows.Font = new System.Drawing.Font("MS Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelArrows.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.labelArrows.Location = new System.Drawing.Point(439, 285);
+            this.labelArrows.Name = "labelArrows";
+            this.labelArrows.Size = new System.Drawing.Size(49, 13);
+            this.labelArrows.TabIndex = 15;
+            this.labelArrows.Text = "Arrows";
             // 
             // GameForm
             // 
@@ -236,8 +237,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateGray;
             this.ClientSize = new System.Drawing.Size(652, 353);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
+            this.Controls.Add(this.labelArrows);
+            this.Controls.Add(this.labelCoins);
             this.Controls.Add(this.labelWumpusWarning);
             this.Controls.Add(this.labelPitWarning);
             this.Controls.Add(this.labelBatWarning);
@@ -248,6 +249,7 @@
             this.Controls.Add(this.pictureBoxGame);
             this.Controls.Add(this.groupBox1);
             this.Name = "GameForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Hunt The Wumpus";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -282,7 +284,7 @@
         private System.Windows.Forms.Label labelBatWarning;
         private System.Windows.Forms.Label labelPitWarning;
         private System.Windows.Forms.Label labelWumpusWarning;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label labelCoins;
+        private System.Windows.Forms.Label labelArrows;
     }
 }

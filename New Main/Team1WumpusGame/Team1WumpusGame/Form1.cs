@@ -16,5 +16,11 @@ namespace Team1WumpusGame
         {
             InitializeComponent();
         }
+
+        private void buttonStart_Click(object sender, EventArgs e)
+        {
+            GameForm gameForm = new GameForm();
+            gameForm.ShowDialog();
+        }
     }
 }

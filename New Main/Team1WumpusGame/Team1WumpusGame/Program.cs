@@ -16,6 +16,8 @@ namespace Team1WumpusGame
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            SplashScreen splashScreen = new SplashScreen();
+            splashScreen.ShowDialog();
             Application.Run(new Form1());
         }
     }

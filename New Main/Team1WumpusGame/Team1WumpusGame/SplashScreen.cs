@@ -16,5 +16,16 @@ namespace Team1WumpusGame
         {
             InitializeComponent();
         }
+
+        private void SplashScreen_Activated(object sender, EventArgs e)
+        {
+            timerSplashScreen.Enabled = true;
+            
+        }
+
+        private void timerSplashScreen_Tick(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
