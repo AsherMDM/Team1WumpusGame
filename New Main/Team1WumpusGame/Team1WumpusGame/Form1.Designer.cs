@@ -73,6 +73,7 @@
             this.buttonExitGame.TabIndex = 3;
             this.buttonExitGame.Text = "Exit";
             this.buttonExitGame.UseVisualStyleBackColor = false;
+            this.buttonExitGame.Click += new System.EventHandler(this.buttonExitGame_Click);
             // 
             // buttonCredits
             // 
@@ -84,6 +85,7 @@
             this.buttonCredits.TabIndex = 4;
             this.buttonCredits.Text = "Credits";
             this.buttonCredits.UseVisualStyleBackColor = false;
+            this.buttonCredits.Click += new System.EventHandler(this.buttonCredits_Click);
             // 
             // label2
             // 
