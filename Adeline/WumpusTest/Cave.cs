@@ -8,7 +8,6 @@ using System.Windows.Forms;
 
 namespace WumpusTest
 {
-
     public class Cave
     {
         // Array of list to store room connections
@@ -17,8 +16,6 @@ namespace WumpusTest
         List<int>[] adjacentCave3;
         List<int>[] adjacentCave4;
         List<int>[] adjacentCave5;
-
-
 
         public Cave()
         {
@@ -53,7 +50,6 @@ namespace WumpusTest
             sr.Close();
             return adjacentCave;
         }
-
         public List<int> get_possible_moves(int currentRoom, int caveNum)
         {
             // find adjacent rooms for currentRoom 
@@ -97,7 +93,6 @@ namespace WumpusTest
                 possibleMoves = new List<int>(); // return empty list
                 return possibleMoves;
             }
-
         }
     }
 }
