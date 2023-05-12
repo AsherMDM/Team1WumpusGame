@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WumpusGame
+namespace Team1WumpusGameMain
 {
-    internal class Question
+    internal class GameControl
     {
     }
 }
