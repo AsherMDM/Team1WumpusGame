@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32819.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Team1WumpusGameMain", "Team1WumpusGameMain\Team1WumpusGameMain.csproj", "{EB09D4C7-7B6A-454A-802B-6FF08EF3DB3E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Team1WumpusGame", "Team1WumpusGame\Team1WumpusGame.csproj", "{6D2DA46B-820D-4C9C-9551-B4BBAB6B6B7F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{EB09D4C7-7B6A-454A-802B-6FF08EF3DB3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EB09D4C7-7B6A-454A-802B-6FF08EF3DB3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EB09D4C7-7B6A-454A-802B-6FF08EF3DB3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EB09D4C7-7B6A-454A-802B-6FF08EF3DB3E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D2DA46B-820D-4C9C-9551-B4BBAB6B6B7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D2DA46B-820D-4C9C-9551-B4BBAB6B6B7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D2DA46B-820D-4C9C-9551-B4BBAB6B6B7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D2DA46B-820D-4C9C-9551-B4BBAB6B6B7F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {3CAFB16A-51FE-48D1-8E45-110389E9781A}
+		SolutionGuid = {94F7ABF0-FAE8-48A6-BABF-E7ABA101F88B}
 	EndGlobalSection
 EndGlobal

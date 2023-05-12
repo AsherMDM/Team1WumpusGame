@@ -1,6 +1,6 @@
-﻿namespace Team1WumpusGameMain
+﻿namespace Team1WumpusGame
 {
-    partial class SplashScreen
+    partial class Form1
     {
         /// <summary>
         /// Required designer variable.
@@ -31,9 +31,10 @@
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "SplashScreen";
+            this.Text = "Form1";
         }
 
         #endregion
     }
 }
+
