@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WumpusTest
+namespace Team1WumpusGame
 {
     public class Cave
     {
@@ -27,7 +27,7 @@ namespace WumpusTest
         }
         public List<int>[] ReadFromFileCave(string filename)
         {
-            List <int>[] adjacentCave = new List<int>[30];
+            List<int>[] adjacentCave = new List<int>[30];
             // read the file that stores the room connections
             // store room into the Array of list
             StreamReader sr = new StreamReader(filename);
@@ -59,10 +59,10 @@ namespace WumpusTest
             {
                 adjacentCave = adjacentCave1;
             }
-            else if(caveNum == 2)
+            else if (caveNum == 2)
             {
                 adjacentCave = adjacentCave2;
-            } 
+            }
             else if (caveNum == 3)
             {
                 adjacentCave = adjacentCave3;
