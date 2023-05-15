@@ -29,12 +29,13 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.pictureBoxBuyArrows = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.pictureBoxShootArrows = new System.Windows.Forms.PictureBox();
+            this.textBoxShootArrowLocation = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBoxExit = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.pictureBoxShootArrows = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBoxBuyArrows = new System.Windows.Forms.PictureBox();
             this.pictureBoxGame = new System.Windows.Forms.PictureBox();
             this.pictureBoxMoveRoom1 = new System.Windows.Forms.PictureBox();
             this.pictureBoxMoveRoom2 = new System.Windows.Forms.PictureBox();
@@ -42,14 +43,13 @@
             this.pictureBoxPlayer = new System.Windows.Forms.PictureBox();
             this.labelBatWarning = new System.Windows.Forms.Label();
             this.labelPitWarning = new System.Windows.Forms.Label();
-            this.textBoxShootArrowLocation = new System.Windows.Forms.TextBox();
             this.labelWumpusWarning = new System.Windows.Forms.Label();
             this.labelCoins = new System.Windows.Forms.Label();
             this.labelArrows = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBuyArrows)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxShootArrows)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxExit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxShootArrows)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBuyArrows)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGame)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMoveRoom1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMoveRoom2)).BeginInit();
@@ -75,39 +75,14 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Menu";
             // 
-            // pictureBoxBuyArrows
+            // textBoxShootArrowLocation
             // 
-            this.pictureBoxBuyArrows.Location = new System.Drawing.Point(19, 36);
-            this.pictureBoxBuyArrows.Name = "pictureBoxBuyArrows";
-            this.pictureBoxBuyArrows.Size = new System.Drawing.Size(100, 50);
-            this.pictureBoxBuyArrows.TabIndex = 0;
-            this.pictureBoxBuyArrows.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 12);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Buy Arrows";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(16, 97);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(77, 12);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Shoot Arrows";
-            // 
-            // pictureBoxShootArrows
-            // 
-            this.pictureBoxShootArrows.Location = new System.Drawing.Point(19, 113);
-            this.pictureBoxShootArrows.Name = "pictureBoxShootArrows";
-            this.pictureBoxShootArrows.Size = new System.Drawing.Size(100, 50);
-            this.pictureBoxShootArrows.TabIndex = 2;
-            this.pictureBoxShootArrows.TabStop = false;
+            this.textBoxShootArrowLocation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(78)))), ((int)(((byte)(83)))));
+            this.textBoxShootArrowLocation.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.textBoxShootArrowLocation.Location = new System.Drawing.Point(19, 182);
+            this.textBoxShootArrowLocation.Name = "textBoxShootArrowLocation";
+            this.textBoxShootArrowLocation.Size = new System.Drawing.Size(100, 19);
+            this.textBoxShootArrowLocation.TabIndex = 6;
             // 
             // label3
             // 
@@ -126,6 +101,40 @@
             this.pictureBoxExit.TabIndex = 4;
             this.pictureBoxExit.TabStop = false;
             this.pictureBoxExit.Click += new System.EventHandler(this.pictureBoxExit_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(16, 97);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(77, 12);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Shoot Arrows";
+            // 
+            // pictureBoxShootArrows
+            // 
+            this.pictureBoxShootArrows.Location = new System.Drawing.Point(19, 113);
+            this.pictureBoxShootArrows.Name = "pictureBoxShootArrows";
+            this.pictureBoxShootArrows.Size = new System.Drawing.Size(100, 50);
+            this.pictureBoxShootArrows.TabIndex = 2;
+            this.pictureBoxShootArrows.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(16, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(65, 12);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Buy Arrows";
+            // 
+            // pictureBoxBuyArrows
+            // 
+            this.pictureBoxBuyArrows.Location = new System.Drawing.Point(19, 36);
+            this.pictureBoxBuyArrows.Name = "pictureBoxBuyArrows";
+            this.pictureBoxBuyArrows.Size = new System.Drawing.Size(100, 50);
+            this.pictureBoxBuyArrows.TabIndex = 0;
+            this.pictureBoxBuyArrows.TabStop = false;
             // 
             // pictureBoxGame
             // 
@@ -189,15 +198,6 @@
             this.labelPitWarning.TabIndex = 12;
             this.labelPitWarning.Text = "I feel a draft";
             // 
-            // textBoxShootArrowLocation
-            // 
-            this.textBoxShootArrowLocation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(78)))), ((int)(((byte)(83)))));
-            this.textBoxShootArrowLocation.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.textBoxShootArrowLocation.Location = new System.Drawing.Point(19, 169);
-            this.textBoxShootArrowLocation.Name = "textBoxShootArrowLocation";
-            this.textBoxShootArrowLocation.Size = new System.Drawing.Size(100, 19);
-            this.textBoxShootArrowLocation.TabIndex = 6;
-            // 
             // labelWumpusWarning
             // 
             this.labelWumpusWarning.AutoSize = true;
@@ -251,11 +251,12 @@
             this.Name = "GameForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Hunt The Wumpus";
+            this.Load += new System.EventHandler(this.GameForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBuyArrows)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxShootArrows)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxExit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxShootArrows)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBuyArrows)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGame)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMoveRoom1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMoveRoom2)).EndInit();
