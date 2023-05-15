@@ -6,11 +6,7 @@ using System.Threading.Tasks;
 
 namespace Team1WumpusGame
 {
-    public class GameControl
+    internal class GameControl
     {
-        public Question GetQuestion()
-        {
-            fdf
-        }
     }
 }
