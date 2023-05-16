@@ -19,13 +19,14 @@ namespace Team1WumpusGame
 
         private void buttonStart_Click(object sender, EventArgs e)
         {
+            this.Hide();
             GameForm gameForm = new GameForm();
             gameForm.ShowDialog();
         }
 
         private void buttonCredits_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Game made by Team 'Won'" + "\n" + "Monica, Adeline, Asher, and Rayan" + "\n" + "Special thanks to Mr. Donnelly!");
+            MessageBox.Show("Game made by Team 'Won'\nMonica, Adeline, Asher, and Rayan\nSpecial thanks to Mr. Donnelly!", "Credits");
         }
 
         private void buttonExitGame_Click(object sender, EventArgs e)

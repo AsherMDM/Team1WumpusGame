@@ -18,7 +18,9 @@ namespace Team1WumpusGame
             Application.SetCompatibleTextRenderingDefault(false);
             SplashScreen splashScreen = new SplashScreen();
             splashScreen.ShowDialog();
-            Application.Run(new MainMenuForm());
+            MainMenuForm mainMenuForm = new MainMenuForm();
+            mainMenuForm.ShowDialog();
+            Application.Run();
         }
     }
 }
