@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Team1WumpusGame
 {
-    public class Trivia
+    internal class Trivia
     {
         string[] data;
         List<Question> _questions = new List<Question>();

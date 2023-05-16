@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Team1WumpusGame
 {
-    public class GameControl
+    internal class GameControl
     {
         public Question passQuestion(string Question, string ans1, string ans2, string ans3, string ans4, string correctAnswer)
         {

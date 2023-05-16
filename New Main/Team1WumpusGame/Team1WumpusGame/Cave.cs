@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace Team1WumpusGame
 {
-    public class Cave
+    internal class Cave
     {
         // Array of list to store room connections
         List<int>[] adjacentCave1;

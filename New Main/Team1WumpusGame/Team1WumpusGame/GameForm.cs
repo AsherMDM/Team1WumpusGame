@@ -19,7 +19,7 @@ namespace Team1WumpusGame
 
         private void pictureBoxExit_Click(object sender, EventArgs e)
         {
-            Form1 form1 = new Form1();
+            MainMenuForm form1 = new MainMenuForm();
             form1.Show();
             this.Close();
         }
