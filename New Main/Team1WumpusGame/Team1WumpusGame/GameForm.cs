@@ -12,6 +12,7 @@ namespace Team1WumpusGame
 {
     public partial class GameForm : Form
     {
+        int movedLocation;
         public GameForm()
         {
             InitializeComponent();
@@ -22,6 +23,29 @@ namespace Team1WumpusGame
             MainMenuForm form1 = new MainMenuForm();
             form1.Show();
             this.Close();
+        }
+
+        private void pictureBoxMoveRoom1_Click(object sender, EventArgs e)
+        {
+            movedLocation = int.Parse(pictureBoxMoveRoom1.Text);
+        }
+
+        private void pictureBoxMoveRoom2_Click(object sender, EventArgs e)
+        {
+            movedLocation = int.Parse(pictureBoxMoveRoom2.Text);
+        }
+
+        private void pictureBoxMoveRoom3_Click(object sender, EventArgs e)
+        {
+            movedLocation = int.Parse(pictureBoxMoveRoom3.Text);
+        }
+
+        public int movingLocation()
+        {
+
+                return movedLocation;
+            
+            
         }
     }
 }

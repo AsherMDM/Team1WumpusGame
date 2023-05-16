@@ -151,6 +151,7 @@
             this.pictureBoxMoveRoom1.Size = new System.Drawing.Size(60, 58);
             this.pictureBoxMoveRoom1.TabIndex = 7;
             this.pictureBoxMoveRoom1.TabStop = false;
+            this.pictureBoxMoveRoom1.Click += new System.EventHandler(this.pictureBoxMoveRoom1_Click);
             // 
             // pictureBoxMoveRoom2
             // 
@@ -159,6 +160,7 @@
             this.pictureBoxMoveRoom2.Size = new System.Drawing.Size(60, 58);
             this.pictureBoxMoveRoom2.TabIndex = 8;
             this.pictureBoxMoveRoom2.TabStop = false;
+            this.pictureBoxMoveRoom2.Click += new System.EventHandler(this.pictureBoxMoveRoom2_Click);
             // 
             // pictureBoxMoveRoom3
             // 
@@ -167,6 +169,7 @@
             this.pictureBoxMoveRoom3.Size = new System.Drawing.Size(60, 58);
             this.pictureBoxMoveRoom3.TabIndex = 9;
             this.pictureBoxMoveRoom3.TabStop = false;
+            this.pictureBoxMoveRoom3.Click += new System.EventHandler(this.pictureBoxMoveRoom3_Click);
             // 
             // pictureBoxPlayer
             // 
