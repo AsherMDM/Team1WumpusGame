@@ -47,5 +47,17 @@ namespace Team1WumpusGame
             
             
         }
+
+        private void pictureBoxBuyArrows_Click(object sender, EventArgs e)
+        {
+            ShopForm shop = new ShopForm();
+            shop.ShowDialog();
+        }
+
+        private void buttonTriviaTest_Click(object sender, EventArgs e)
+        {
+            TriviaForm trivia = new TriviaForm();
+            trivia.ShowDialog();
+        }
     }
 }
