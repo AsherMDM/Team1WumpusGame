@@ -53,5 +53,10 @@ namespace Team1WumpusGame
             TriviaForm trivia = new TriviaForm();
             trivia.ShowDialog();
         }
+
+        private void pictureBoxShootArrows_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

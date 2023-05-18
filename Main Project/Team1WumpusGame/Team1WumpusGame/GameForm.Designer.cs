@@ -134,6 +134,7 @@
             this.pictureBoxShootArrows.Size = new System.Drawing.Size(100, 50);
             this.pictureBoxShootArrows.TabIndex = 2;
             this.pictureBoxShootArrows.TabStop = false;
+            this.pictureBoxShootArrows.Click += new System.EventHandler(this.pictureBoxShootArrows_Click);
             // 
             // label1
             // 
