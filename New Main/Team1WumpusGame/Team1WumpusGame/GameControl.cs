@@ -55,8 +55,8 @@ namespace Team1WumpusGame
         public List<int> passPossibleMoves()
         {
             Random random = new Random();
-            int bob = random.Next(1, 5);
-            return cave.get_possible_moves(passPlayerLocation(), bob);
+            int i = random.Next(1, 5);
+            return cave.get_possible_moves(passPlayerLocation(), i);
         }
 
 

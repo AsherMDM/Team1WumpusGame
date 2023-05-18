@@ -16,12 +16,12 @@ namespace Team1WumpusGame
         public TriviaForm()
         {
             InitializeComponent();
-            Question bob = gameControl.createQuestion();
-            labelQuestion.Text = bob.Ques;
-            labelAnswerA.Text = bob.Answer1;
-            labelAnswerB.Text = bob.Answer2;
-            labelAnswerC.Text = bob.Answer3;
-            labelAnswerD.Text = bob.Answer4;
+            Question question = gameControl.createQuestion();
+            labelQuestion.Text = question.Ques;
+            labelAnswerA.Text = question.Answer1;
+            labelAnswerB.Text = question.Answer2;
+            labelAnswerC.Text = question.Answer3;
+            labelAnswerD.Text = question.Answer4;
         }
 
         private void TriviaForm_Load(object sender, EventArgs e)
@@ -33,6 +33,5 @@ namespace Team1WumpusGame
         {
             
         }
-
     }
 }
