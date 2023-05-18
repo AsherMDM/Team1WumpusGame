@@ -72,6 +72,12 @@
       <DependentUpon>SplashScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="Trivia.cs" />
+    <Compile Include="TriviaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TriviaForm.Designer.cs">
+      <DependentUpon>TriviaForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="MainMenuForm.resx">
       <DependentUpon>MainMenuForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -90,6 +96,9 @@
     </Compile>
     <EmbeddedResource Include="SplashScreen.resx">
       <DependentUpon>SplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TriviaForm.resx">
+      <DependentUpon>TriviaForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
