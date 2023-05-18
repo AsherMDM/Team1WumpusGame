@@ -53,6 +53,7 @@
             this.labelQuestion.Size = new System.Drawing.Size(98, 21);
             this.labelQuestion.TabIndex = 0;
             this.labelQuestion.Text = "Question";
+            this.labelQuestion.Click += new System.EventHandler(this.labelQuestion_Click);
             // 
             // buttonA
             // 
@@ -211,6 +212,7 @@
             this.Controls.Add(this.labelQuestion);
             this.Name = "TriviaForm";
             this.Text = "Trivia";
+            this.Load += new System.EventHandler(this.TriviaForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
