@@ -33,17 +33,28 @@ namespace Team1WumpusGame
             inventory[1] += update;
         }
 
-        public bool ShootArrow(int cave, int wumpusLoc)
+        public int ShootArrow(int caveToShoot, int[] allowedCaves, int wumpusLoc)
         {
-            inventory[0]--;
-            if (cave == wumpusLoc)
+            foreach (int cave in allowedCaves)
             {
-                return true;
+                if (cave != caveToShoot)
+                {
+                    return 2;
+                } 
+                else
+                {
+                    inventory[0]--;
+                    if (cave == wumpusLoc)
+                    {
+                        return 1;
+                    }
+                    else
+                    {
+                        return 0;
+                    }
+                }
             }
-            else
-            {
-                return false;
-            }
+            return 3;
         }
 
         public int GetPlayerLocation()
