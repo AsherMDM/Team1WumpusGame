@@ -116,8 +116,7 @@
             this.label1.Size = new System.Drawing.Size(65, 12);
             this.label1.TabIndex = 1;
             this.label1.Text = "Buy Arrows";
-            // 
-<<<<<<< Updated upstream
+            // <<<<<<< Updated upstream
             // pictureBoxBuyArrows
             // 
             this.pictureBoxBuyArrows.Location = new System.Drawing.Point(19, 36);
@@ -168,9 +167,7 @@
             this.pictureBoxPlayer.Size = new System.Drawing.Size(60, 127);
             this.pictureBoxPlayer.TabIndex = 10;
             this.pictureBoxPlayer.TabStop = false;
-            // 
-=======
->>>>>>> Stashed changes
+            //=======>>>>>>> Stashed changes
             // labelBatWarning
             // 
             this.labelBatWarning.AutoSize = true;
