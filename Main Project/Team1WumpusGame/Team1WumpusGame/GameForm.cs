@@ -47,5 +47,11 @@ namespace Team1WumpusGame
             
             
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            TriviaForm trivia = new TriviaForm();
+            trivia.ShowDialog();
+        }
     }
 }
