@@ -57,14 +57,14 @@ namespace Team1WumpusGame
             return wumpusLocation;
         }
 
-        public bool[] findAdjacentHazards(int[] adjacentCaves, int[] batLocs, int[] pitLocs, int wumpusLoc)
+        public bool[] findAdjacentHazards(int[] adjacentCaves)
         {
             bool[] warnings = new bool[3] { false, false, false };
 
 
             foreach (int cave in adjacentCaves)
             {
-                foreach (int caveBat in batLocs)
+                foreach (int caveBat in batLocations)
                 {
                     if (caveBat == cave)
                     {
@@ -72,7 +72,7 @@ namespace Team1WumpusGame
                     }
                 }
 
-                foreach (int cavePit in pitLocs)
+                foreach (int cavePit in pitLocations)
                 {
                     if (cavePit == cave)
                     {
@@ -80,7 +80,7 @@ namespace Team1WumpusGame
                     }
                 }
 
-                if (cave == wumpusLoc)
+                if (cave == wumpusLocation)
                 {
                     warnings[2] = true;
                 }
@@ -89,11 +89,11 @@ namespace Team1WumpusGame
             return warnings;
         }
 
-        public bool[] findCurrentHazards(int cave, int[] batLocs, int[] pitLocs, int wumpusLoc)
+        public bool[] findCurrentHazards(int cave)
         {
             bool[] warnings = new bool[3] { false, false, false };
 
-            foreach (int caveBat in batLocs)
+            foreach (int caveBat in batLocations)
             {
                 if (caveBat == cave)
                 {
@@ -101,7 +101,7 @@ namespace Team1WumpusGame
                 }
             }
 
-            foreach (int cavePit in pitLocs)
+            foreach (int cavePit in pitLocations)
             {
                 if (cavePit == cave)
                 {
@@ -109,7 +109,7 @@ namespace Team1WumpusGame
                 }
             }
 
-            if (cave == wumpusLoc)
+            if (cave == wumpusLocation)
             {
                 warnings[2] = true;
             }
