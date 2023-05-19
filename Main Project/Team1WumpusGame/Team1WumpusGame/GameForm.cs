@@ -27,17 +27,17 @@ namespace Team1WumpusGame
 
         private void pictureBoxMoveRoom1_Click(object sender, EventArgs e)
         {
-            movedLocation = int.Parse(pictureBoxMoveRoom1.Text);
+            movedLocation = int.Parse(labelRoom1.Text);
         }
 
         private void pictureBoxMoveRoom2_Click(object sender, EventArgs e)
         {
-            movedLocation = int.Parse(pictureBoxMoveRoom2.Text);
+            movedLocation = int.Parse(labelRoom2.Text);
         }
 
         private void pictureBoxMoveRoom3_Click(object sender, EventArgs e)
         {
-            movedLocation = int.Parse(pictureBoxMoveRoom3.Text);
+            movedLocation = int.Parse(labelRoom3.Text);
         }
 
         public int movingLocation()

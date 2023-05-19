@@ -21,16 +21,22 @@ namespace Team1WumpusGame
         {
             InitializeComponent();
 
-            labelQuestion.Text = bob.Ques;
-            labelAnswerA.Text = bob.Answer1;
-            labelAnswerB.Text = bob.Answer2;
-            labelAnswerC.Text = bob.Answer3;
-            labelAnswerD.Text = bob.Answer4;
+            //labelQuestion.Text = bob.Ques;
+            //labelAnswerA.Text = bob.Answer1;
+            //labelAnswerB.Text = bob.Answer2;
+            //labelAnswerC.Text = bob.Answer3;
+            //labelAnswerD.Text = bob.Answer4;
         }
 
         private void TriviaForm_Load(object sender, EventArgs e)
         {
             bob = gameControl.createQuestion()[counter];
+
+            labelQuestion.Text = bob.Ques;
+            labelAnswerA.Text = bob.Answer1;
+            labelAnswerB.Text = bob.Answer2;
+            labelAnswerC.Text = bob.Answer3;
+            labelAnswerD.Text = bob.Answer4;
         }
 
         private void labelQuestion_Click(object sender, EventArgs e)
