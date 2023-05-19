@@ -45,7 +45,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Monotxt_IV25", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(31, 37);
+            this.label1.Location = new System.Drawing.Point(21, 38);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(550, 60);
             this.label1.TabIndex = 0;
@@ -53,8 +53,9 @@
             // 
             // buttonStart
             // 
-            this.buttonStart.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.buttonStart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.buttonStart.Font = new System.Drawing.Font("MS Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonStart.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.buttonStart.Location = new System.Drawing.Point(41, 138);
             this.buttonStart.Name = "buttonStart";
             this.buttonStart.Size = new System.Drawing.Size(215, 53);
@@ -65,8 +66,9 @@
             // 
             // buttonExitGame
             // 
-            this.buttonExitGame.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.buttonExitGame.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.buttonExitGame.Font = new System.Drawing.Font("MS Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonExitGame.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.buttonExitGame.Location = new System.Drawing.Point(41, 256);
             this.buttonExitGame.Name = "buttonExitGame";
             this.buttonExitGame.Size = new System.Drawing.Size(215, 53);
@@ -77,8 +79,9 @@
             // 
             // buttonCredits
             // 
-            this.buttonCredits.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.buttonCredits.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.buttonCredits.Font = new System.Drawing.Font("MS Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCredits.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.buttonCredits.Location = new System.Drawing.Point(41, 197);
             this.buttonCredits.Name = "buttonCredits";
             this.buttonCredits.Size = new System.Drawing.Size(215, 53);
@@ -157,7 +160,7 @@
             this.labelHighScore3.TabIndex = 11;
             this.labelHighScore3.Text = "000";
             // 
-            // Form1
+            // MainMenuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -173,7 +176,7 @@
             this.Controls.Add(this.buttonExitGame);
             this.Controls.Add(this.buttonStart);
             this.Controls.Add(this.label1);
-            this.Name = "Form1";
+            this.Name = "MainMenuForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Hunt The Wumpus";
             this.ResumeLayout(false);
