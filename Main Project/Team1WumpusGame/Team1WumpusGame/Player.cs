@@ -67,6 +67,7 @@ namespace Team1WumpusGame
             playerLocation = newLocation;
             turnAmount++;
         }
+
         public int CalculateScore(bool win)
         {
             // 100 - number of turns + gold coins + (5 * Arrows) + 50 ( if won )
