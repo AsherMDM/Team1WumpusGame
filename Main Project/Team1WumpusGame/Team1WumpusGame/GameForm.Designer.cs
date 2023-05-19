@@ -221,6 +221,8 @@
             // 
             // button1
             // 
+            this.button1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.button1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.button1.Location = new System.Drawing.Point(570, 294);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(95, 47);
@@ -370,6 +372,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(78)))), ((int)(((byte)(91)))));
+            this.CancelButton = this.buttonExit;
             this.ClientSize = new System.Drawing.Size(677, 353);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
