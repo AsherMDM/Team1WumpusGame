@@ -36,6 +36,7 @@ namespace Team1WumpusGame
             batLocations[1] = rnd.Next(1, 30);
             batLocations[2] = rnd.Next(1, 30);
         }
+
         public int[] GetBatLocations()
         {
             return batLocations;
@@ -47,6 +48,7 @@ namespace Team1WumpusGame
             pitLocations[1] = rnd.Next(1, 30);
             pitLocations[2] = rnd.Next(1, 30);
         }
+
         public int[] GetPitLocations()
         {
             return pitLocations;
