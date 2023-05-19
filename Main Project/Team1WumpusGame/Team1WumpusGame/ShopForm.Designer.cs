@@ -155,6 +155,7 @@
             // 
             this.buttonBuyArrows.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.buttonBuyArrows.Font = new System.Drawing.Font("MS Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonBuyArrows.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.buttonBuyArrows.Location = new System.Drawing.Point(12, 289);
             this.buttonBuyArrows.Name = "buttonBuyArrows";
             this.buttonBuyArrows.Size = new System.Drawing.Size(132, 46);
@@ -166,12 +167,14 @@
             // 
             this.buttonExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.buttonExit.Font = new System.Drawing.Font("MS Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonExit.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.buttonExit.Location = new System.Drawing.Point(153, 289);
             this.buttonExit.Name = "buttonExit";
             this.buttonExit.Size = new System.Drawing.Size(132, 46);
             this.buttonExit.TabIndex = 11;
             this.buttonExit.Text = "Exit";
             this.buttonExit.UseVisualStyleBackColor = false;
+            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
             // 
             // label6
             // 

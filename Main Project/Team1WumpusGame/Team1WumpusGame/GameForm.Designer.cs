@@ -31,7 +31,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
             this.textBoxShootArrowLocation = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.labelBatWarning = new System.Windows.Forms.Label();
@@ -49,7 +48,6 @@
             this.pictureBoxMoveRoom2 = new System.Windows.Forms.PictureBox();
             this.pictureBoxMoveRoom1 = new System.Windows.Forms.PictureBox();
             this.pictureBoxGame = new System.Windows.Forms.PictureBox();
-            this.pictureBoxExit = new System.Windows.Forms.PictureBox();
             this.pictureBoxShootArrows = new System.Windows.Forms.PictureBox();
             this.pictureBoxBuyArrows = new System.Windows.Forms.PictureBox();
             this.labelRoom1 = new System.Windows.Forms.Label();
@@ -57,23 +55,22 @@
             this.labelRoom3 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.buttonExit = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPlayer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMoveRoom3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMoveRoom2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMoveRoom1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGame)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxExit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxShootArrows)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBuyArrows)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.buttonExit);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.textBoxShootArrowLocation);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.pictureBoxExit);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.pictureBoxShootArrows);
             this.groupBox1.Controls.Add(this.label1);
@@ -104,15 +101,6 @@
             this.textBoxShootArrowLocation.Name = "textBoxShootArrowLocation";
             this.textBoxShootArrowLocation.Size = new System.Drawing.Size(100, 19);
             this.textBoxShootArrowLocation.TabIndex = 6;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(16, 249);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(29, 12);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Exit";
             // 
             // label2
             // 
@@ -292,15 +280,6 @@
             this.pictureBoxGame.TabIndex = 6;
             this.pictureBoxGame.TabStop = false;
             // 
-            // pictureBoxExit
-            // 
-            this.pictureBoxExit.Location = new System.Drawing.Point(19, 265);
-            this.pictureBoxExit.Name = "pictureBoxExit";
-            this.pictureBoxExit.Size = new System.Drawing.Size(100, 50);
-            this.pictureBoxExit.TabIndex = 4;
-            this.pictureBoxExit.TabStop = false;
-            this.pictureBoxExit.Click += new System.EventHandler(this.pictureBoxExit_Click);
-            // 
             // pictureBoxShootArrows
             // 
             this.pictureBoxShootArrows.Location = new System.Drawing.Point(19, 113);
@@ -317,6 +296,7 @@
             this.pictureBoxBuyArrows.Size = new System.Drawing.Size(100, 50);
             this.pictureBoxBuyArrows.TabIndex = 0;
             this.pictureBoxBuyArrows.TabStop = false;
+            this.pictureBoxBuyArrows.Click += new System.EventHandler(this.pictureBoxBuyArrows_Click);
             // 
             // labelRoom1
             // 
@@ -373,6 +353,18 @@
             this.label8.TabIndex = 25;
             this.label8.Text = "Arrows";
             // 
+            // buttonExit
+            // 
+            this.buttonExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.buttonExit.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.buttonExit.Location = new System.Drawing.Point(18, 268);
+            this.buttonExit.Name = "buttonExit";
+            this.buttonExit.Size = new System.Drawing.Size(101, 47);
+            this.buttonExit.TabIndex = 8;
+            this.buttonExit.Text = "Exit";
+            this.buttonExit.UseVisualStyleBackColor = false;
+            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
+            // 
             // GameForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -410,7 +402,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMoveRoom2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMoveRoom1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGame)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxExit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxShootArrows)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBuyArrows)).EndInit();
             this.ResumeLayout(false);
@@ -422,8 +413,6 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox textBoxShootArrowLocation;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.PictureBox pictureBoxExit;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBoxShootArrows;
         private System.Windows.Forms.Label label1;
@@ -449,5 +438,6 @@
         private System.Windows.Forms.Label labelRoom3;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button buttonExit;
     }
 }
