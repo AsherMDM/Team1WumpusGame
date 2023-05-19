@@ -16,7 +16,7 @@ namespace Team1WumpusGame
 
         public List<Question> createQuestion()
         {
-            for(int i = 0; i <= 3; i++)
+            for(int i = 0; i <= 99; i++)
             {
                 List<Question> questions = new List<Question>();
                 questions.Add(trivia.GetQuestion());

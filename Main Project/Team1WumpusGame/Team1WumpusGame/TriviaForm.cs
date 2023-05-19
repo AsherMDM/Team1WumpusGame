@@ -46,52 +46,160 @@ namespace Team1WumpusGame
 
         private void buttonB_Click(object sender, EventArgs e)
         {
-            if(buttonB.Text == bob.CorrectAnswer)
+            try
             {
-                correctAnswers++;
-                counter++;
-                if(limitChecker() == 3){
-                    Application.Exit();
+                limitChecker();
+                if (labelAnswerA.Text == bob.CorrectAnswer)
+                {
+                    correctAnswers++;
+                    counter++;
+                    if (limitChecker() == 3)
+                    {
+                        Application.Exit();
+                    }
+                    bob = gameControl.createQuestion()[counter];
+
+                    labelQuestion.Text = bob.Ques;
+                    labelAnswerA.Text = bob.Answer1;
+                    labelAnswerB.Text = bob.Answer2;
+                    labelAnswerC.Text = bob.Answer3;
+                    labelAnswerD.Text = bob.Answer4;
                 }
+                else
+                {
+                    counter++;
+                    bob = gameControl.createQuestion()[counter];
+
+                    labelQuestion.Text = bob.Ques;
+                    labelAnswerA.Text = bob.Answer1;
+                    labelAnswerB.Text = bob.Answer2;
+                    labelAnswerC.Text = bob.Answer3;
+                    labelAnswerD.Text = bob.Answer4;
+                }
+            }
+            catch
+            {
+                counter = 0;
             }
         }
 
         private void buttonA_Click(object sender, EventArgs e)
         {
-            if(buttonA.Text == bob.CorrectAnswer)
+            try
             {
-                correctAnswers++;
-                counter++;
-                if (limitChecker() == 3)
+
+                limitChecker();
+                if (labelAnswerA.Text == bob.CorrectAnswer)
                 {
-                    Application.Exit();
+                    correctAnswers++;
+                    counter++;
+                    if (limitChecker() == 3)
+                    {
+                        Application.Exit();
+                    }
+
+                    bob = gameControl.createQuestion()[counter];
+
+                    labelQuestion.Text = bob.Ques;
+                    labelAnswerA.Text = bob.Answer1;
+                    labelAnswerB.Text = bob.Answer2;
+                    labelAnswerC.Text = bob.Answer3;
+                    labelAnswerD.Text = bob.Answer4;
                 }
+                else
+                {
+                    counter++;
+                    bob = gameControl.createQuestion()[counter];
+
+                    labelQuestion.Text = bob.Ques;
+                    labelAnswerA.Text = bob.Answer1;
+                    labelAnswerB.Text = bob.Answer2;
+                    labelAnswerC.Text = bob.Answer3;
+                    labelAnswerD.Text = bob.Answer4;
+                }
+            }
+            catch
+            {
+                counter = 0;
             }
         }
 
         private void buttonC_Click(object sender, EventArgs e)
         {
-            if(buttonC.Text == bob.CorrectAnswer)
+            try
             {
-                correctAnswers++;
-                counter++;
-                if (limitChecker() == 3)
+                limitChecker();
+                if (labelAnswerC.Text == bob.CorrectAnswer)
                 {
-                    Application.Exit();
+                    correctAnswers++;
+                    counter++;
+                    if (limitChecker() == 3)
+                    {
+                        Application.Exit();
+                    }
+                    counter++;
+                    bob = gameControl.createQuestion()[counter];
+
+                    labelQuestion.Text = bob.Ques;
+                    labelAnswerA.Text = bob.Answer1;
+                    labelAnswerB.Text = bob.Answer2;
+                    labelAnswerC.Text = bob.Answer3;
+                    labelAnswerD.Text = bob.Answer4;
+
                 }
+                else
+                {
+                    counter++;
+                    bob = gameControl.createQuestion()[counter];
+
+                    labelQuestion.Text = bob.Ques;
+                    labelAnswerA.Text = bob.Answer1;
+                    labelAnswerB.Text = bob.Answer2;
+                    labelAnswerC.Text = bob.Answer3;
+                    labelAnswerD.Text = bob.Answer4;
+                }
+            }
+            catch
+            {
+                counter = 0;
             }
         }
 
         private void buttonD_Click(object sender, EventArgs e)
         {
-            if(buttonD.Text == bob.CorrectAnswer)
+            try
             {
-                correctAnswers++;
-                counter++;
-                if (limitChecker() == 3)
+                limitChecker();
+                if (labelAnswerD.Text == bob.CorrectAnswer)
                 {
-                    Application.Exit();
+                    correctAnswers++;
+                    counter++;
+                    if (limitChecker() == 3)
+                    {
+                        Application.Exit();
+                    }
+                    bob = gameControl.createQuestion()[counter];
+
+                    labelQuestion.Text = bob.Ques;
+                    labelAnswerA.Text = bob.Answer1;
+                    labelAnswerB.Text = bob.Answer2;
+                    labelAnswerC.Text = bob.Answer3;
+                    labelAnswerD.Text = bob.Answer4;
                 }
+                else
+                {
+                    bob = gameControl.createQuestion()[counter];
+
+                    labelQuestion.Text = bob.Ques;
+                    labelAnswerA.Text = bob.Answer1;
+                    labelAnswerB.Text = bob.Answer2;
+                    labelAnswerC.Text = bob.Answer3;
+                    labelAnswerD.Text = bob.Answer4;
+                }
+            }
+            catch
+            {
+                counter = 0;
             }
         }
 
