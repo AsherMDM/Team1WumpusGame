@@ -48,33 +48,44 @@ namespace Team1WumpusGame
         {
             try
             {
-                limitChecker();
-                if (labelAnswerA.Text == bob.CorrectAnswer)
+                if (limitChecker() == 2)
                 {
-                    correctAnswers++;
-                    counter++;
-                    if (limitChecker() == 3)
-                    {
-                        Application.Exit();
-                    }
-                    bob = gameControl.createQuestion()[counter];
-
-                    labelQuestion.Text = bob.Ques;
-                    labelAnswerA.Text = bob.Answer1;
-                    labelAnswerB.Text = bob.Answer2;
-                    labelAnswerC.Text = bob.Answer3;
-                    labelAnswerD.Text = bob.Answer4;
+                    MessageBox.Show("You got 2 right!");
+                    this.Close();
+                }
+                else if (limitChecker() == 3)
+                {
+                    MessageBox.Show("You didn't get enough right. ");
                 }
                 else
                 {
-                    counter++;
-                    bob = gameControl.createQuestion()[counter];
+                    if (labelAnswerB.Text == bob.CorrectAnswer)
+                    {
+                        correctAnswers++;
+                        counter++;
+                        if (limitChecker() == 3)
+                        {
+                            this.Close();
+                        }
+                        bob = gameControl.createQuestion()[counter];
 
-                    labelQuestion.Text = bob.Ques;
-                    labelAnswerA.Text = bob.Answer1;
-                    labelAnswerB.Text = bob.Answer2;
-                    labelAnswerC.Text = bob.Answer3;
-                    labelAnswerD.Text = bob.Answer4;
+                        labelQuestion.Text = bob.Ques;
+                        labelAnswerA.Text = bob.Answer1;
+                        labelAnswerB.Text = bob.Answer2;
+                        labelAnswerC.Text = bob.Answer3;
+                        labelAnswerD.Text = bob.Answer4;
+                    }
+                    else
+                    {
+                        counter++;
+                        bob = gameControl.createQuestion()[counter];
+
+                        labelQuestion.Text = bob.Ques;
+                        labelAnswerA.Text = bob.Answer1;
+                        labelAnswerB.Text = bob.Answer2;
+                        labelAnswerC.Text = bob.Answer3;
+                        labelAnswerD.Text = bob.Answer4;
+                    }
                 }
             }
             catch
@@ -87,35 +98,46 @@ namespace Team1WumpusGame
         {
             try
             {
-
-                limitChecker();
-                if (labelAnswerA.Text == bob.CorrectAnswer)
+                if (limitChecker() == 2)
                 {
-                    correctAnswers++;
-                    counter++;
-                    if (limitChecker() == 3)
-                    {
-                        Application.Exit();
-                    }
-
-                    bob = gameControl.createQuestion()[counter];
-
-                    labelQuestion.Text = bob.Ques;
-                    labelAnswerA.Text = bob.Answer1;
-                    labelAnswerB.Text = bob.Answer2;
-                    labelAnswerC.Text = bob.Answer3;
-                    labelAnswerD.Text = bob.Answer4;
+                    MessageBox.Show("You got 2 right!");
+                    this.Close();
+                }
+                else if (limitChecker() == 3)
+                {
+                    MessageBox.Show("You didn't get enough right. ");
                 }
                 else
                 {
-                    counter++;
-                    bob = gameControl.createQuestion()[counter];
+                    limitChecker();
+                    if (labelAnswerA.Text == bob.CorrectAnswer)
+                    {
+                        correctAnswers++;
+                        counter++;
+                        if (limitChecker() == 3)
+                        {
+                            this.Close();
+                        }
 
-                    labelQuestion.Text = bob.Ques;
-                    labelAnswerA.Text = bob.Answer1;
-                    labelAnswerB.Text = bob.Answer2;
-                    labelAnswerC.Text = bob.Answer3;
-                    labelAnswerD.Text = bob.Answer4;
+                        bob = gameControl.createQuestion()[counter];
+
+                        labelQuestion.Text = bob.Ques;
+                        labelAnswerA.Text = bob.Answer1;
+                        labelAnswerB.Text = bob.Answer2;
+                        labelAnswerC.Text = bob.Answer3;
+                        labelAnswerD.Text = bob.Answer4;
+                    }
+                    else
+                    {
+                        counter++;
+                        bob = gameControl.createQuestion()[counter];
+
+                        labelQuestion.Text = bob.Ques;
+                        labelAnswerA.Text = bob.Answer1;
+                        labelAnswerB.Text = bob.Answer2;
+                        labelAnswerC.Text = bob.Answer3;
+                        labelAnswerD.Text = bob.Answer4;
+                    }
                 }
             }
             catch
@@ -128,35 +150,46 @@ namespace Team1WumpusGame
         {
             try
             {
-                limitChecker();
-                if (labelAnswerC.Text == bob.CorrectAnswer)
+                if (limitChecker() == 2)
                 {
-                    correctAnswers++;
-                    counter++;
-                    if (limitChecker() == 3)
-                    {
-                        Application.Exit();
-                    }
-                    counter++;
-                    bob = gameControl.createQuestion()[counter];
-
-                    labelQuestion.Text = bob.Ques;
-                    labelAnswerA.Text = bob.Answer1;
-                    labelAnswerB.Text = bob.Answer2;
-                    labelAnswerC.Text = bob.Answer3;
-                    labelAnswerD.Text = bob.Answer4;
-
+                    MessageBox.Show("You got 2 right!");
+                    this.Close();
+                }
+                else if (limitChecker() == 3)
+                {
+                    MessageBox.Show("You didn't get enough right. ");
                 }
                 else
                 {
-                    counter++;
-                    bob = gameControl.createQuestion()[counter];
+                    if (labelAnswerC.Text == bob.CorrectAnswer)
+                    {
+                        correctAnswers++;
+                        counter++;
+                        if (limitChecker() == 3)
+                        {
+                            this.Close();
+                        }
+                        counter++;
+                        bob = gameControl.createQuestion()[counter];
 
-                    labelQuestion.Text = bob.Ques;
-                    labelAnswerA.Text = bob.Answer1;
-                    labelAnswerB.Text = bob.Answer2;
-                    labelAnswerC.Text = bob.Answer3;
-                    labelAnswerD.Text = bob.Answer4;
+                        labelQuestion.Text = bob.Ques;
+                        labelAnswerA.Text = bob.Answer1;
+                        labelAnswerB.Text = bob.Answer2;
+                        labelAnswerC.Text = bob.Answer3;
+                        labelAnswerD.Text = bob.Answer4;
+
+                    }
+                    else
+                    {
+                        counter++;
+                        bob = gameControl.createQuestion()[counter];
+
+                        labelQuestion.Text = bob.Ques;
+                        labelAnswerA.Text = bob.Answer1;
+                        labelAnswerB.Text = bob.Answer2;
+                        labelAnswerC.Text = bob.Answer3;
+                        labelAnswerD.Text = bob.Answer4;
+                    }
                 }
             }
             catch
@@ -169,32 +202,43 @@ namespace Team1WumpusGame
         {
             try
             {
-                limitChecker();
-                if (labelAnswerD.Text == bob.CorrectAnswer)
+                if (limitChecker() == 2)
                 {
-                    correctAnswers++;
-                    counter++;
-                    if (limitChecker() == 3)
-                    {
-                        Application.Exit();
-                    }
-                    bob = gameControl.createQuestion()[counter];
-
-                    labelQuestion.Text = bob.Ques;
-                    labelAnswerA.Text = bob.Answer1;
-                    labelAnswerB.Text = bob.Answer2;
-                    labelAnswerC.Text = bob.Answer3;
-                    labelAnswerD.Text = bob.Answer4;
+                    MessageBox.Show("You got 2 right!");
+                    this.Close();
+                }
+                else if (limitChecker() == 3)
+                {
+                    MessageBox.Show("You didn't get enough right. ");
                 }
                 else
                 {
-                    bob = gameControl.createQuestion()[counter];
+                    if (labelAnswerD.Text == bob.CorrectAnswer)
+                    {
+                        correctAnswers++;
+                        counter++;
+                        if (limitChecker() == 3)
+                        {
+                            this.Close();
+                        }
+                        bob = gameControl.createQuestion()[counter];
 
-                    labelQuestion.Text = bob.Ques;
-                    labelAnswerA.Text = bob.Answer1;
-                    labelAnswerB.Text = bob.Answer2;
-                    labelAnswerC.Text = bob.Answer3;
-                    labelAnswerD.Text = bob.Answer4;
+                        labelQuestion.Text = bob.Ques;
+                        labelAnswerA.Text = bob.Answer1;
+                        labelAnswerB.Text = bob.Answer2;
+                        labelAnswerC.Text = bob.Answer3;
+                        labelAnswerD.Text = bob.Answer4;
+                    }
+                    else
+                    {
+                        bob = gameControl.createQuestion()[counter];
+
+                        labelQuestion.Text = bob.Ques;
+                        labelAnswerA.Text = bob.Answer1;
+                        labelAnswerB.Text = bob.Answer2;
+                        labelAnswerC.Text = bob.Answer3;
+                        labelAnswerD.Text = bob.Answer4;
+                    }
                 }
             }
             catch
@@ -207,12 +251,10 @@ namespace Team1WumpusGame
         {
             if(correctAnswers == 2)
             {
-                MessageBox.Show("You got two correct!");
                 return correctAnswers;
             }
             else if(counter == 3)
             {
-                MessageBox.Show("You didn't get enough correct in time :(");
                 return counter;
             }
             else

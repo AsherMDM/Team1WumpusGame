@@ -93,6 +93,7 @@
             this.labelCoins.Size = new System.Drawing.Size(21, 21);
             this.labelCoins.TabIndex = 3;
             this.labelCoins.Text = "0";
+            this.labelCoins.Click += new System.EventHandler(this.labelCoins_Click);
             // 
             // labelArrows
             // 
@@ -150,6 +151,7 @@
             this.textBoxArrowsBought.Name = "textBoxArrowsBought";
             this.textBoxArrowsBought.Size = new System.Drawing.Size(100, 20);
             this.textBoxArrowsBought.TabIndex = 9;
+            this.textBoxArrowsBought.TextChanged += new System.EventHandler(this.textBoxArrowsBought_TextChanged);
             // 
             // buttonBuyArrows
             // 
@@ -162,6 +164,7 @@
             this.buttonBuyArrows.TabIndex = 10;
             this.buttonBuyArrows.Text = "Buy Arrows";
             this.buttonBuyArrows.UseVisualStyleBackColor = false;
+            this.buttonBuyArrows.Click += new System.EventHandler(this.buttonBuyArrows_Click);
             // 
             // buttonExit
             // 
@@ -253,6 +256,7 @@
             this.Controls.Add(this.label1);
             this.Name = "ShopForm";
             this.Text = "Shop";
+            this.Load += new System.EventHandler(this.ShopForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
