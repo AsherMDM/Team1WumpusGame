@@ -26,10 +26,19 @@ namespace Team1WumpusGame
 
         private void buttonBuyArrows_Click(object sender, EventArgs e)
         {
-            gameControl.AddCoins(-3);
-            gameControl.AddArrows(1);
-            TriviaForm triviaForm = new TriviaForm();   
-            triviaForm.Show();
+            int newArrows = int.Parse(textBoxArrowsBought.Text);
+            int price = -3 * newArrows;
+            if(price > gameControl.passInventory()[1])
+            {
+                MessageBox.Show("You do not have enough coins to buy that many arrows.");
+            }
+            else
+            {
+                gameControl.AddCoins(price);
+                gameControl.AddArrows(newArrows);
+                TriviaForm triviaForm = new TriviaForm();
+                triviaForm.Show();
+            }
         }
 
         private void textBoxArrowsBought_TextChanged(object sender, EventArgs e)

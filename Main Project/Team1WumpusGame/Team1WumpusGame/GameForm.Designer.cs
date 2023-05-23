@@ -178,7 +178,7 @@
             this.labelWumpusWarning.AutoSize = true;
             this.labelWumpusWarning.Font = new System.Drawing.Font("MS Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelWumpusWarning.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.labelWumpusWarning.Location = new System.Drawing.Point(175, 313);
+            this.labelWumpusWarning.Location = new System.Drawing.Point(175, 314);
             this.labelWumpusWarning.Name = "labelWumpusWarning";
             this.labelWumpusWarning.Size = new System.Drawing.Size(119, 13);
             this.labelWumpusWarning.TabIndex = 13;
@@ -399,6 +399,7 @@
             this.Name = "GameForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Hunt The Wumpus";
+            this.Load += new System.EventHandler(this.GameForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxShootArrows)).EndInit();
