@@ -13,6 +13,8 @@ namespace Team1WumpusGame
     public partial class ShopForm : Form
     {
         GameControl gameControl = new GameControl();
+
+
         public ShopForm()
         {
             InitializeComponent();
@@ -56,6 +58,7 @@ namespace Team1WumpusGame
 
             labelCoins.Text = gameControl.passInventory()[1].ToString();
             labelArrows.Text = gameControl.passInventory()[0].ToString();
+            
         }
     }
 }

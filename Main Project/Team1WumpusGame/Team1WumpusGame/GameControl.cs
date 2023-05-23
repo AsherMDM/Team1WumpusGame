@@ -57,11 +57,13 @@ namespace Team1WumpusGame
             return gameLocations.GetPitLocations();
         }
 
-        public List<int> passPossibleMoves()
+        public int[] passPossibleMoves()
         {
             Random random = new Random();
             int i = random.Next(1, 5);
-            return cave.get_possible_moves(passPlayerLocation(), i);
+            List<int> bob = cave.get_possible_moves(passPlayerLocation(), i);
+            int[] PossibleMoves = bob.ToArray();
+            return passPossibleMoves();
         }
 
         public int[] passInventory()
@@ -80,6 +82,7 @@ namespace Team1WumpusGame
             player.GetInventory()[0] += newArrows;
             return player.GetInventory()[0];
         }
+
 
 
 

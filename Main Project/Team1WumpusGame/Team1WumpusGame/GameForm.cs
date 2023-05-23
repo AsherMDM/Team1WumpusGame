@@ -15,13 +15,15 @@ namespace Team1WumpusGame
 
         Player player = new Player();
         Cave cave = new Cave();
-        GameControl gameControl = new GameControl();    
+        //remove above two methods etc
+        GameControl gameControl = new GameControl();
 
 
         int movedLocation;
         public GameForm()
         {
             InitializeComponent();
+            labelCoins.Text = gameControl.passInventory()[1].ToString();
         }
 
         private void pictureBoxExit_Click(object sender, EventArgs e)
@@ -64,7 +66,8 @@ namespace Team1WumpusGame
 
         private void pictureBoxShootArrows_Click(object sender, EventArgs e)
         {
-
+            int[] adjacentCaves = gameControl.passPossibleMoves();
+            player.ShootArrow(int.Parse(textBoxShootArrowLocation.Text), adjacentCaves, gameControl.passWumpusLocation());
         }
 
         private void pictureBoxBuyArrows_Click(object sender, EventArgs e)
@@ -82,7 +85,9 @@ namespace Team1WumpusGame
 
         private void GameForm_Load(object sender, EventArgs e)
         {
-
+            labelRoom1.Text = gameControl.passPossibleMoves()[0].ToString();
+            labelRoom2.Text = gameControl.passPossibleMoves()[1].ToString();
+            labelRoom3.Text = gameControl.passPossibleMoves()[2].ToString();
         }
     }
 }
