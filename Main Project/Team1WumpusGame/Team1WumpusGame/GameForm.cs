@@ -12,6 +12,9 @@ namespace Team1WumpusGame
 {
     public partial class GameForm : Form
     {
+
+        GameControl gameControl = new GameControl();
+
         int movedLocation;
         public GameForm()
         {
@@ -57,7 +60,7 @@ namespace Team1WumpusGame
 
         private void pictureBoxShootArrows_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void pictureBoxBuyArrows_Click(object sender, EventArgs e)
