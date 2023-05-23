@@ -12,21 +12,12 @@ namespace Team1WumpusGame
 {
     public partial class GameForm : Form
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
+
         Player player = new Player();
         Cave cave = new Cave();
         GameControl gameControl = new GameControl();    
-=======
 
-        GameControl gameControl = new GameControl();
 
->>>>>>> 8da03975f36d3b6ed84d23846a34a9a589d84fda
-=======
-
-        GameControl gameControl = new GameControl();
-
->>>>>>> 8da03975f36d3b6ed84d23846a34a9a589d84fda
         int movedLocation;
         public GameForm()
         {
@@ -70,18 +61,10 @@ namespace Team1WumpusGame
             this.Hide();
         }
 
+
         private void pictureBoxShootArrows_Click(object sender, EventArgs e)
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-            //player.ShootArrow(,gameControl.passPossibleMoves(),gameControl.passWumpusLocation());
 
-=======
-            
->>>>>>> 8da03975f36d3b6ed84d23846a34a9a589d84fda
-=======
-            
->>>>>>> 8da03975f36d3b6ed84d23846a34a9a589d84fda
         }
 
         private void pictureBoxBuyArrows_Click(object sender, EventArgs e)
