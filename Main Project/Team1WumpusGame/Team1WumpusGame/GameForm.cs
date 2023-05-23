@@ -58,11 +58,6 @@ namespace Team1WumpusGame
             this.Hide();
         }
 
-        private void pictureBoxShootArrows_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void pictureBoxBuyArrows_Click(object sender, EventArgs e)
         {
             ShopForm shop = new ShopForm();
