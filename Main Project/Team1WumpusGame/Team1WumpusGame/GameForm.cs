@@ -14,12 +14,13 @@ namespace Team1WumpusGame
     {
 
 
-        GameControl gameControl = new GameControl();
-
+        private readonly GameControl gameControl;
+        
 
         int movedLocation;
-        public GameForm()
+        public GameForm(GameControl gameControl)
         {
+            this.gameControl = gameControl;
             InitializeComponent();
             labelCoins.Text = gameControl.passInventory()[1].ToString();
         }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Team1WumpusGame
 {
-    internal class Question
+    public class Question
     {
         public string Ques { get; set; }
         public string Answer1 { get; set; }

@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace Team1WumpusGame
 {
-    internal class GameControl
+    public class GameControl
     {
         Trivia trivia = new Trivia();
         Player player = new Player();
-        GameForm gameForm = new GameForm();
+
         GameLocations gameLocations = new GameLocations();
         Cave cave = new Cave();
 
@@ -40,6 +40,7 @@ namespace Team1WumpusGame
 
         public int passNewLocation()
         {
+            GameForm gameForm = new GameForm(this);
             return gameForm.movingLocation();
         }
 
