@@ -11,10 +11,10 @@ namespace Team1WumpusGame
     {
         Trivia trivia = new Trivia();
         Player player = new Player();
-
         GameLocations gameLocations = new GameLocations();
         Cave cave = new Cave();
-
+        
+        
         public List<Question> createQuestion()
         {
             for(int i = 0; i <= 99; i++)
@@ -33,7 +33,6 @@ namespace Team1WumpusGame
 
         public int passPlayerLocation()
         {
-            Player player = new Player();
             int location = player.GetPlayerLocation();
             return location;    
         }
@@ -58,13 +57,12 @@ namespace Team1WumpusGame
             return gameLocations.GetPitLocations();
         }
 
-        public int[] passPossibleMoves()
+        public int[] passPossibleMoves(int CaveSystem)
         {
-            Random random = new Random();
-            int i = random.Next(1, 5);
-            List<int> bob = cave.get_possible_moves(passPlayerLocation(), i);
+
+            List<int> bob = cave.get_possible_moves(passPlayerLocation(), CaveSystem);
             int[] PossibleMoves = bob.ToArray();
-            return passPossibleMoves();
+            return PossibleMoves;
         }
 
         public int[] passInventory()

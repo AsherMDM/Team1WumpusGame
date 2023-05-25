@@ -12,23 +12,25 @@ namespace Team1WumpusGame
 {
     public partial class GameForm : Form
     {
-
-
         private readonly GameControl gameControl;
+        Player player = new Player();
+        GameLocations gameLocations = new GameLocations();
         
-
-        int movedLocation;
-        public GameForm(GameControl gameControl)
+        public GameForm()//GameControl gameControl)
         {
-            this.gameControl = gameControl;
+            this.gameControl = new GameControl();
             InitializeComponent();
             labelCoins.Text = gameControl.passInventory()[1].ToString();
         }
 
+        public int CaveSystemReturn()
+        {
+            Random random = new Random();
+            int i = random.Next(1, 5);
+            return i;
+        }
         private void pictureBoxExit_Click(object sender, EventArgs e)
         {
-            MainMenuForm form1 = new MainMenuForm();
-            form1.Show();
             this.Close();
         }
 
@@ -58,8 +60,27 @@ namespace Team1WumpusGame
 
         private void pictureBoxShootArrows_Click(object sender, EventArgs e)
         {
-            int[] adjacentCaves = gameControl.passPossibleMoves();
+            
+            int[] adjacentCaves = gameControl.passPossibleMoves(CaveSystemReturn());
             gameControl.ShootArrow(int.Parse(textBoxShootArrowLocation.Text), adjacentCaves, gameControl.passWumpusLocation());
+            if (gameControl.ShootArrow(int.Parse(textBoxShootArrowLocation.Text), gameControl.passPossibleMoves(CaveSystemReturn()), gameControl.passWumpusLocation()) == 1)
+            {
+                //Win
+                player.CalculateScore(true);
+                MessageBox.Show("You Win!");
+            }
+            else if (gameControl.ShootArrow(int.Parse(textBoxShootArrowLocation.Text), gameControl.passPossibleMoves(CaveSystemReturn()), gameControl.passWumpusLocation()) == 0)
+            {
+                MessageBox.Show("You Missed!");
+            }
+            else if (gameControl.ShootArrow(int.Parse(textBoxShootArrowLocation.Text), gameControl.passPossibleMoves(CaveSystemReturn()), gameControl.passWumpusLocation()) == 2)
+            {
+                MessageBox.Show("You Can't Shoot There!");
+            }
+            else
+            {
+                MessageBox.Show("BIG ERROR");
+            }
         }
 
         private void pictureBoxBuyArrows_Click(object sender, EventArgs e)
@@ -70,16 +91,22 @@ namespace Team1WumpusGame
 
         private void buttonExit_Click(object sender, EventArgs e)
         {
-            MainMenuForm form1 = new MainMenuForm();
-            form1.Show();
             this.Close();
         }
 
         private void GameForm_Load(object sender, EventArgs e)
         {
-            labelRoom1.Text = gameControl.passPossibleMoves()[0].ToString();
-            labelRoom2.Text = gameControl.passPossibleMoves()[1].ToString();
-            labelRoom3.Text = gameControl.passPossibleMoves()[2].ToString();
+            labelRoom1.Text = gameControl.passPossibleMoves(CaveSystemReturn())[0].ToString();
+            labelRoom2.Text = gameControl.passPossibleMoves(CaveSystemReturn())[1].ToString();
+            labelRoom3.Text = gameControl.passPossibleMoves(CaveSystemReturn())[2].ToString();
+
+            gameLocations.GenerateBatLocations();
+            gameLocations.GeneratePitLocations();
+            gameLocations.GenerateWumpusLocation();
+
+            labelBatWarning.Visible = gameLocations.findAdjacentHazards(gameControl.passPossibleMoves(CaveSystemReturn()))[0];
+            labelPitWarning.Visible = gameLocations.findAdjacentHazards(gameControl.passPossibleMoves(CaveSystemReturn()))[1];
+            labelWumpusWarning.Visible = gameLocations.findAdjacentHazards(gameControl.passPossibleMoves(CaveSystemReturn()))[2];
         }
     }
 }

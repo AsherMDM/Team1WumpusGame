@@ -19,7 +19,7 @@ namespace Team1WumpusGame
             SplashScreen splashScreen = new SplashScreen();
             splashScreen.ShowDialog();
             MainMenuForm mainMenuForm = new MainMenuForm();
-            mainMenuForm.ShowDialog();
+            mainMenuForm.Show();
             Application.Run();
         }
     }
