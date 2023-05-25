@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -83,10 +84,13 @@ namespace Team1WumpusGame
             return player.GetInventory()[0];
         }
 
+        public int ShootArrow(int location, int[] adjacentCaves, int WumpusLoc )
+        {
+            return player.ShootArrow(location,adjacentCaves,WumpusLoc);
+        }
 
 
-
-
+        
 
 
 

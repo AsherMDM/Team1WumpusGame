@@ -13,9 +13,7 @@ namespace Team1WumpusGame
     public partial class GameForm : Form
     {
 
-        Player player = new Player();
-        Cave cave = new Cave();
-        //remove above two methods etc
+
         GameControl gameControl = new GameControl();
 
 
@@ -67,7 +65,7 @@ namespace Team1WumpusGame
         private void pictureBoxShootArrows_Click(object sender, EventArgs e)
         {
             int[] adjacentCaves = gameControl.passPossibleMoves();
-            player.ShootArrow(int.Parse(textBoxShootArrowLocation.Text), adjacentCaves, gameControl.passWumpusLocation());
+            gameControl.ShootArrow(int.Parse(textBoxShootArrowLocation.Text), adjacentCaves, gameControl.passWumpusLocation());
         }
 
         private void pictureBoxBuyArrows_Click(object sender, EventArgs e)
