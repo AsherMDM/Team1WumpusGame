@@ -40,8 +40,7 @@ namespace Team1WumpusGame
 
         public int passNewLocation()
         {
-            GameForm gameForm = new GameForm(this);
-            return gameForm.movingLocation();
+            
         }
 
         public int passWumpusLocation()
@@ -90,7 +89,10 @@ namespace Team1WumpusGame
             return player.ShootArrow(location,adjacentCaves,WumpusLoc);
         }
 
-
+        public void moveTo(int roomNumber)
+        {
+            //Call player and move them to roomNumber
+        }
         
 
 
