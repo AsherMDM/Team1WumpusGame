@@ -123,6 +123,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\arrow2" />
+    <None Include="Resources\arrow3" />
     <None Include="Resources\batcave1.png" />
   </ItemGroup>
   <ItemGroup>

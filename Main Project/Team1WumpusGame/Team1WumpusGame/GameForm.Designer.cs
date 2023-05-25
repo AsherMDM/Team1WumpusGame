@@ -33,9 +33,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.textBoxShootArrowLocation = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.pictureBoxShootArrows = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBoxBuyArrows = new System.Windows.Forms.PictureBox();
             this.labelBatWarning = new System.Windows.Forms.Label();
             this.labelPitWarning = new System.Windows.Forms.Label();
             this.labelWumpusWarning = new System.Windows.Forms.Label();
@@ -46,24 +44,26 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.pictureBoxPlayer = new System.Windows.Forms.PictureBox();
-            this.pictureBoxMoveRoom3 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxMoveRoom2 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxMoveRoom1 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxGame = new System.Windows.Forms.PictureBox();
             this.labelRoom1 = new System.Windows.Forms.Label();
             this.labelRoom2 = new System.Windows.Forms.Label();
             this.labelRoom3 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.pictureBoxPlayer = new System.Windows.Forms.PictureBox();
+            this.pictureBoxMoveRoom3 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxMoveRoom2 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxMoveRoom1 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxGame = new System.Windows.Forms.PictureBox();
+            this.pictureBoxShootArrows = new System.Windows.Forms.PictureBox();
+            this.pictureBoxBuyArrows = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxShootArrows)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBuyArrows)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPlayer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMoveRoom3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMoveRoom2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMoveRoom1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGame)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxShootArrows)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBuyArrows)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -124,15 +124,6 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Shoot Arrows";
             // 
-            // pictureBoxShootArrows
-            // 
-            this.pictureBoxShootArrows.Location = new System.Drawing.Point(19, 113);
-            this.pictureBoxShootArrows.Name = "pictureBoxShootArrows";
-            this.pictureBoxShootArrows.Size = new System.Drawing.Size(100, 50);
-            this.pictureBoxShootArrows.TabIndex = 2;
-            this.pictureBoxShootArrows.TabStop = false;
-            this.pictureBoxShootArrows.Click += new System.EventHandler(this.pictureBoxShootArrows_Click);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -141,15 +132,6 @@
             this.label1.Size = new System.Drawing.Size(65, 12);
             this.label1.TabIndex = 1;
             this.label1.Text = "Buy Arrows";
-            // 
-            // pictureBoxBuyArrows
-            // 
-            this.pictureBoxBuyArrows.Location = new System.Drawing.Point(19, 36);
-            this.pictureBoxBuyArrows.Name = "pictureBoxBuyArrows";
-            this.pictureBoxBuyArrows.Size = new System.Drawing.Size(100, 50);
-            this.pictureBoxBuyArrows.TabIndex = 0;
-            this.pictureBoxBuyArrows.TabStop = false;
-            this.pictureBoxBuyArrows.Click += new System.EventHandler(this.pictureBoxBuyArrows_Click);
             // 
             // labelBatWarning
             // 
@@ -262,57 +244,6 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // pictureBoxPlayer
-            // 
-            this.pictureBoxPlayer.Location = new System.Drawing.Point(509, 95);
-            this.pictureBoxPlayer.Name = "pictureBoxPlayer";
-            this.pictureBoxPlayer.Size = new System.Drawing.Size(60, 127);
-            this.pictureBoxPlayer.TabIndex = 10;
-            this.pictureBoxPlayer.TabStop = false;
-            // 
-            // pictureBoxMoveRoom3
-            // 
-            this.pictureBoxMoveRoom3.Image = global::Team1WumpusGame.Properties.Resources.rightarrow;
-            this.pictureBoxMoveRoom3.Location = new System.Drawing.Point(575, 91);
-            this.pictureBoxMoveRoom3.Name = "pictureBoxMoveRoom3";
-            this.pictureBoxMoveRoom3.Size = new System.Drawing.Size(60, 58);
-            this.pictureBoxMoveRoom3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxMoveRoom3.TabIndex = 9;
-            this.pictureBoxMoveRoom3.TabStop = false;
-            this.pictureBoxMoveRoom3.Click += new System.EventHandler(this.pictureBoxMoveRoom3_Click);
-            // 
-            // pictureBoxMoveRoom2
-            // 
-            this.pictureBoxMoveRoom2.Image = global::Team1WumpusGame.Properties.Resources.uparrow;
-            this.pictureBoxMoveRoom2.Location = new System.Drawing.Point(509, 31);
-            this.pictureBoxMoveRoom2.Name = "pictureBoxMoveRoom2";
-            this.pictureBoxMoveRoom2.Size = new System.Drawing.Size(60, 58);
-            this.pictureBoxMoveRoom2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxMoveRoom2.TabIndex = 8;
-            this.pictureBoxMoveRoom2.TabStop = false;
-            this.pictureBoxMoveRoom2.Click += new System.EventHandler(this.pictureBoxMoveRoom2_Click);
-            // 
-            // pictureBoxMoveRoom1
-            // 
-            this.pictureBoxMoveRoom1.Image = global::Team1WumpusGame.Properties.Resources.leftarrow;
-            this.pictureBoxMoveRoom1.Location = new System.Drawing.Point(442, 91);
-            this.pictureBoxMoveRoom1.Name = "pictureBoxMoveRoom1";
-            this.pictureBoxMoveRoom1.Size = new System.Drawing.Size(60, 58);
-            this.pictureBoxMoveRoom1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxMoveRoom1.TabIndex = 7;
-            this.pictureBoxMoveRoom1.TabStop = false;
-            this.pictureBoxMoveRoom1.Click += new System.EventHandler(this.pictureBoxMoveRoom1_Click);
-            // 
-            // pictureBoxGame
-            // 
-            this.pictureBoxGame.Image = global::Team1WumpusGame.Properties.Resources.wumpuscave1;
-            this.pictureBoxGame.Location = new System.Drawing.Point(178, 31);
-            this.pictureBoxGame.Name = "pictureBoxGame";
-            this.pictureBoxGame.Size = new System.Drawing.Size(209, 191);
-            this.pictureBoxGame.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxGame.TabIndex = 6;
-            this.pictureBoxGame.TabStop = false;
-            // 
             // labelRoom1
             // 
             this.labelRoom1.AutoSize = true;
@@ -368,6 +299,77 @@
             this.label8.TabIndex = 25;
             this.label8.Text = "Arrows";
             // 
+            // pictureBoxPlayer
+            // 
+            this.pictureBoxPlayer.Location = new System.Drawing.Point(509, 95);
+            this.pictureBoxPlayer.Name = "pictureBoxPlayer";
+            this.pictureBoxPlayer.Size = new System.Drawing.Size(60, 127);
+            this.pictureBoxPlayer.TabIndex = 10;
+            this.pictureBoxPlayer.TabStop = false;
+            // 
+            // pictureBoxMoveRoom3
+            // 
+            this.pictureBoxMoveRoom3.Image = global::Team1WumpusGame.Properties.Resources.rightarrow;
+            this.pictureBoxMoveRoom3.Location = new System.Drawing.Point(575, 91);
+            this.pictureBoxMoveRoom3.Name = "pictureBoxMoveRoom3";
+            this.pictureBoxMoveRoom3.Size = new System.Drawing.Size(60, 58);
+            this.pictureBoxMoveRoom3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxMoveRoom3.TabIndex = 9;
+            this.pictureBoxMoveRoom3.TabStop = false;
+            this.pictureBoxMoveRoom3.Click += new System.EventHandler(this.pictureBoxMoveRoom3_Click);
+            // 
+            // pictureBoxMoveRoom2
+            // 
+            this.pictureBoxMoveRoom2.Image = global::Team1WumpusGame.Properties.Resources.uparrow;
+            this.pictureBoxMoveRoom2.Location = new System.Drawing.Point(509, 31);
+            this.pictureBoxMoveRoom2.Name = "pictureBoxMoveRoom2";
+            this.pictureBoxMoveRoom2.Size = new System.Drawing.Size(60, 58);
+            this.pictureBoxMoveRoom2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxMoveRoom2.TabIndex = 8;
+            this.pictureBoxMoveRoom2.TabStop = false;
+            this.pictureBoxMoveRoom2.Click += new System.EventHandler(this.pictureBoxMoveRoom2_Click);
+            // 
+            // pictureBoxMoveRoom1
+            // 
+            this.pictureBoxMoveRoom1.Image = global::Team1WumpusGame.Properties.Resources.leftarrow;
+            this.pictureBoxMoveRoom1.Location = new System.Drawing.Point(442, 91);
+            this.pictureBoxMoveRoom1.Name = "pictureBoxMoveRoom1";
+            this.pictureBoxMoveRoom1.Size = new System.Drawing.Size(60, 58);
+            this.pictureBoxMoveRoom1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxMoveRoom1.TabIndex = 7;
+            this.pictureBoxMoveRoom1.TabStop = false;
+            this.pictureBoxMoveRoom1.Click += new System.EventHandler(this.pictureBoxMoveRoom1_Click);
+            // 
+            // pictureBoxGame
+            // 
+            this.pictureBoxGame.Image = global::Team1WumpusGame.Properties.Resources.wumpuscave1;
+            this.pictureBoxGame.Location = new System.Drawing.Point(178, 31);
+            this.pictureBoxGame.Name = "pictureBoxGame";
+            this.pictureBoxGame.Size = new System.Drawing.Size(209, 191);
+            this.pictureBoxGame.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxGame.TabIndex = 6;
+            this.pictureBoxGame.TabStop = false;
+            // 
+            // pictureBoxShootArrows
+            // 
+            this.pictureBoxShootArrows.Image = global::Team1WumpusGame.Properties.Resources.arrow3;
+            this.pictureBoxShootArrows.Location = new System.Drawing.Point(19, 113);
+            this.pictureBoxShootArrows.Name = "pictureBoxShootArrows";
+            this.pictureBoxShootArrows.Size = new System.Drawing.Size(100, 50);
+            this.pictureBoxShootArrows.TabIndex = 2;
+            this.pictureBoxShootArrows.TabStop = false;
+            this.pictureBoxShootArrows.Click += new System.EventHandler(this.pictureBoxShootArrows_Click);
+            // 
+            // pictureBoxBuyArrows
+            // 
+            this.pictureBoxBuyArrows.Image = global::Team1WumpusGame.Properties.Resources.arrow2;
+            this.pictureBoxBuyArrows.Location = new System.Drawing.Point(19, 36);
+            this.pictureBoxBuyArrows.Name = "pictureBoxBuyArrows";
+            this.pictureBoxBuyArrows.Size = new System.Drawing.Size(100, 50);
+            this.pictureBoxBuyArrows.TabIndex = 0;
+            this.pictureBoxBuyArrows.TabStop = false;
+            this.pictureBoxBuyArrows.Click += new System.EventHandler(this.pictureBoxBuyArrows_Click);
+            // 
             // GameForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -402,13 +404,13 @@
             this.Load += new System.EventHandler(this.GameForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxShootArrows)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBuyArrows)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPlayer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMoveRoom3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMoveRoom2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMoveRoom1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGame)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxShootArrows)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBuyArrows)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
