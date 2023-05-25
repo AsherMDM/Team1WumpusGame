@@ -13,6 +13,7 @@ namespace Team1WumpusGame
     public partial class GameForm : Form
     {
         private readonly GameControl gameControl;
+        Player player = new Player();
         
         public GameForm()//GameControl gameControl)
         {
@@ -52,8 +53,24 @@ namespace Team1WumpusGame
 
         private void pictureBoxShootArrows_Click(object sender, EventArgs e)
         {
-            int[] adjacentCaves = gameControl.passPossibleMoves();
-            gameControl.ShootArrow(int.Parse(textBoxShootArrowLocation.Text), adjacentCaves, gameControl.passWumpusLocation());
+            if (gameControl.ShootArrow(int.Parse(textBoxShootArrowLocation.Text), gameControl.passPossibleMoves(), gameControl.passWumpusLocation()) == 1)
+            {
+                //Win
+                player.CalculateScore(true);
+                MessageBox.Show("You Win!");
+            }
+            else if (gameControl.ShootArrow(int.Parse(textBoxShootArrowLocation.Text), gameControl.passPossibleMoves(), gameControl.passWumpusLocation()) == 0)
+            {
+                MessageBox.Show("You Missed!");
+            }
+            else if (gameControl.ShootArrow(int.Parse(textBoxShootArrowLocation.Text), gameControl.passPossibleMoves(), gameControl.passWumpusLocation()) == 2)
+            {
+                MessageBox.Show("You Can't Shoot There!");
+            }
+            else
+            {
+                MessageBox.Show("BIG ERROR");
+            }
         }
 
         private void pictureBoxBuyArrows_Click(object sender, EventArgs e)
