@@ -21,6 +21,12 @@ namespace Team1WumpusGame
             labelCoins.Text = gameControl.passInventory()[1].ToString();
         }
 
+        public int CaveSystemReturn()
+        {
+            Random random = new Random();
+            int i = random.Next(1, 5);
+            return i;
+        }
         private void pictureBoxExit_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -52,7 +58,8 @@ namespace Team1WumpusGame
 
         private void pictureBoxShootArrows_Click(object sender, EventArgs e)
         {
-            int[] adjacentCaves = gameControl.passPossibleMoves();
+            CaveSystemReturn();
+            int[] adjacentCaves = gameControl.passPossibleMoves(CaveSystemReturn());
             gameControl.ShootArrow(int.Parse(textBoxShootArrowLocation.Text), adjacentCaves, gameControl.passWumpusLocation());
         }
 
@@ -69,9 +76,15 @@ namespace Team1WumpusGame
 
         private void GameForm_Load(object sender, EventArgs e)
         {
-            labelRoom1.Text = gameControl.passPossibleMoves()[0].ToString();
-            labelRoom2.Text = gameControl.passPossibleMoves()[1].ToString();
-            labelRoom3.Text = gameControl.passPossibleMoves()[2].ToString();
+            
+            labelRoom1.Text = gameControl.passPossibleMoves(CaveSystemReturn())[0].ToString();
+            labelRoom2.Text = gameControl.passPossibleMoves(CaveSystemReturn())[1].ToString();
+            labelRoom3.Text = gameControl.passPossibleMoves(CaveSystemReturn())[2].ToString();
+        }
+
+        private void labelRoom2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
