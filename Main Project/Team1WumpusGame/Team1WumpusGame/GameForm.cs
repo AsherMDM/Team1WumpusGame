@@ -108,10 +108,5 @@ namespace Team1WumpusGame
             labelPitWarning.Visible = gameLocations.findAdjacentHazards(gameControl.passPossibleMoves(CaveSystemReturn()))[1];
             labelWumpusWarning.Visible = gameLocations.findAdjacentHazards(gameControl.passPossibleMoves(CaveSystemReturn()))[2];
         }
-
-        private void labelRoom2_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

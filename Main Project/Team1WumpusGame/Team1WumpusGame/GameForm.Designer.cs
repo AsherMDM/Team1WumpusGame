@@ -56,7 +56,6 @@
             this.labelRoom3 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxShootArrows)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBuyArrows)).BeginInit();
@@ -335,7 +334,6 @@
             this.labelRoom2.Size = new System.Drawing.Size(14, 13);
             this.labelRoom2.TabIndex = 22;
             this.labelRoom2.Text = "1";
-            this.labelRoom2.Click += new System.EventHandler(this.labelRoom2_Click);
             // 
             // labelRoom3
             // 
@@ -370,16 +368,6 @@
             this.label8.TabIndex = 25;
             this.label8.Text = "Arrows";
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(325, 294);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 26;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // GameForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -387,7 +375,6 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(78)))), ((int)(((byte)(91)))));
             this.CancelButton = this.buttonExit;
             this.ClientSize = new System.Drawing.Size(677, 353);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.labelRoom3);
@@ -457,6 +444,5 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button buttonExit;
-        private System.Windows.Forms.Button button2;
     }
 }
