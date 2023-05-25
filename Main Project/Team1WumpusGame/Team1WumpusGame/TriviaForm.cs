@@ -251,11 +251,11 @@ namespace Team1WumpusGame
         {
             if(correctAnswers == 2)
             {
-                return correctAnswers;
+                return 2;
             }
             else if(counter == 3)
             {
-                return counter;
+                return 3;
             }
             else
             {
