@@ -34,18 +34,18 @@ namespace Team1WumpusGame
 
         private void pictureBoxMoveRoom1_Click(object sender, EventArgs e)
         {
-            this.gameControl.moveTo(int.Parse(labelRoom1.Text));
+            this.gameControl.passNewLocation(int.Parse(labelRoom1.Text));
         }
 
         private void pictureBoxMoveRoom2_Click(object sender, EventArgs e)
         {
 
-            this.gameControl.moveTo(int.Parse(labelRoom2.Text);
+            this.gameControl.passNewLocation(int.Parse(labelRoom2.Text));
         }
 
         private void pictureBoxMoveRoom3_Click(object sender, EventArgs e)
         {
-            this.gameControl.moveTo(int.Parse(labelRoom3.Text));
+            this.gameControl.passNewLocation(int.Parse(labelRoom3.Text));
         }
 
 
