@@ -334,7 +334,6 @@
             this.labelRoom2.Size = new System.Drawing.Size(14, 13);
             this.labelRoom2.TabIndex = 22;
             this.labelRoom2.Text = "1";
-            this.labelRoom2.Click += new System.EventHandler(this.labelRoom2_Click);
             // 
             // labelRoom3
             // 

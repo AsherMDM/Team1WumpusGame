@@ -14,6 +14,7 @@ namespace Team1WumpusGame
     {
         private readonly GameControl gameControl;
         Player player = new Player();
+        GameLocations gameLocations = new GameLocations();
         
         public GameForm()//GameControl gameControl)
         {
@@ -95,15 +96,17 @@ namespace Team1WumpusGame
 
         private void GameForm_Load(object sender, EventArgs e)
         {
-            
             labelRoom1.Text = gameControl.passPossibleMoves(CaveSystemReturn())[0].ToString();
             labelRoom2.Text = gameControl.passPossibleMoves(CaveSystemReturn())[1].ToString();
             labelRoom3.Text = gameControl.passPossibleMoves(CaveSystemReturn())[2].ToString();
-        }
 
-        private void labelRoom2_Click(object sender, EventArgs e)
-        {
+            gameLocations.GenerateBatLocations();
+            gameLocations.GeneratePitLocations();
+            gameLocations.GenerateWumpusLocation();
 
+            labelBatWarning.Visible = gameLocations.findAdjacentHazards(gameControl.passPossibleMoves(CaveSystemReturn()))[0];
+            labelPitWarning.Visible = gameLocations.findAdjacentHazards(gameControl.passPossibleMoves(CaveSystemReturn()))[1];
+            labelWumpusWarning.Visible = gameLocations.findAdjacentHazards(gameControl.passPossibleMoves(CaveSystemReturn()))[2];
         }
     }
 }
