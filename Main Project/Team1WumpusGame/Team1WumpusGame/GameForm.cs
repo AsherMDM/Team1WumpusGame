@@ -40,7 +40,7 @@ namespace Team1WumpusGame
         private void pictureBoxMoveRoom2_Click(object sender, EventArgs e)
         {
 
-            this.gameControl.moveTo(int.Parse(labelRoom2.Text);
+            this.gameControl.moveTo(int.Parse(labelRoom2.Text));
         }
 
         private void pictureBoxMoveRoom3_Click(object sender, EventArgs e)

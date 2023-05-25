@@ -38,9 +38,9 @@ namespace Team1WumpusGame
             return location;    
         }
 
-        public int passNewLocation()
+        public void passNewLocation()
         {
-            
+
         }
 
         public int passWumpusLocation()
