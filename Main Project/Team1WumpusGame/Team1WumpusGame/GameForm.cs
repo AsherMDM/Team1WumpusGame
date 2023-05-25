@@ -12,23 +12,17 @@ namespace Team1WumpusGame
 {
     public partial class GameForm : Form
     {
-
-
         private readonly GameControl gameControl;
         
-
-        int movedLocation;
-        public GameForm(GameControl gameControl)
+        public GameForm()//GameControl gameControl)
         {
-            this.gameControl = gameControl;
+            this.gameControl = new GameControl();
             InitializeComponent();
             labelCoins.Text = gameControl.passInventory()[1].ToString();
         }
 
         private void pictureBoxExit_Click(object sender, EventArgs e)
         {
-            MainMenuForm form1 = new MainMenuForm();
-            form1.Show();
             this.Close();
         }
 
@@ -70,8 +64,6 @@ namespace Team1WumpusGame
 
         private void buttonExit_Click(object sender, EventArgs e)
         {
-            MainMenuForm form1 = new MainMenuForm();
-            form1.Show();
             this.Close();
         }
 

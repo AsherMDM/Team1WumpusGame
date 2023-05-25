@@ -64,7 +64,7 @@ namespace Team1WumpusGame
             int i = random.Next(1, 5);
             List<int> bob = cave.get_possible_moves(passPlayerLocation(), i);
             int[] PossibleMoves = bob.ToArray();
-            return passPossibleMoves();
+            return PossibleMoves;
         }
 
         public int[] passInventory()

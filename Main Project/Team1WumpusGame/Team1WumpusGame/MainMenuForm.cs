@@ -20,9 +20,9 @@ namespace Team1WumpusGame
         private void buttonStart_Click(object sender, EventArgs e)
         {
             this.Hide();
-            GameControl gameControl = new GameControl();
-            GameForm gameForm = new GameForm(gameControl);
-            gameForm.ShowDialog();
+            //GameControl gameControl = new GameControl();
+            GameForm gameForm = new GameForm();//gameControl);
+            gameForm.Show();
         }
 
         private void buttonCredits_Click(object sender, EventArgs e)
