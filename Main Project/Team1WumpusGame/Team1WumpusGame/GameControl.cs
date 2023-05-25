@@ -38,9 +38,9 @@ namespace Team1WumpusGame
             return location;    
         }
 
-        public void passNewLocation()
+        public void passNewLocation(int roomNumber)
         {
-
+            player.MovePlayer(roomNumber);
         }
 
         public int passWumpusLocation()
@@ -88,15 +88,5 @@ namespace Team1WumpusGame
         {
             return player.ShootArrow(location,adjacentCaves,WumpusLoc);
         }
-
-        public void moveTo(int roomNumber)
-        {
-            //Call player and move them to roomNumber
-        }
-        
-
-
-
-
     }
 }
