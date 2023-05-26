@@ -32,7 +32,7 @@ namespace Team1WumpusGame
 
         private void buttonExitGame_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
     }
 }
