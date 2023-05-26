@@ -62,25 +62,32 @@ namespace Team1WumpusGame
         {
             
             int[] adjacentCaves = gameControl.passPossibleMoves(CaveSystemReturn());
-            gameControl.ShootArrow(int.Parse(textBoxShootArrowLocation.Text), adjacentCaves, gameControl.passWumpusLocation());
-            if (gameControl.ShootArrow(int.Parse(textBoxShootArrowLocation.Text), gameControl.passPossibleMoves(CaveSystemReturn()), gameControl.passWumpusLocation()) == 1)
+            try
             {
-                //Win
-                player.CalculateScore(true);
-                MessageBox.Show("You Win!");
+                if (gameControl.ShootArrow(int.Parse(textBoxShootArrowLocation.Text), adjacentCaves, gameControl.passWumpusLocation()) == 1)
+                {
+                    //Win
+                    player.CalculateScore(true);
+                    MessageBox.Show("You Win!");
+                }
+                else if (gameControl.ShootArrow(int.Parse(textBoxShootArrowLocation.Text), adjacentCaves, gameControl.passWumpusLocation()) == 0)
+                {
+                    MessageBox.Show("You Missed!");
+                }
+                else if (gameControl.ShootArrow(int.Parse(textBoxShootArrowLocation.Text), adjacentCaves, gameControl.passWumpusLocation()) == 2)
+                {
+                    MessageBox.Show("You Can't Shoot There!");
+                }
+                else
+                {
+                    MessageBox.Show("BIG ERROR");
+                }
             }
-            else if (gameControl.ShootArrow(int.Parse(textBoxShootArrowLocation.Text), gameControl.passPossibleMoves(CaveSystemReturn()), gameControl.passWumpusLocation()) == 0)
+            catch
             {
-                MessageBox.Show("You Missed!");
+                MessageBox.Show("No");
             }
-            else if (gameControl.ShootArrow(int.Parse(textBoxShootArrowLocation.Text), gameControl.passPossibleMoves(CaveSystemReturn()), gameControl.passWumpusLocation()) == 2)
-            {
-                MessageBox.Show("You Can't Shoot There!");
-            }
-            else
-            {
-                MessageBox.Show("BIG ERROR");
-            }
+            
         }
 
         private void pictureBoxBuyArrows_Click(object sender, EventArgs e)
