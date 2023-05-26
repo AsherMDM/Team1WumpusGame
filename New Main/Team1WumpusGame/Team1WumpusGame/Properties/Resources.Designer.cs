@@ -63,26 +63,6 @@ namespace Team1WumpusGame.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap arrow2 {
-            get {
-                object obj = ResourceManager.GetObject("arrow2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap arrow3 {
-            get {
-                object obj = ResourceManager.GetObject("arrow3", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap batcave1 {
             get {
                 object obj = ResourceManager.GetObject("batcave1", resourceCulture);
@@ -133,16 +113,6 @@ namespace Team1WumpusGame.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap mainmenu {
-            get {
-                object obj = ResourceManager.GetObject("mainmenu", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap pitcave1 {
             get {
                 object obj = ResourceManager.GetObject("pitcave1", resourceCulture);
@@ -156,16 +126,6 @@ namespace Team1WumpusGame.Properties {
         internal static System.Drawing.Bitmap rightarrow {
             get {
                 object obj = ResourceManager.GetObject("rightarrow", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap splash {
-            get {
-                object obj = ResourceManager.GetObject("splash", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

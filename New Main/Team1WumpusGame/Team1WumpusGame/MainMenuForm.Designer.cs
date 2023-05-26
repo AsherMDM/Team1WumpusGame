@@ -45,17 +45,17 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Monotxt_IV25", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(21, 38);
+            this.label1.Location = new System.Drawing.Point(31, 37);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 60);
+            this.label1.Size = new System.Drawing.Size(550, 60);
             this.label1.TabIndex = 0;
+            this.label1.Text = "Hunt The Wumpus";
             // 
             // buttonStart
             // 
-            this.buttonStart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.buttonStart.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.buttonStart.Font = new System.Drawing.Font("MS Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonStart.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonStart.Location = new System.Drawing.Point(69, 131);
+            this.buttonStart.Location = new System.Drawing.Point(41, 138);
             this.buttonStart.Name = "buttonStart";
             this.buttonStart.Size = new System.Drawing.Size(215, 53);
             this.buttonStart.TabIndex = 2;
@@ -65,10 +65,9 @@
             // 
             // buttonExitGame
             // 
-            this.buttonExitGame.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.buttonExitGame.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.buttonExitGame.Font = new System.Drawing.Font("MS Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonExitGame.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonExitGame.Location = new System.Drawing.Point(69, 249);
+            this.buttonExitGame.Location = new System.Drawing.Point(41, 256);
             this.buttonExitGame.Name = "buttonExitGame";
             this.buttonExitGame.Size = new System.Drawing.Size(215, 53);
             this.buttonExitGame.TabIndex = 3;
@@ -78,10 +77,9 @@
             // 
             // buttonCredits
             // 
-            this.buttonCredits.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.buttonCredits.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.buttonCredits.Font = new System.Drawing.Font("MS Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCredits.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonCredits.Location = new System.Drawing.Point(31, 190);
+            this.buttonCredits.Location = new System.Drawing.Point(41, 197);
             this.buttonCredits.Name = "buttonCredits";
             this.buttonCredits.Size = new System.Drawing.Size(215, 53);
             this.buttonCredits.TabIndex = 4;
@@ -92,10 +90,8 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(29)))), ((int)(((byte)(40)))));
             this.label2.Font = new System.Drawing.Font("MS Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(366, 131);
+            this.label2.Location = new System.Drawing.Point(346, 132);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(131, 21);
             this.label2.TabIndex = 5;
@@ -104,10 +100,8 @@
             // labelHighScoreName1
             // 
             this.labelHighScoreName1.AutoSize = true;
-            this.labelHighScoreName1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(29)))), ((int)(((byte)(40)))));
             this.labelHighScoreName1.Font = new System.Drawing.Font("MS Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelHighScoreName1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.labelHighScoreName1.Location = new System.Drawing.Point(369, 177);
+            this.labelHighScoreName1.Location = new System.Drawing.Point(347, 175);
             this.labelHighScoreName1.Name = "labelHighScoreName1";
             this.labelHighScoreName1.Size = new System.Drawing.Size(31, 16);
             this.labelHighScoreName1.TabIndex = 6;
@@ -116,10 +110,8 @@
             // labelHighScoreName2
             // 
             this.labelHighScoreName2.AutoSize = true;
-            this.labelHighScoreName2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(29)))), ((int)(((byte)(40)))));
             this.labelHighScoreName2.Font = new System.Drawing.Font("MS Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelHighScoreName2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.labelHighScoreName2.Location = new System.Drawing.Point(369, 202);
+            this.labelHighScoreName2.Location = new System.Drawing.Point(347, 215);
             this.labelHighScoreName2.Name = "labelHighScoreName2";
             this.labelHighScoreName2.Size = new System.Drawing.Size(31, 16);
             this.labelHighScoreName2.TabIndex = 7;
@@ -128,10 +120,8 @@
             // labelHighScoreName3
             // 
             this.labelHighScoreName3.AutoSize = true;
-            this.labelHighScoreName3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(29)))), ((int)(((byte)(40)))));
             this.labelHighScoreName3.Font = new System.Drawing.Font("MS Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelHighScoreName3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.labelHighScoreName3.Location = new System.Drawing.Point(369, 227);
+            this.labelHighScoreName3.Location = new System.Drawing.Point(347, 255);
             this.labelHighScoreName3.Name = "labelHighScoreName3";
             this.labelHighScoreName3.Size = new System.Drawing.Size(31, 16);
             this.labelHighScoreName3.TabIndex = 8;
@@ -140,10 +130,8 @@
             // labelHighScore1
             // 
             this.labelHighScore1.AutoSize = true;
-            this.labelHighScore1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(29)))), ((int)(((byte)(40)))));
             this.labelHighScore1.Font = new System.Drawing.Font("MS Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelHighScore1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.labelHighScore1.Location = new System.Drawing.Point(466, 177);
+            this.labelHighScore1.Location = new System.Drawing.Point(444, 175);
             this.labelHighScore1.Name = "labelHighScore1";
             this.labelHighScore1.Size = new System.Drawing.Size(31, 16);
             this.labelHighScore1.TabIndex = 9;
@@ -152,10 +140,8 @@
             // labelHighScore2
             // 
             this.labelHighScore2.AutoSize = true;
-            this.labelHighScore2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(29)))), ((int)(((byte)(40)))));
             this.labelHighScore2.Font = new System.Drawing.Font("MS Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelHighScore2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.labelHighScore2.Location = new System.Drawing.Point(466, 202);
+            this.labelHighScore2.Location = new System.Drawing.Point(444, 215);
             this.labelHighScore2.Name = "labelHighScore2";
             this.labelHighScore2.Size = new System.Drawing.Size(31, 16);
             this.labelHighScore2.TabIndex = 10;
@@ -164,21 +150,17 @@
             // labelHighScore3
             // 
             this.labelHighScore3.AutoSize = true;
-            this.labelHighScore3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(29)))), ((int)(((byte)(40)))));
             this.labelHighScore3.Font = new System.Drawing.Font("MS Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelHighScore3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.labelHighScore3.Location = new System.Drawing.Point(466, 227);
+            this.labelHighScore3.Location = new System.Drawing.Point(444, 255);
             this.labelHighScore3.Name = "labelHighScore3";
             this.labelHighScore3.Size = new System.Drawing.Size(31, 16);
             this.labelHighScore3.TabIndex = 11;
             this.labelHighScore3.Text = "000";
             // 
-            // MainMenuForm
+            // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Team1WumpusGame.Properties.Resources.mainmenu;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(594, 340);
             this.Controls.Add(this.labelHighScore3);
             this.Controls.Add(this.labelHighScore2);
@@ -191,7 +173,7 @@
             this.Controls.Add(this.buttonExitGame);
             this.Controls.Add(this.buttonStart);
             this.Controls.Add(this.label1);
-            this.Name = "MainMenuForm";
+            this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Hunt The Wumpus";
             this.ResumeLayout(false);
