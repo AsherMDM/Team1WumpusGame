@@ -33,7 +33,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.textBoxShootArrowLocation = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.pictureBoxShootArrows = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBoxBuyArrows = new System.Windows.Forms.PictureBox();
             this.labelBatWarning = new System.Windows.Forms.Label();
             this.labelPitWarning = new System.Windows.Forms.Label();
             this.labelWumpusWarning = new System.Windows.Forms.Label();
@@ -54,16 +56,15 @@
             this.pictureBoxMoveRoom2 = new System.Windows.Forms.PictureBox();
             this.pictureBoxMoveRoom1 = new System.Windows.Forms.PictureBox();
             this.pictureBoxGame = new System.Windows.Forms.PictureBox();
-            this.pictureBoxShootArrows = new System.Windows.Forms.PictureBox();
-            this.pictureBoxBuyArrows = new System.Windows.Forms.PictureBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxShootArrows)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBuyArrows)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPlayer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMoveRoom3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMoveRoom2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMoveRoom1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGame)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxShootArrows)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBuyArrows)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -124,6 +125,16 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Shoot Arrows";
             // 
+            // pictureBoxShootArrows
+            // 
+            this.pictureBoxShootArrows.Image = global::Team1WumpusGame.Properties.Resources.arrow3;
+            this.pictureBoxShootArrows.Location = new System.Drawing.Point(19, 113);
+            this.pictureBoxShootArrows.Name = "pictureBoxShootArrows";
+            this.pictureBoxShootArrows.Size = new System.Drawing.Size(100, 50);
+            this.pictureBoxShootArrows.TabIndex = 2;
+            this.pictureBoxShootArrows.TabStop = false;
+            this.pictureBoxShootArrows.Click += new System.EventHandler(this.pictureBoxShootArrows_Click);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -132,6 +143,16 @@
             this.label1.Size = new System.Drawing.Size(65, 12);
             this.label1.TabIndex = 1;
             this.label1.Text = "Buy Arrows";
+            // 
+            // pictureBoxBuyArrows
+            // 
+            this.pictureBoxBuyArrows.Image = global::Team1WumpusGame.Properties.Resources.arrow2;
+            this.pictureBoxBuyArrows.Location = new System.Drawing.Point(19, 36);
+            this.pictureBoxBuyArrows.Name = "pictureBoxBuyArrows";
+            this.pictureBoxBuyArrows.Size = new System.Drawing.Size(100, 50);
+            this.pictureBoxBuyArrows.TabIndex = 0;
+            this.pictureBoxBuyArrows.TabStop = false;
+            this.pictureBoxBuyArrows.Click += new System.EventHandler(this.pictureBoxBuyArrows_Click);
             // 
             // labelBatWarning
             // 
@@ -350,25 +371,15 @@
             this.pictureBoxGame.TabIndex = 6;
             this.pictureBoxGame.TabStop = false;
             // 
-            // pictureBoxShootArrows
+            // button2
             // 
-            this.pictureBoxShootArrows.Image = global::Team1WumpusGame.Properties.Resources.arrow3;
-            this.pictureBoxShootArrows.Location = new System.Drawing.Point(19, 113);
-            this.pictureBoxShootArrows.Name = "pictureBoxShootArrows";
-            this.pictureBoxShootArrows.Size = new System.Drawing.Size(100, 50);
-            this.pictureBoxShootArrows.TabIndex = 2;
-            this.pictureBoxShootArrows.TabStop = false;
-            this.pictureBoxShootArrows.Click += new System.EventHandler(this.pictureBoxShootArrows_Click);
-            // 
-            // pictureBoxBuyArrows
-            // 
-            this.pictureBoxBuyArrows.Image = global::Team1WumpusGame.Properties.Resources.arrow2;
-            this.pictureBoxBuyArrows.Location = new System.Drawing.Point(19, 36);
-            this.pictureBoxBuyArrows.Name = "pictureBoxBuyArrows";
-            this.pictureBoxBuyArrows.Size = new System.Drawing.Size(100, 50);
-            this.pictureBoxBuyArrows.TabIndex = 0;
-            this.pictureBoxBuyArrows.TabStop = false;
-            this.pictureBoxBuyArrows.Click += new System.EventHandler(this.pictureBoxBuyArrows_Click);
+            this.button2.Location = new System.Drawing.Point(311, 271);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 26;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // GameForm
             // 
@@ -377,6 +388,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(78)))), ((int)(((byte)(91)))));
             this.CancelButton = this.buttonExit;
             this.ClientSize = new System.Drawing.Size(677, 353);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.labelRoom3);
@@ -404,13 +416,13 @@
             this.Load += new System.EventHandler(this.GameForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxShootArrows)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBuyArrows)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPlayer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMoveRoom3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMoveRoom2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMoveRoom1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGame)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxShootArrows)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBuyArrows)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -446,5 +458,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button buttonExit;
+        private System.Windows.Forms.Button button2;
     }
 }

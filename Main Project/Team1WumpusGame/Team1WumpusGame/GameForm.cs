@@ -105,7 +105,36 @@ namespace Team1WumpusGame
         {
             labelRoom1.Text = gameControl.passPossibleMoves(CaveSystemReturn())[0].ToString();
             labelRoom2.Text = gameControl.passPossibleMoves(CaveSystemReturn())[1].ToString();
-            labelRoom3.Text = gameControl.passPossibleMoves(CaveSystemReturn())[2].ToString();
+            try
+            {
+                labelRoom3.Text = gameControl.passPossibleMoves(CaveSystemReturn())[2].ToString();
+            }
+            catch
+            {
+                labelRoom3.Text = "error";
+            }
+
+            gameLocations.GenerateBatLocations();
+            gameLocations.GeneratePitLocations();
+            gameLocations.GenerateWumpusLocation();
+
+            labelBatWarning.Visible = gameLocations.findAdjacentHazards(gameControl.passPossibleMoves(CaveSystemReturn()))[0];
+            labelPitWarning.Visible = gameLocations.findAdjacentHazards(gameControl.passPossibleMoves(CaveSystemReturn()))[1];
+            labelWumpusWarning.Visible = gameLocations.findAdjacentHazards(gameControl.passPossibleMoves(CaveSystemReturn()))[2];
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            labelRoom1.Text = gameControl.passPossibleMoves(CaveSystemReturn())[0].ToString();
+            labelRoom2.Text = gameControl.passPossibleMoves(CaveSystemReturn())[1].ToString();
+            try
+            {
+                labelRoom3.Text = gameControl.passPossibleMoves(CaveSystemReturn())[2].ToString();
+            }
+            catch
+            {
+                labelRoom3.Text = "error";
+            }
 
             gameLocations.GenerateBatLocations();
             gameLocations.GeneratePitLocations();
