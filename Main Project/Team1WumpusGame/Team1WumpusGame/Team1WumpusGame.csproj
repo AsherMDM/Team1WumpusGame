@@ -137,9 +137,11 @@
     <None Include="Resources\emptycave3.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\mainmenu" />
     <None Include="Resources\pitcave1.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\splash" />
     <None Include="Resources\wumpuscave1.png" />
   </ItemGroup>
   <ItemGroup>
