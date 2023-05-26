@@ -17,13 +17,12 @@ namespace Team1WumpusGame
         
         public List<Question> createQuestion()
         {
-            for(int i = 0; i <= 99; i++)
+            List<Question> questions = new List<Question>();
+            for (int i = 0; i <= 30; i++)
             {
-                List<Question> questions = new List<Question>();
                 questions.Add(trivia.GetQuestion());
-                return questions;
             }
-            return null;
+            return questions;
         }
         public Question passQuestion(string Question, string ans1, string ans2, string ans3, string ans4, string correctAnswer)
         {

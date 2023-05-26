@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,13 +31,18 @@ namespace Team1WumpusGame
 
         private void TriviaForm_Load(object sender, EventArgs e)
         {
+            generateQuestion();
+        }
+        
+        private void generateQuestion()
+        {
             bob = gameControl.createQuestion()[counter];
 
             labelQuestion.Text = bob.Ques;
-            labelAnswerA.Text = bob.Answer1;
-            labelAnswerB.Text = bob.Answer2;
-            labelAnswerC.Text = bob.Answer3;
-            labelAnswerD.Text = bob.Answer4;
+            radioButtonAnswer1.Text = bob.Answer1;
+            radioButtonAnswer2.Text = bob.Answer2;
+            radioButtonAnswer3.Text = bob.Answer3;
+            radioButtonAnswer4.Text = bob.Answer4;
         }
 
         private void labelQuestion_Click(object sender, EventArgs e)
@@ -44,207 +50,14 @@ namespace Team1WumpusGame
             
         }
 
-        private void buttonB_Click(object sender, EventArgs e)
+        private bool returnTrue()
         {
-            try
-            {
-                if (limitChecker() == 2)
-                {
-                    MessageBox.Show("You got 2 right!");
-                    this.Close();
-                }
-                else if (limitChecker() == 3)
-                {
-                    MessageBox.Show("You didn't get enough right. ");
-                }
-                else
-                {
-                    if (labelAnswerB.Text == bob.CorrectAnswer)
-                    {
-                        correctAnswers++;
-                        counter++;
-                        if (limitChecker() == 3)
-                        {
-                            this.Close();
-                        }
-                        bob = gameControl.createQuestion()[counter];
-
-                        labelQuestion.Text = bob.Ques;
-                        labelAnswerA.Text = bob.Answer1;
-                        labelAnswerB.Text = bob.Answer2;
-                        labelAnswerC.Text = bob.Answer3;
-                        labelAnswerD.Text = bob.Answer4;
-                    }
-                    else
-                    {
-                        counter++;
-                        bob = gameControl.createQuestion()[counter];
-
-                        labelQuestion.Text = bob.Ques;
-                        labelAnswerA.Text = bob.Answer1;
-                        labelAnswerB.Text = bob.Answer2;
-                        labelAnswerC.Text = bob.Answer3;
-                        labelAnswerD.Text = bob.Answer4;
-                    }
-                }
-            }
-            catch
-            {
-                counter = 0;
-            }
+            return true;
         }
 
-        private void buttonA_Click(object sender, EventArgs e)
+        private bool returnFalse()
         {
-            try
-            {
-                if (limitChecker() == 2)
-                {
-                    MessageBox.Show("You got 2 right!");
-                    this.Close();
-                }
-                else if (limitChecker() == 3)
-                {
-                    MessageBox.Show("You didn't get enough right. ");
-                }
-                else
-                {
-                    limitChecker();
-                    if (labelAnswerA.Text == bob.CorrectAnswer)
-                    {
-                        correctAnswers++;
-                        counter++;
-                        if (limitChecker() == 3)
-                        {
-                            this.Close();
-                        }
-
-                        bob = gameControl.createQuestion()[counter];
-
-                        labelQuestion.Text = bob.Ques;
-                        labelAnswerA.Text = bob.Answer1;
-                        labelAnswerB.Text = bob.Answer2;
-                        labelAnswerC.Text = bob.Answer3;
-                        labelAnswerD.Text = bob.Answer4;
-                    }
-                    else
-                    {
-                        counter++;
-                        bob = gameControl.createQuestion()[counter];
-
-                        labelQuestion.Text = bob.Ques;
-                        labelAnswerA.Text = bob.Answer1;
-                        labelAnswerB.Text = bob.Answer2;
-                        labelAnswerC.Text = bob.Answer3;
-                        labelAnswerD.Text = bob.Answer4;
-                    }
-                }
-            }
-            catch
-            {
-                counter = 0;
-            }
-        }
-
-        private void buttonC_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (limitChecker() == 2)
-                {
-                    MessageBox.Show("You got 2 right!");
-                    this.Close();
-                }
-                else if (limitChecker() == 3)
-                {
-                    MessageBox.Show("You didn't get enough right. ");
-                }
-                else
-                {
-                    if (labelAnswerC.Text == bob.CorrectAnswer)
-                    {
-                        correctAnswers++;
-                        counter++;
-                        if (limitChecker() == 3)
-                        {
-                            this.Close();
-                        }
-                        counter++;
-                        bob = gameControl.createQuestion()[counter];
-
-                        labelQuestion.Text = bob.Ques;
-                        labelAnswerA.Text = bob.Answer1;
-                        labelAnswerB.Text = bob.Answer2;
-                        labelAnswerC.Text = bob.Answer3;
-                        labelAnswerD.Text = bob.Answer4;
-
-                    }
-                    else
-                    {
-                        counter++;
-                        bob = gameControl.createQuestion()[counter];
-
-                        labelQuestion.Text = bob.Ques;
-                        labelAnswerA.Text = bob.Answer1;
-                        labelAnswerB.Text = bob.Answer2;
-                        labelAnswerC.Text = bob.Answer3;
-                        labelAnswerD.Text = bob.Answer4;
-                    }
-                }
-            }
-            catch
-            {
-                counter = 0;
-            }
-        }
-
-        private void buttonD_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (limitChecker() == 2)
-                {
-                    MessageBox.Show("You got 2 right!");
-                    this.Close();
-                }
-                else if (limitChecker() == 3)
-                {
-                    MessageBox.Show("You didn't get enough right. ");
-                }
-                else
-                {
-                    if (labelAnswerD.Text == bob.CorrectAnswer)
-                    {
-                        correctAnswers++;
-                        counter++;
-                        if (limitChecker() == 3)
-                        {
-                            this.Close();
-                        }
-                        bob = gameControl.createQuestion()[counter];
-
-                        labelQuestion.Text = bob.Ques;
-                        labelAnswerA.Text = bob.Answer1;
-                        labelAnswerB.Text = bob.Answer2;
-                        labelAnswerC.Text = bob.Answer3;
-                        labelAnswerD.Text = bob.Answer4;
-                    }
-                    else
-                    {
-                        bob = gameControl.createQuestion()[counter];
-
-                        labelQuestion.Text = bob.Ques;
-                        labelAnswerA.Text = bob.Answer1;
-                        labelAnswerB.Text = bob.Answer2;
-                        labelAnswerC.Text = bob.Answer3;
-                        labelAnswerD.Text = bob.Answer4;
-                    }
-                }
-            }
-            catch
-            {
-                counter = 0;
-            }
+            return false;
         }
 
         public int limitChecker()
@@ -262,6 +75,48 @@ namespace Team1WumpusGame
                 return 0;
             }
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            counter++;
+            if (radioButtonAnswer1.Checked && radioButtonAnswer1.Text == bob.CorrectAnswer)
+            {
+                correctAnswers++;
+                
+            }
+            else if (radioButtonAnswer2.Checked && radioButtonAnswer2.Text == bob.CorrectAnswer)
+            {
+                correctAnswers++;
+                
+            }
+            else if (radioButtonAnswer3.Checked && radioButtonAnswer3.Text == bob.CorrectAnswer)
+            {
+                correctAnswers++;
+                
+            }
+            else if (radioButtonAnswer4.Checked && radioButtonAnswer4.Text == bob.CorrectAnswer)
+            {
+                correctAnswers++;
+                
+            }
+
+            if (limitChecker() == 2)
+            {
+                MessageBox.Show("You got 2 right!");
+                returnTrue();
+                this.Close();
+            }
+            else if (limitChecker() == 3)
+            {
+                MessageBox.Show("You didn't get enough right. ");
+                returnFalse();
+                this.Close();
+            }
+
+            generateQuestion();
+            
         }
     }
 }
