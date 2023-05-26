@@ -98,7 +98,7 @@ namespace Team1WumpusGame
 
         private void buttonExit_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
         private void GameForm_Load(object sender, EventArgs e)
