@@ -36,7 +36,7 @@ namespace Team1WumpusGame
             {
                 string[] data = input.Split(',');
                 int index = int.Parse(data[0]);
-
+                
                 adjacentCave[index - 1] = new List<int>();
 
                 for (int i = 1; i <= data.GetUpperBound(0); i++)
