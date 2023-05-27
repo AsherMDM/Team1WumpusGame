@@ -28,6 +28,7 @@ namespace Team1WumpusGame
             Random random = new Random();
             int i = random.Next(1, 5);
             return i;
+            //return (1);
         }
         private void pictureBoxExit_Click(object sender, EventArgs e)
         {
@@ -103,11 +104,12 @@ namespace Team1WumpusGame
 
         private void GameForm_Load(object sender, EventArgs e)
         {
-            labelRoom1.Text = gameControl.passPossibleMoves(CaveSystemReturn())[0].ToString();
-            labelRoom2.Text = gameControl.passPossibleMoves(CaveSystemReturn())[1].ToString();
+            int[] possiblemoves = gameControl.passPossibleMoves(CaveSystemReturn());
+            labelRoom1.Text = possiblemoves[0].ToString();
+            labelRoom2.Text = possiblemoves[1].ToString();
             try
             {
-                labelRoom3.Text = gameControl.passPossibleMoves(CaveSystemReturn())[2].ToString();
+                labelRoom3.Text = possiblemoves[2].ToString();
             }
             catch
             {
@@ -125,11 +127,12 @@ namespace Team1WumpusGame
 
         private void button2_Click(object sender, EventArgs e)
         {
-            labelRoom1.Text = gameControl.passPossibleMoves(CaveSystemReturn())[0].ToString();
-            labelRoom2.Text = gameControl.passPossibleMoves(CaveSystemReturn())[1].ToString();
+            int[] possiblemoves = gameControl.passPossibleMoves(CaveSystemReturn());
+            labelRoom1.Text = possiblemoves[0].ToString();
+            labelRoom2.Text = possiblemoves[1].ToString();
             try
             {
-                labelRoom3.Text = gameControl.passPossibleMoves(CaveSystemReturn())[2].ToString();
+                labelRoom3.Text = possiblemoves[2].ToString();
             }
             catch
             {
