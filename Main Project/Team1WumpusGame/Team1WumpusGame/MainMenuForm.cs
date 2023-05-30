@@ -12,6 +12,7 @@ namespace Team1WumpusGame
 {
     public partial class MainMenuForm : Form
     {
+        Random random = new Random();
         public MainMenuForm()
         {
             InitializeComponent();
@@ -21,7 +22,7 @@ namespace Team1WumpusGame
         {
             this.Hide();
             //GameControl gameControl = new GameControl();
-            GameForm gameForm = new GameForm();//gameControl);
+            GameForm gameForm = new GameForm(random.Next(1, 5));//gameControl);
             gameForm.Show();
         }
 
