@@ -15,20 +15,19 @@ namespace Team1WumpusGame
         private readonly GameControl gameControl;
         Player player = new Player();
         GameLocations gameLocations = new GameLocations();
-        
-        public GameForm()//GameControl gameControl)
+
+        int cavesystem;
+        public GameForm(int cs)//GameControl gameControl)
         {
             this.gameControl = new GameControl();
+            cavesystem = cs;
             InitializeComponent();
             labelCoins.Text = gameControl.passInventory()[1].ToString();
         }
 
         public int CaveSystemReturn()
         {
-            Random random = new Random();
-            int i = random.Next(1, 5);
-            return i;
-            //return (1);
+            return cavesystem;
         }
         private void pictureBoxExit_Click(object sender, EventArgs e)
         {
