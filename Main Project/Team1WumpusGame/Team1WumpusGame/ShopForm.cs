@@ -12,6 +12,7 @@ namespace Team1WumpusGame
 {
     public partial class ShopForm : Form
     {
+        // Create new instance of game control class
         GameControl gameControl = new GameControl();
 
 
@@ -28,6 +29,7 @@ namespace Team1WumpusGame
 
         private void buttonBuyArrows_Click(object sender, EventArgs e)
         {
+            // 
             int newArrows = int.Parse(textBoxArrowsBought.Text);
             int price = -3 * newArrows;
             if(price > gameControl.passInventory()[1])
