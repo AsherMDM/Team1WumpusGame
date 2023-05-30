@@ -106,14 +106,7 @@ namespace Team1WumpusGame
             int[] possiblemoves = gameControl.passPossibleMoves(CaveSystemReturn());
             labelRoom1.Text = possiblemoves[0].ToString();
             labelRoom2.Text = possiblemoves[1].ToString();
-            try
-            {
-                labelRoom3.Text = possiblemoves[2].ToString();
-            }
-            catch
-            {
-                labelRoom3.Text = "error";
-            }
+            labelRoom3.Text = possiblemoves[2].ToString();            
 
             gameLocations.GenerateBatLocations();
             gameLocations.GeneratePitLocations();
