@@ -34,6 +34,7 @@
             this.radioButtonAnswer3 = new System.Windows.Forms.RadioButton();
             this.radioButtonAnswer4 = new System.Windows.Forms.RadioButton();
             this.buttonSubmit = new System.Windows.Forms.Button();
+            this.buttonExit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelQuestion
@@ -105,7 +106,7 @@
             this.buttonSubmit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(68)))), ((int)(((byte)(80)))));
             this.buttonSubmit.Font = new System.Drawing.Font("MS Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSubmit.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonSubmit.Location = new System.Drawing.Point(235, 248);
+            this.buttonSubmit.Location = new System.Drawing.Point(160, 248);
             this.buttonSubmit.Name = "buttonSubmit";
             this.buttonSubmit.Size = new System.Drawing.Size(133, 56);
             this.buttonSubmit.TabIndex = 18;
@@ -113,18 +114,33 @@
             this.buttonSubmit.UseVisualStyleBackColor = false;
             this.buttonSubmit.Click += new System.EventHandler(this.buttonSubmit_Click);
             // 
+            // buttonExit
+            // 
+            this.buttonExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(68)))), ((int)(((byte)(80)))));
+            this.buttonExit.Font = new System.Drawing.Font("MS Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonExit.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.buttonExit.Location = new System.Drawing.Point(299, 248);
+            this.buttonExit.Name = "buttonExit";
+            this.buttonExit.Size = new System.Drawing.Size(133, 56);
+            this.buttonExit.TabIndex = 19;
+            this.buttonExit.Text = "Exit";
+            this.buttonExit.UseVisualStyleBackColor = false;
+            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
+            // 
             // TriviaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(78)))), ((int)(((byte)(91)))));
             this.ClientSize = new System.Drawing.Size(611, 318);
+            this.Controls.Add(this.buttonExit);
             this.Controls.Add(this.buttonSubmit);
             this.Controls.Add(this.radioButtonAnswer4);
             this.Controls.Add(this.radioButtonAnswer3);
             this.Controls.Add(this.radioButtonAnswer2);
             this.Controls.Add(this.radioButtonAnswer1);
             this.Controls.Add(this.labelQuestion);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "TriviaForm";
             this.Text = "Trivia";
             this.Load += new System.EventHandler(this.TriviaForm_Load);
@@ -141,5 +157,6 @@
         private System.Windows.Forms.RadioButton radioButtonAnswer3;
         private System.Windows.Forms.RadioButton radioButtonAnswer4;
         private System.Windows.Forms.Button buttonSubmit;
+        private System.Windows.Forms.Button buttonExit;
     }
 }

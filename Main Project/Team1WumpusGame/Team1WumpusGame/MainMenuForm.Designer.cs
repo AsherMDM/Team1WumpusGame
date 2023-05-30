@@ -191,6 +191,7 @@
             this.Controls.Add(this.buttonExitGame);
             this.Controls.Add(this.buttonStart);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MainMenuForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Hunt The Wumpus";

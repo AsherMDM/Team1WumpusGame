@@ -109,7 +109,9 @@ namespace Team1WumpusGame
         private void buttonExit_Click(object sender, EventArgs e)
         {
             // Closes down the form, takes you back to the main menu
-            Application.Exit();
+            this.Close();
+            MainMenuForm mainMenuForm = new MainMenuForm();
+            mainMenuForm.Show();
         }
 
         private void GameForm_Load(object sender, EventArgs e)
@@ -147,5 +149,6 @@ namespace Team1WumpusGame
             labelPitWarning.Visible = gameLocations.findAdjacentHazards(gameControl.passPossibleMoves(CaveSystemReturn()))[1];
             labelWumpusWarning.Visible = gameLocations.findAdjacentHazards(gameControl.passPossibleMoves(CaveSystemReturn()))[2];
         }
+
     }
 }
