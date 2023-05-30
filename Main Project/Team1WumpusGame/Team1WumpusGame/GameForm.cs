@@ -138,7 +138,6 @@ namespace Team1WumpusGame
             labelRoom1.Text = possiblemoves[0].ToString();
             labelRoom2.Text = possiblemoves[1].ToString();
             labelRoom3.Text = possiblemoves[2].ToString();
-            
 
             gameLocations.GenerateBatLocations();
             gameLocations.GeneratePitLocations();
