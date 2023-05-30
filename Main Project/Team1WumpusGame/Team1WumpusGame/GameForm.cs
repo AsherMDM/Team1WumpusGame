@@ -12,14 +12,16 @@ namespace Team1WumpusGame
 {
     public partial class GameForm : Form
     {
+        // Create instances of classes
         private readonly GameControl gameControl;
         Player player = new Player();
         GameLocations gameLocations = new GameLocations();
         
-        public GameForm()//GameControl gameControl)
+        public GameForm()
         {
             this.gameControl = new GameControl();
             InitializeComponent();
+            // Display current coins
             labelCoins.Text = gameControl.passInventory()[1].ToString();
         }
 
@@ -32,21 +34,25 @@ namespace Team1WumpusGame
         }
         private void pictureBoxExit_Click(object sender, EventArgs e)
         {
+            // Close this form and return back to the main menu
             this.Close();
         }
 
         private void pictureBoxMoveRoom1_Click(object sender, EventArgs e)
         {
+            // move player to new cave
             this.gameControl.passNewLocation(int.Parse(labelRoom1.Text));
         }
 
         private void pictureBoxMoveRoom2_Click(object sender, EventArgs e)
         {
+            // move player to new cave
             this.gameControl.passNewLocation(int.Parse(labelRoom2.Text));
         }
 
         private void pictureBoxMoveRoom3_Click(object sender, EventArgs e)
         {
+            // move player to new cave
             this.gameControl.passNewLocation(int.Parse(labelRoom3.Text));
         }
 
@@ -61,7 +67,7 @@ namespace Team1WumpusGame
 
         private void pictureBoxShootArrows_Click(object sender, EventArgs e)
         {
-            
+            // Shoot the arrow into the user-input location from textbox
             int[] adjacentCaves = gameControl.passPossibleMoves(CaveSystemReturn());
             try
             {
@@ -73,10 +79,12 @@ namespace Team1WumpusGame
                 }
                 else if (gameControl.ShootArrow(int.Parse(textBoxShootArrowLocation.Text), adjacentCaves, gameControl.passWumpusLocation()) == 0)
                 {
+                    // Missed the wumpus
                     MessageBox.Show("You Missed!");
                 }
                 else if (gameControl.ShootArrow(int.Parse(textBoxShootArrowLocation.Text), adjacentCaves, gameControl.passWumpusLocation()) == 2)
                 {
+                    // If shot in invalid location
                     MessageBox.Show("You Can't Shoot There!");
                 }
                 else
@@ -86,25 +94,30 @@ namespace Team1WumpusGame
             }
             catch
             {
-                MessageBox.Show("No");
+                // If shot in invalid location
+                MessageBox.Show("You Can't Shoot There!");
             }
             
         }
 
         private void pictureBoxBuyArrows_Click(object sender, EventArgs e)
         {
+            // Open shop form to buy arrows
             ShopForm shop = new ShopForm();
             shop.ShowDialog();
         }
 
         private void buttonExit_Click(object sender, EventArgs e)
         {
+            // Closes down the form, takes you back to the main menu
             Application.Exit();
         }
 
         private void GameForm_Load(object sender, EventArgs e)
         {
+            // Get possible moves for current cave
             int[] possiblemoves = gameControl.passPossibleMoves(CaveSystemReturn());
+            // Display possible moves to label
             labelRoom1.Text = possiblemoves[0].ToString();
             labelRoom2.Text = possiblemoves[1].ToString();
             try
@@ -116,10 +129,12 @@ namespace Team1WumpusGame
                 labelRoom3.Text = "error";
             }
 
+            // Generate danger locations
             gameLocations.GenerateBatLocations();
             gameLocations.GeneratePitLocations();
             gameLocations.GenerateWumpusLocation();
 
+            // Generate warnings based on generated danger locations
             labelBatWarning.Visible = gameLocations.findAdjacentHazards(gameControl.passPossibleMoves(CaveSystemReturn()))[0];
             labelPitWarning.Visible = gameLocations.findAdjacentHazards(gameControl.passPossibleMoves(CaveSystemReturn()))[1];
             labelWumpusWarning.Visible = gameLocations.findAdjacentHazards(gameControl.passPossibleMoves(CaveSystemReturn()))[2];

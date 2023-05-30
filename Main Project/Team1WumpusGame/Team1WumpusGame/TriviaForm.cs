@@ -22,11 +22,7 @@ namespace Team1WumpusGame
         {
             InitializeComponent();
 
-            //labelQuestion.Text = bob.Ques;
-            //labelAnswerA.Text = bob.Answer1;
-            //labelAnswerB.Text = bob.Answer2;
-            //labelAnswerC.Text = bob.Answer3;
-            //labelAnswerD.Text = bob.Answer4;
+            
         }
 
         private void TriviaForm_Load(object sender, EventArgs e)
@@ -80,26 +76,33 @@ namespace Team1WumpusGame
         private void button1_Click(object sender, EventArgs e)
         {
 
+            
+            
+        }
+
+        private void buttonSubmit_Click(object sender, EventArgs e)
+        {
+
             counter++;
             if (radioButtonAnswer1.Checked && radioButtonAnswer1.Text == bob.CorrectAnswer)
             {
                 correctAnswers++;
-                
+
             }
             else if (radioButtonAnswer2.Checked && radioButtonAnswer2.Text == bob.CorrectAnswer)
             {
                 correctAnswers++;
-                
+
             }
             else if (radioButtonAnswer3.Checked && radioButtonAnswer3.Text == bob.CorrectAnswer)
             {
                 correctAnswers++;
-                
+
             }
             else if (radioButtonAnswer4.Checked && radioButtonAnswer4.Text == bob.CorrectAnswer)
             {
                 correctAnswers++;
-                
+
             }
 
             if (limitChecker() == 2)
@@ -116,7 +119,6 @@ namespace Team1WumpusGame
             }
 
             generateQuestion();
-            
         }
     }
 }
