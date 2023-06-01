@@ -176,6 +176,7 @@
             this.labelPitWarning.Size = new System.Drawing.Size(105, 13);
             this.labelPitWarning.TabIndex = 12;
             this.labelPitWarning.Text = "I feel a draft";
+            this.labelPitWarning.Click += new System.EventHandler(this.labelPitWarning_Click);
             // 
             // labelWumpusWarning
             // 
@@ -210,6 +211,7 @@
             this.labelArrows.Size = new System.Drawing.Size(14, 13);
             this.labelArrows.TabIndex = 15;
             this.labelArrows.Text = "0";
+            this.labelArrows.Click += new System.EventHandler(this.labelArrows_Click);
             // 
             // labelCurrentRoom
             // 
