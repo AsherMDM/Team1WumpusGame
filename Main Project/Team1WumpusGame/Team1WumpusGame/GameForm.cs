@@ -40,19 +40,33 @@ namespace Team1WumpusGame
         private void pictureBoxMoveRoom1_Click(object sender, EventArgs e)
         {
             // move player to new cave
-            this.gameControl.passNewLocation(int.Parse(labelRoom1.Text));
+            int newMove = int.Parse(labelRoom1.Text);
+            this.gameControl.passNewLocation(newMove);
+            labelCurrentRoom.Text = newMove.ToString();
+            // add warnings and new moves
         }
 
         private void pictureBoxMoveRoom2_Click(object sender, EventArgs e)
         {
             // move player to new cave
-            this.gameControl.passNewLocation(int.Parse(labelRoom2.Text));
+            int newMove = int.Parse(labelRoom2.Text);
+            this.gameControl.passNewLocation(newMove);
+            labelCurrentRoom.Text = newMove.ToString();
         }
 
         private void pictureBoxMoveRoom3_Click(object sender, EventArgs e)
         {
             // move player to new cave
-            this.gameControl.passNewLocation(int.Parse(labelRoom3.Text));
+            try
+            {
+                int newMove = int.Parse(labelRoom3.Text);
+                this.gameControl.passNewLocation(newMove);
+                labelCurrentRoom.Text = newMove.ToString();
+            }
+            catch
+            {
+                //do nothing if there is no third cave
+            }
         }
 
 
