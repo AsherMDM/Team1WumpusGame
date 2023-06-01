@@ -43,8 +43,6 @@ namespace Team1WumpusGame
                 {
                     adjacentCave[index - 1].Add(int.Parse(data[i]));
                 }
-
-                //Console.WriteLine(data[0]);
                 input = sr.ReadLine();
             }
             sr.Close();
