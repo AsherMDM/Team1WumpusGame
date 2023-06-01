@@ -223,9 +223,38 @@ namespace Team1WumpusGame
             gameLocations.GeneratePitLocations();
             gameLocations.GenerateWumpusLocation();
 
-            labelBatWarning.Visible = gameLocations.findAdjacentHazards(gameControl.passPossibleMoves(CaveSystemReturn()))[0];
-            labelPitWarning.Visible = gameLocations.findAdjacentHazards(gameControl.passPossibleMoves(CaveSystemReturn()))[1];
-            labelWumpusWarning.Visible = gameLocations.findAdjacentHazards(gameControl.passPossibleMoves(CaveSystemReturn()))[2];
+            //labelBatWarning.Visible = gameLocations.findAdjacentHazards(gameControl.passPossibleMoves(CaveSystemReturn()))[0];
+            //labelPitWarning.Visible = gameLocations.findAdjacentHazards(gameControl.passPossibleMoves(CaveSystemReturn()))[1];
+            //labelWumpusWarning.Visible = gameLocations.findAdjacentHazards(gameControl.passPossibleMoves(CaveSystemReturn()))[2];
+
+            string filename = "5";
+            if (CaveSystemReturn() == 1)
+            {
+                filename = "";
+            }
+            else if (CaveSystemReturn() == 2)
+            {
+                filename = "2";
+            }
+            else if (CaveSystemReturn() == 3)
+            {
+                filename = "3";
+            }
+            else if (CaveSystemReturn() == 4)
+            {
+                filename = "4";
+            }
+            else if (CaveSystemReturn() == 5)
+            {
+                filename = "1";
+            }
+            labelWumpusWarning.Visible = (gameControl.passWumpusLocation() == gameControl.passAdjacentCaves(filename)[0] ||
+                gameControl.passWumpusLocation() == gameControl.passAdjacentCaves(filename)[1]);
+
+            labelPitWarning.Visible = (gameControl.passPitLocations() == gameControl.passAdjacentCaves(filename));
+
+            labelBatWarning.Visible = (gameControl.passBatLocations() == gameControl.passAdjacentCaves(filename));  
+
         }
 
         public bool areYouDead()
