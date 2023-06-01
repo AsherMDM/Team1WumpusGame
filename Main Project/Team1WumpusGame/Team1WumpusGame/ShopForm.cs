@@ -30,7 +30,17 @@ namespace Team1WumpusGame
         private void buttonBuyArrows_Click(object sender, EventArgs e)
         {
             // 
-            int newArrows = int.Parse(textBoxArrowsBought.Text);
+            int newArrows = 0;
+            try
+            {
+                newArrows = int.Parse(textBoxArrowsBought.Text);
+            }
+            catch
+            {
+                MessageBox.Show("invalid response", "error");
+                return;
+            }
+
             int price = -3 * newArrows;
             if(price > gameControl.passInventory()[1])
             {

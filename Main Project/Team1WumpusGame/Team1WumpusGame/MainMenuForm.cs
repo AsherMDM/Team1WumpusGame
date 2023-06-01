@@ -35,5 +35,6 @@ namespace Team1WumpusGame
         {
             Application.Exit();
         }
+
     }
 }
