@@ -147,6 +147,7 @@
             // textBoxArrowsBought
             // 
             this.textBoxArrowsBought.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textBoxArrowsBought.ForeColor = System.Drawing.SystemColors.Window;
             this.textBoxArrowsBought.Location = new System.Drawing.Point(29, 222);
             this.textBoxArrowsBought.Name = "textBoxArrowsBought";
             this.textBoxArrowsBought.Size = new System.Drawing.Size(100, 20);
@@ -195,7 +196,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("MS Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label7.Location = new System.Drawing.Point(371, 67);
+            this.label7.Location = new System.Drawing.Point(401, 67);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(87, 16);
             this.label7.TabIndex = 13;
@@ -256,6 +257,7 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ShopForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Shop";
             this.Load += new System.EventHandler(this.ShopForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

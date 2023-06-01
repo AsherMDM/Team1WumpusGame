@@ -13,7 +13,7 @@ namespace Team1WumpusGame
         Player player = new Player();
         GameLocations gameLocations = new GameLocations();
         Cave cave = new Cave();
-        int caveSystem;
+        // int caveSystem;
 
         
         public List<Question> createQuestion()

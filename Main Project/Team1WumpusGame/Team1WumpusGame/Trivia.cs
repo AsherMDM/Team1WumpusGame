@@ -14,13 +14,8 @@ namespace Team1WumpusGame
         public Trivia()
         {
 
-
-            //for(int i = 0; i <= 30; i++)
-            //{
             ReadFromFile();
-            //}  
-
-            //What is the chemical formula for Carbonic Acid?, A. A, B.Y2, C.H2CO3, D.A ", "C" },);
+            
         }
 
         private void ReadFromFile()
