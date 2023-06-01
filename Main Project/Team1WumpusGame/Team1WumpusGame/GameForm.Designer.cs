@@ -164,6 +164,7 @@
             this.labelBatWarning.Size = new System.Drawing.Size(119, 13);
             this.labelBatWarning.TabIndex = 11;
             this.labelBatWarning.Text = "I hear something";
+            this.labelBatWarning.Click += new System.EventHandler(this.labelBatWarning_Click);
             // 
             // labelPitWarning
             // 
@@ -186,6 +187,7 @@
             this.labelWumpusWarning.Size = new System.Drawing.Size(119, 13);
             this.labelWumpusWarning.TabIndex = 13;
             this.labelWumpusWarning.Text = "I smell a wumpus";
+            this.labelWumpusWarning.Click += new System.EventHandler(this.labelWumpusWarning_Click);
             // 
             // labelCoins
             // 

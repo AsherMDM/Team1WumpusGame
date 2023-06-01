@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Reflection.Emit;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -40,34 +41,19 @@ namespace Team1WumpusGame
 
         private void pictureBoxMoveRoom1_Click(object sender, EventArgs e)
         {
-            // move player to new cave
-            int newMove = int.Parse(labelRoom1.Text);
-            this.gameControl.passNewLocation(newMove);
-            labelCurrentRoom.Text = newMove.ToString();
-            // add warnings and new moves
+
+            this.gameControl.passNewLocation(int.Parse(labelRoom1.Text));
+
         }
 
         private void pictureBoxMoveRoom2_Click(object sender, EventArgs e)
         {
-            // move player to new cave
-            int newMove = int.Parse(labelRoom2.Text);
-            this.gameControl.passNewLocation(newMove);
-            labelCurrentRoom.Text = newMove.ToString();
+            this.gameControl.passNewLocation(int.Parse(labelRoom2.Text));
         }
 
         private void pictureBoxMoveRoom3_Click(object sender, EventArgs e)
-        {
-            // move player to new cave
-            try
-            {
-                int newMove = int.Parse(labelRoom3.Text);
-                this.gameControl.passNewLocation(newMove);
-                labelCurrentRoom.Text = newMove.ToString();
-            }
-            catch
-            {
-                //do nothing if there is no third cave
-            }
+        { 
+            this.gameControl.passNewLocation(int.Parse(labelRoom3.Text));
         }
 
 
@@ -165,10 +151,10 @@ namespace Team1WumpusGame
             labelWumpusWarning.Visible = gameLocations.findAdjacentHazards(gameControl.passPossibleMoves(CaveSystemReturn()))[2];
         }
 
-        public void areYouDead()
+        public bool areYouDead()
         {
             this.gameControl.passNewLocation(int.Parse(labelRoom1.Text));
-            string filename;
+            string filename = "5";
             if(CaveSystemReturn() == 1)
             {
                 filename = "";
@@ -185,17 +171,46 @@ namespace Team1WumpusGame
             {
                 filename = "4";
             }
-            else if (CaveSystemReturn() == 1)
+            else if (CaveSystemReturn() == 5)
             {
                 filename = "1";
             }
-            //if (gameControl.passWumpusLocation() == gameLocations.findAdjacentHazards())
-            //{
 
-            //}
 
-            //figure that out too
+
+            if (gameControl.passWumpusLocation() == gameControl.passAdjacentCaves(filename)[0]|| 
+                gameControl.passWumpusLocation() == gameControl.passAdjacentCaves(filename)[1])
+            {
+                if(gameControl.passPlayerLocation() == gameControl.passWumpusLocation())
+                {
+                    return true;
+                }
+            }
+
+            
+            if(gameControl.passPitLocations() == gameControl.passAdjacentCaves(filename))
+            {
+                foreach (int pit in gameControl.passPitLocations())
+                {
+                    if(pit == gameControl.passPlayerLocation())
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
+
+
         }
 
+        private void labelBatWarning_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelWumpusWarning_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
