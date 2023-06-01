@@ -26,6 +26,7 @@ namespace Team1WumpusGame
             InitializeComponent();
             // Display current coins
             labelCoins.Text = gameControl.passInventory()[1].ToString();
+            labelArrows.Text = gameControl.passInventory()[0].ToString();
         }
 
         public int CaveSystemReturn()
@@ -43,8 +44,28 @@ namespace Team1WumpusGame
             // move player to new cave
             int newMove = int.Parse(labelRoom1.Text);
             this.gameControl.passNewLocation(newMove);
+
+            // update current room
             labelCurrentRoom.Text = newMove.ToString();
-            // add warnings and new moves
+
+            // update the new moves
+            int[] possMoves = this.gameControl.passPossibleMoves(newMove);
+            labelRoom1.Text = possMoves[0].ToString();
+            labelRoom2.Text = possMoves[1].ToString();
+            try
+            {
+                labelRoom3.Text = possMoves[2].ToString();
+            }
+            catch
+            {
+                // if there is no third move possible blank out the label
+                labelRoom3.Text = "";
+            }
+
+            // update coins
+            int newCoins = 1;
+            labelCoins.Text = this.gameControl.AddCoins(newCoins).ToString();
+
         }
 
         private void pictureBoxMoveRoom2_Click(object sender, EventArgs e)
@@ -52,7 +73,28 @@ namespace Team1WumpusGame
             // move player to new cave
             int newMove = int.Parse(labelRoom2.Text);
             this.gameControl.passNewLocation(newMove);
+
+            // update current room
             labelCurrentRoom.Text = newMove.ToString();
+
+            //update possible moves
+            int[] possMoves = this.gameControl.passPossibleMoves(newMove);
+            labelRoom1.Text = possMoves[0].ToString();
+            labelRoom2.Text = possMoves[1].ToString();
+            try
+            {
+                labelRoom3.Text = possMoves[2].ToString();
+            }
+            catch
+            {
+                // if there is no third move possible blank out the label
+                labelRoom3.Text = "";
+            }
+
+            // update coins
+            int newCoins = 1;
+            labelCoins.Text = this.gameControl.AddCoins(newCoins).ToString();
+
         }
 
         private void pictureBoxMoveRoom3_Click(object sender, EventArgs e)
@@ -62,7 +104,27 @@ namespace Team1WumpusGame
             {
                 int newMove = int.Parse(labelRoom3.Text);
                 this.gameControl.passNewLocation(newMove);
+
+                // update current room
                 labelCurrentRoom.Text = newMove.ToString();
+
+                // update possible moves
+                int[] possMoves = this.gameControl.passPossibleMoves(newMove);
+                labelRoom1.Text = possMoves[0].ToString();
+                labelRoom2.Text = possMoves[1].ToString();
+                try
+                {
+                    labelRoom3.Text = possMoves[2].ToString();
+                }
+                catch
+                {
+                    // if there is no third move possible blank out the label
+                    labelRoom3.Text = "";
+                }
+
+                // update coins
+                int newCoins = 1;
+                labelCoins.Text = this.gameControl.AddCoins(newCoins).ToString();
             }
             catch
             {
