@@ -142,6 +142,7 @@
             this.Controls.Add(this.labelQuestion);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "TriviaForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Trivia";
             this.Load += new System.EventHandler(this.TriviaForm_Load);
             this.ResumeLayout(false);

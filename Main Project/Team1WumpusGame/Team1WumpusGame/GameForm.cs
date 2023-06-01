@@ -20,6 +20,7 @@ namespace Team1WumpusGame
         GameLocations gameLocations = new GameLocations();
 
         int cavesystem;
+
         public GameForm(int cs)//GameControl gameControl)
         {
             this.gameControl = new GameControl();
@@ -71,6 +72,7 @@ namespace Team1WumpusGame
         {
             return cavesystem;
         }
+
         private void pictureBoxExit_Click(object sender, EventArgs e)
         {
             // Close this form and return back to the main menu
@@ -227,6 +229,8 @@ namespace Team1WumpusGame
             // Open shop form to buy arrows
             ShopForm shop = new ShopForm();
             shop.ShowDialog();
+            labelCoins.Text = this.gameControl.passInventory()[1].ToString();
+            labelArrows.Text = this.gameControl.passInventory()[0].ToString();
         }
 
         private void buttonExit_Click(object sender, EventArgs e)
@@ -297,7 +301,6 @@ namespace Team1WumpusGame
             {
                 filename = "1";
             }
-
 
 
             if (gameControl.passWumpusLocation() == gameControl.passAdjacentCaves(filename)[0]|| 

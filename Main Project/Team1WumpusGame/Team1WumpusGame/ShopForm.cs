@@ -25,26 +25,30 @@ namespace Team1WumpusGame
         private void buttonExit_Click(object sender, EventArgs e)
         {
             this.Close();
+
         }
 
         private void buttonBuyArrows_Click(object sender, EventArgs e)
         {
-            // 
+            // buy arrows method
+
             int newArrows = 0;
+
             try
             {
+                // see how many arrows user wants
                 newArrows = int.Parse(textBoxArrowsBought.Text);
             }
             catch
             {
-                MessageBox.Show("invalid response", "error");
+                MessageBox.Show("Invalid response", "Error");
                 return;
             }
 
             int price = -3 * newArrows;
-            if(price > gameControl.passInventory()[1])
+            if( Math.Abs(price) > gameControl.passInventory()[1])
             {
-                MessageBox.Show("You do not have enough coins to buy that many arrows.");
+                MessageBox.Show("You do not have enough coins to buy that many arrows.", "Sorry...");
             }
             else
             {
@@ -53,11 +57,26 @@ namespace Team1WumpusGame
                 TriviaForm triviaForm = new TriviaForm();
                 triviaForm.Show();
             }
+
+            labelCoins.Text = gameControl.passInventory()[1].ToString();
+            labelArrows.Text = gameControl.passInventory()[0].ToString();
         }
 
         private void textBoxArrowsBought_TextChanged(object sender, EventArgs e)
         {
-
+            // display coin cost to label
+            try
+            {
+                int newArrows = int.Parse(textBoxArrowsBought.Text);
+                int price = 3 * newArrows;
+                labelCoinCost.Text = price.ToString();
+            }
+            catch
+            {
+                // if there is nothing valid in the textbox display a price of 0 coins
+                labelCoinCost.Text = "0";
+            }
+           
         }
 
         private void labelCoins_Click(object sender, EventArgs e)
