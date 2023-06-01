@@ -28,7 +28,7 @@ namespace Team1WumpusGame
 
         private void buttonCredits_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Game made by Team 'Won'\nMonica, Adeline, Asher, and Rayan\nSpecial thanks to Mr. Donnelly!", "Credits");
+            MessageBox.Show("Game made by Team 'Won'\nMonica, Adeline, Asher, and Rayan\nThanks to Mr.Donnelly for saving our mental state (barely)", "Credits");
         }
 
         private void buttonExitGame_Click(object sender, EventArgs e)
