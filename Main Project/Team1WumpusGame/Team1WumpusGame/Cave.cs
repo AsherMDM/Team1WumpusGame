@@ -50,8 +50,7 @@ namespace Team1WumpusGame
         }
         public List<int> get_possible_moves(int currentRoom, int caveNum)
         {
-            //MessageBox.Show(caveNum.ToString(), "Alert");
-
+            
             // find adjacent rooms for currentRoom 
             List<int> possibleMoves;
             List<int>[] adjacentCave;

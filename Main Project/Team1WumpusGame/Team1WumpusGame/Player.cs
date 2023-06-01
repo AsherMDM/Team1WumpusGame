@@ -13,21 +13,24 @@ namespace Team1WumpusGame
 
         }
 
-        //   arrows coins
+        //   arrows & coins inventory
         int[] inventory = { 3, 10 };
         int turnAmount = 0;
         int playerLocation = 1;
 
+        // get inventory method
         public int[] GetInventory()
         {
             return inventory;
         }
 
+        // updates the arrow amount
         public void UpdateArrowAmount(int update)
         {
             inventory[0] += update;
         }
 
+        // updates the coin amount
         public void UpdateCoinAmount(int update)
         {
             inventory[1] += update;
