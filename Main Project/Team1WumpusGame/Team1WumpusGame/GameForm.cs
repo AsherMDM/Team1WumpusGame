@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -162,6 +163,38 @@ namespace Team1WumpusGame
             labelBatWarning.Visible = gameLocations.findAdjacentHazards(gameControl.passPossibleMoves(CaveSystemReturn()))[0];
             labelPitWarning.Visible = gameLocations.findAdjacentHazards(gameControl.passPossibleMoves(CaveSystemReturn()))[1];
             labelWumpusWarning.Visible = gameLocations.findAdjacentHazards(gameControl.passPossibleMoves(CaveSystemReturn()))[2];
+        }
+
+        public void areYouDead()
+        {
+            this.gameControl.passNewLocation(int.Parse(labelRoom1.Text));
+            string filename;
+            if(CaveSystemReturn() == 1)
+            {
+                filename = "";
+            }
+            else if(CaveSystemReturn() == 2)
+            {
+                filename = "2";
+            }
+            else if (CaveSystemReturn() == 3)
+            {
+                filename = "3";
+            }
+            else if (CaveSystemReturn() == 4)
+            {
+                filename = "4";
+            }
+            else if (CaveSystemReturn() == 1)
+            {
+                filename = "1";
+            }
+            //if (gameControl.passWumpusLocation() == gameLocations.findAdjacentHazards())
+            //{
+
+            //}
+
+            //figure that out too
         }
 
     }

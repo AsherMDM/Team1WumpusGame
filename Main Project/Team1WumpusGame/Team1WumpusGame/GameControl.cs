@@ -13,7 +13,8 @@ namespace Team1WumpusGame
         Player player = new Player();
         GameLocations gameLocations = new GameLocations();
         Cave cave = new Cave();
-        
+        int caveSystem;
+
         
         public List<Question> createQuestion()
         {
@@ -84,6 +85,14 @@ namespace Team1WumpusGame
         public int ShootArrow(int location, int[] adjacentCaves, int WumpusLoc )
         {
             return player.ShootArrow(location,adjacentCaves,WumpusLoc);
+        }
+
+        public void passAdjacentCaves(int cs)
+        {
+            //List<int>[] adjacentCaves = cave.ReadFromFileCave("MapOfCave" + cs.ToString() + ".txt" );
+            //return { 5, 3};
+
+            // figure this out
         }
     }
 }
