@@ -87,12 +87,9 @@ namespace Team1WumpusGame
             return player.ShootArrow(location,adjacentCaves,WumpusLoc);
         }
 
-        public void passAdjacentCaves(int cs)
+        public int[] passAdjacentCaves(string cs)
         {
-            //List<int>[] adjacentCaves = cave.ReadFromFileCave("MapOfCave" + cs.ToString() + ".txt" );
-            //return { 5, 3};
-
-            // figure this out
+            return cave.ReadFromFileCave("MapOfCave" + cs + ".txt")[int.Parse(cs)].ToArray();
         }
     }
 }
