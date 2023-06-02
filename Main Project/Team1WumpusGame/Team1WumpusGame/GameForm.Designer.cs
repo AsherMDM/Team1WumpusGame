@@ -418,7 +418,6 @@
             this.Name = "GameForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Hunt The Wumpus";
-            this.Activated += new System.EventHandler(this.GameForm_Activated);
             this.Load += new System.EventHandler(this.GameForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

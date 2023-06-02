@@ -35,27 +35,29 @@ namespace Team1WumpusGame
         private void ShowHazards()
         {
             string filename = "";
-            if (CaveSystemReturn() == 1)
+            if (cavesystem == 1)
             {
                 filename = "";
             }
-            else if (CaveSystemReturn() == 2)
+            else if (cavesystem == 2)
             {
                 filename = "2";
             }
-            else if (CaveSystemReturn() == 3)
+            else if (cavesystem == 3)
             {
                 filename = "3";
             }
-            else if (CaveSystemReturn() == 4)
+            else if (cavesystem == 4)
             {
                 filename = "4";
             }
-            else if (CaveSystemReturn() == 5)
+            else if (cavesystem == 5)
             {
                 filename = "5";
             }
-            labelWumpusWarning.Visible = (gameControl.passWumpusLocation() == gameControl.passAdjacentCaves(filename)[0]);
+            labelWumpusWarning.Visible = (gameControl.passWumpusLocation() == gameControl.passAdjacentCaves(filename)[0] || 
+                gameControl.passWumpusLocation() == gameControl.passAdjacentCaves(filename)[1] ||
+                gameControl.passWumpusLocation() == gameControl.passAdjacentCaves(filename)[2]);
 
             labelPitWarning.Visible = (gameControl.passPitLocations() == gameControl.passAdjacentCaves(filename));
 
@@ -104,7 +106,6 @@ namespace Team1WumpusGame
             // update coins
             int newCoins = 1;
             labelCoins.Text = this.gameControl.AddCoins(newCoins).ToString();
-
             ShowHazards();
 
         }
@@ -235,7 +236,7 @@ namespace Team1WumpusGame
 
         private void buttonExit_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Are you sure you want to quit?", "", MessageBoxButtons.YesNo);
+            DialogResult result = MessageBox.Show("Are you sure you want to quit?", ".", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
                 // Closes down the form, takes you back to the main menu
@@ -389,12 +390,6 @@ namespace Team1WumpusGame
         private void labelArrows_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void GameForm_Activated(object sender, EventArgs e)
-        {
-            labelCoins.Text = gameControl.passInventory()[1].ToString();
-            labelArrows.Text = gameControl.passInventory()[0].ToString();
         }
     }
 }
