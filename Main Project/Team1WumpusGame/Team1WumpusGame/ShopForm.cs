@@ -19,6 +19,8 @@ namespace Team1WumpusGame
         public ShopForm()
         {
             InitializeComponent();
+            labelArrows.Text = gameControl.passInventory()[0].ToString();
+            labelCoins.Text = gameControl.passInventory()[1].ToString();
             
         }
 
