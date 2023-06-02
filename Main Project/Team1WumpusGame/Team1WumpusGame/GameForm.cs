@@ -53,10 +53,9 @@ namespace Team1WumpusGame
             }
             else if (CaveSystemReturn() == 5)
             {
-                filename = "1";
+                filename = "5";
             }
-            labelWumpusWarning.Visible = (gameControl.passWumpusLocation() == gameControl.passAdjacentCaves(filename)[0] ||
-                gameControl.passWumpusLocation() == gameControl.passAdjacentCaves(filename)[1]);
+            labelWumpusWarning.Visible = (gameControl.passWumpusLocation() == gameControl.passAdjacentCaves(filename)[0]);
 
             labelPitWarning.Visible = (gameControl.passPitLocations() == gameControl.passAdjacentCaves(filename));
 
