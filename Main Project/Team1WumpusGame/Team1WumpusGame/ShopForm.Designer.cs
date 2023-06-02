@@ -93,7 +93,6 @@
             this.labelCoins.Size = new System.Drawing.Size(21, 21);
             this.labelCoins.TabIndex = 3;
             this.labelCoins.Text = "0";
-            this.labelCoins.Click += new System.EventHandler(this.labelCoins_Click);
             // 
             // labelArrows
             // 
@@ -259,7 +258,8 @@
             this.Name = "ShopForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Shop";
-            this.Load += new System.EventHandler(this.ShopForm_Load);
+            this.Activated += new System.EventHandler(this.ShopForm_Activated);
+            this.Leave += new System.EventHandler(this.ShopForm_Leave);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();

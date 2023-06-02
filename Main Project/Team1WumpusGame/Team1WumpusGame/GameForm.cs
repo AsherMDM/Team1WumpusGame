@@ -104,6 +104,7 @@ namespace Team1WumpusGame
             // update coins
             int newCoins = 1;
             labelCoins.Text = this.gameControl.AddCoins(newCoins).ToString();
+
             ShowHazards();
 
         }
@@ -234,7 +235,7 @@ namespace Team1WumpusGame
 
         private void buttonExit_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Are you sure you want to quit?", ".", MessageBoxButtons.YesNo);
+            DialogResult result = MessageBox.Show("Are you sure you want to quit?", "", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
                 // Closes down the form, takes you back to the main menu
@@ -388,6 +389,12 @@ namespace Team1WumpusGame
         private void labelArrows_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void GameForm_Activated(object sender, EventArgs e)
+        {
+            labelCoins.Text = gameControl.passInventory()[1].ToString();
+            labelArrows.Text = gameControl.passInventory()[0].ToString();
         }
     }
 }

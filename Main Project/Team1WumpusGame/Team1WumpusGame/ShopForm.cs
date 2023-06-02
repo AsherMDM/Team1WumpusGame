@@ -80,17 +80,15 @@ namespace Team1WumpusGame
            
         }
 
-        private void labelCoins_Click(object sender, EventArgs e)
+        private void ShopForm_Leave(object sender, EventArgs e)
         {
 
         }
 
-        private void ShopForm_Load(object sender, EventArgs e)
+        private void ShopForm_Activated(object sender, EventArgs e)
         {
-
             labelCoins.Text = gameControl.passInventory()[1].ToString();
             labelArrows.Text = gameControl.passInventory()[0].ToString();
-            
         }
     }
 }
