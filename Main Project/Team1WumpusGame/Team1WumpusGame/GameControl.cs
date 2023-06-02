@@ -90,6 +90,7 @@ namespace Team1WumpusGame
         public int[] passAdjacentCaves(string cs)
         {
             return cave.ReadFromFileCave("MapOfCave" + cs + ".txt")[int.Parse(cs)].ToArray();
+            
         }
     }
 }
