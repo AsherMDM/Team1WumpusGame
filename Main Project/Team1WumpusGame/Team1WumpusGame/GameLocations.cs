@@ -66,7 +66,6 @@ namespace Team1WumpusGame
         {
             bool[] warnings = new bool[3] { false, false, false };
 
-
             foreach (int cave in adjacentCaves)
             {
                 foreach (int caveBat in batLocations)

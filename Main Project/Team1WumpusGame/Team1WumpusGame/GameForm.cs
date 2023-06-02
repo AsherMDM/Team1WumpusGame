@@ -235,10 +235,21 @@ namespace Team1WumpusGame
 
         private void buttonExit_Click(object sender, EventArgs e)
         {
-            // Closes down the form, takes you back to the main menu
-            this.Close();
-            MainMenuForm mainMenuForm = new MainMenuForm();
-            mainMenuForm.Show();
+            DialogResult result = MessageBox.Show("Are you sure you want to quit?", ".", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                // Closes down the form, takes you back to the main menu
+                this.Close();
+
+                MainMenuForm mainMenuForm = new MainMenuForm();
+                mainMenuForm.Show();
+            }
+            else
+            {
+
+                // brings you back to game form
+            }
+
         }
 
         private void GameForm_Load(object sender, EventArgs e)

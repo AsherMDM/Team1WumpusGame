@@ -54,6 +54,7 @@ namespace Team1WumpusGame
             {
                 gameControl.AddCoins(price);
                 gameControl.AddArrows(newArrows);
+                
                 TriviaForm triviaForm = new TriviaForm();
                 triviaForm.Show();
             }
