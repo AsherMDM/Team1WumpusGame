@@ -106,6 +106,11 @@ namespace Team1WumpusGame
             // update coins
             int newCoins = 1;
             labelCoins.Text = this.gameControl.AddCoins(newCoins).ToString();
+<<<<<<< HEAD
+=======
+            UpdateInventory();
+
+>>>>>>> 2f4fc1cd4104937834a80378bf6200c566c18498
             ShowHazards();
 
         }
@@ -189,38 +194,47 @@ namespace Team1WumpusGame
         {
             // Shoot the arrow into the user-input location from textbox
             int[] adjacentCaves = gameControl.passPossibleMoves(CaveSystemReturn());
-            try
+            
+            // check to see there are a valid amount of arrows first
+            if (gameControl.passInventory()[0] > 0)
             {
-                if (gameControl.ShootArrow(int.Parse(textBoxShootArrowLocation.Text), adjacentCaves, gameControl.passWumpusLocation()) == 1)
+                try
                 {
-                    //Win
-                    player.CalculateScore(true);
-                    MessageBox.Show("You Win!");
-                    player.UpdateArrowAmount(-1);
-                    UpdateInventory();
-                    
+                    if (gameControl.ShootArrow(int.Parse(textBoxShootArrowLocation.Text), adjacentCaves, gameControl.passWumpusLocation()) == 1)
+                    {
+                        //Win
+                        player.CalculateScore(true);
+                        MessageBox.Show("You Win!");
+                        
+                        UpdateInventory();
+
+                    }
+                    else if (gameControl.ShootArrow(int.Parse(textBoxShootArrowLocation.Text), adjacentCaves, gameControl.passWumpusLocation()) == 0)
+                    {
+                        // Missed the wumpus
+                        MessageBox.Show("You Missed!");
+                        
+                        UpdateInventory();
+                    }
+                    else if (gameControl.ShootArrow(int.Parse(textBoxShootArrowLocation.Text), adjacentCaves, gameControl.passWumpusLocation()) == 2)
+                    {
+                        // If shot in invalid location
+                        MessageBox.Show("You Can't Shoot There!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("BIG ERROR");
+                    }
                 }
-                else if (gameControl.ShootArrow(int.Parse(textBoxShootArrowLocation.Text), adjacentCaves, gameControl.passWumpusLocation()) == 0)
-                {
-                    // Missed the wumpus
-                    MessageBox.Show("You Missed!");
-                    player.UpdateArrowAmount(-1);
-                    UpdateInventory();
-                }
-                else if (gameControl.ShootArrow(int.Parse(textBoxShootArrowLocation.Text), adjacentCaves, gameControl.passWumpusLocation()) == 2)
+                catch
                 {
                     // If shot in invalid location
                     MessageBox.Show("You Can't Shoot There!");
                 }
-                else
-                {
-                    MessageBox.Show("BIG ERROR");
-                }
             }
-            catch
+            else
             {
-                // If shot in invalid location
-                MessageBox.Show("You Can't Shoot There!");
+                MessageBox.Show("You don't have enough arrows for that!");
             }
             
         }
