@@ -37,7 +37,7 @@ namespace Team1WumpusGame
             string filename = "";
             if (cavesystem == 1)
             {
-                filename = "";
+                filename = "1";
             }
             else if (cavesystem == 2)
             {
@@ -106,11 +106,8 @@ namespace Team1WumpusGame
             // update coins
             int newCoins = 1;
             labelCoins.Text = this.gameControl.AddCoins(newCoins).ToString();
-<<<<<<< HEAD
-=======
             UpdateInventory();
 
->>>>>>> 2f4fc1cd4104937834a80378bf6200c566c18498
             ShowHazards();
 
         }
