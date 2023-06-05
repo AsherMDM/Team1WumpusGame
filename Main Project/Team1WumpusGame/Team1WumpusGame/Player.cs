@@ -11,7 +11,7 @@ namespace Team1WumpusGame
     {
         public Player()
         {
-
+            //this game sucks
         }
 
         // starting arrows & coins inventory
