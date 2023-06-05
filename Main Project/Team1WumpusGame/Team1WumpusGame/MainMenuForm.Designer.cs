@@ -109,9 +109,9 @@
             this.labelHighScoreName1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.labelHighScoreName1.Location = new System.Drawing.Point(369, 177);
             this.labelHighScoreName1.Name = "labelHighScoreName1";
-            this.labelHighScoreName1.Size = new System.Drawing.Size(31, 16);
+            this.labelHighScoreName1.Size = new System.Drawing.Size(47, 16);
             this.labelHighScoreName1.TabIndex = 6;
-            this.labelHighScoreName1.Text = "AAA";
+            this.labelHighScoreName1.Text = "Rayan";
             // 
             // labelHighScoreName2
             // 
@@ -121,9 +121,9 @@
             this.labelHighScoreName2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.labelHighScoreName2.Location = new System.Drawing.Point(369, 202);
             this.labelHighScoreName2.Name = "labelHighScoreName2";
-            this.labelHighScoreName2.Size = new System.Drawing.Size(31, 16);
+            this.labelHighScoreName2.Size = new System.Drawing.Size(63, 16);
             this.labelHighScoreName2.TabIndex = 7;
-            this.labelHighScoreName2.Text = "AAA";
+            this.labelHighScoreName2.Text = "Adeline";
             // 
             // labelHighScoreName3
             // 
@@ -133,9 +133,9 @@
             this.labelHighScoreName3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.labelHighScoreName3.Location = new System.Drawing.Point(369, 227);
             this.labelHighScoreName3.Name = "labelHighScoreName3";
-            this.labelHighScoreName3.Size = new System.Drawing.Size(31, 16);
+            this.labelHighScoreName3.Size = new System.Drawing.Size(55, 16);
             this.labelHighScoreName3.TabIndex = 8;
-            this.labelHighScoreName3.Text = "AAA";
+            this.labelHighScoreName3.Text = "Monica";
             // 
             // labelHighScore1
             // 
@@ -145,9 +145,9 @@
             this.labelHighScore1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.labelHighScore1.Location = new System.Drawing.Point(466, 177);
             this.labelHighScore1.Name = "labelHighScore1";
-            this.labelHighScore1.Size = new System.Drawing.Size(31, 16);
+            this.labelHighScore1.Size = new System.Drawing.Size(39, 16);
             this.labelHighScore1.TabIndex = 9;
-            this.labelHighScore1.Text = "000";
+            this.labelHighScore1.Text = "1100";
             // 
             // labelHighScore2
             // 
@@ -159,7 +159,7 @@
             this.labelHighScore2.Name = "labelHighScore2";
             this.labelHighScore2.Size = new System.Drawing.Size(31, 16);
             this.labelHighScore2.TabIndex = 10;
-            this.labelHighScore2.Text = "000";
+            this.labelHighScore2.Text = "923";
             // 
             // labelHighScore3
             // 
@@ -171,7 +171,7 @@
             this.labelHighScore3.Name = "labelHighScore3";
             this.labelHighScore3.Size = new System.Drawing.Size(31, 16);
             this.labelHighScore3.TabIndex = 11;
-            this.labelHighScore3.Text = "000";
+            this.labelHighScore3.Text = "803";
             // 
             // MainMenuForm
             // 
@@ -195,6 +195,7 @@
             this.Name = "MainMenuForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Hunt The Wumpus";
+            this.Load += new System.EventHandler(this.MainMenuForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

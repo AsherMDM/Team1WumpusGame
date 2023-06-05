@@ -41,5 +41,9 @@ namespace Team1WumpusGame
             Application.Exit();
         }
 
+        private void MainMenuForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
