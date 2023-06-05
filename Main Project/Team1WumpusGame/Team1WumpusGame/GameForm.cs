@@ -9,6 +9,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Team1WumpusGame.Properties;
 
 namespace Team1WumpusGame
 {
@@ -18,6 +19,8 @@ namespace Team1WumpusGame
         private readonly GameControl gameControl;
         Player player = new Player();
         GameLocations gameLocations = new GameLocations();
+
+        Random rnd = new Random();
 
         int cavesystem;
         
@@ -34,6 +37,69 @@ namespace Team1WumpusGame
             gameControl.GenerateBatLocations();
             gameControl.GeneratePitLocations();
             ShowHazards();
+        }
+
+        public void ChangeUI()
+        {
+            int pl = gameControl.passPlayerLocation();
+            int wump = gameControl.passWumpusLocation();
+            int[] bat = gameControl.passBatLocations();
+            int[] pit = gameControl.passPitLocations();
+            int ui = 4;
+
+            if (pl == wump)
+            {
+                ui = 1;
+            }
+
+            foreach (int i in bat)
+            {
+                if (pl == i)
+                {
+                    ui = 2;
+                }
+            }
+
+            foreach (int e in pit)
+            {
+                if (pl == e)
+                {
+                    ui = 3;
+                }
+            }
+
+            if (ui == 1)
+            {
+                pictureBoxGame.Image = Resources.wumpuscave1;   
+            }
+            else if (ui == 2)
+            {
+                pictureBoxGame.Image = Resources.batcave1;
+            }
+            else if (ui == 3)
+            {
+                pictureBoxGame.Image = Resources.pitcave1;
+            }
+            else
+            {
+                ui = rnd.Next(4, 7);
+
+                if (ui == 4)
+                {
+                    pictureBoxGame.Image = Resources.emptycave1;
+                }
+
+                if (ui == 5)
+                {
+                    pictureBoxGame.Image = Resources.emptycave2;
+                }
+
+                if (ui == 6)
+                {
+                    pictureBoxGame.Image = Resources.emptycave3;
+                }
+            }
+            
         }
 
         private void ShowHazards()
@@ -129,6 +195,7 @@ namespace Team1WumpusGame
             // move player to new cave
             int newMove = int.Parse(labelRoom1.Text);
             this.gameControl.passNewLocation(newMove);
+            ChangeUI();
 
             // see if you are dead
             if (areYouDead(newMove))
@@ -138,15 +205,17 @@ namespace Team1WumpusGame
                 GoToMain();
             }
 
+            UpdateAll(newMove);
+
             // if there are bats move to random room
             if (bats(newMove))
             {
                 Random random = new Random();
-                int newNumber = random.Next(1, 30);
+                int newNumber = random.Next(1, 31);
                 player.MovePlayer(newNumber);
+                UpdateAll(newNumber);
             }
 
-            UpdateAll(newMove);
 
         }
 
@@ -155,6 +224,7 @@ namespace Team1WumpusGame
             // move player to new cave
             int newMove = int.Parse(labelRoom2.Text);
             this.gameControl.passNewLocation(newMove);
+            ChangeUI();
 
             // see if you are dead
             if (areYouDead(newMove))
@@ -164,15 +234,18 @@ namespace Team1WumpusGame
                 GoToMain();
             }
 
+            UpdateAll(newMove);
+
             // if there are bats move to random room
             if (bats(newMove))
             {
                 Random random = new Random();
-                int newNumber = random.Next(1, 30);
+                int newNumber = random.Next(1, 31);
                 player.MovePlayer(newNumber);
+                UpdateAll(newNumber);
             }
 
-            UpdateAll(newMove);
+            
         }
 
         private void pictureBoxMoveRoom3_Click(object sender, EventArgs e)
@@ -182,6 +255,7 @@ namespace Team1WumpusGame
             {
                 int newMove = int.Parse(labelRoom3.Text);
                 this.gameControl.passNewLocation(newMove);
+                ChangeUI();
 
                 // see if you are dead
                 if (areYouDead(newMove))
@@ -191,15 +265,18 @@ namespace Team1WumpusGame
                     GoToMain();
                 }
 
+                UpdateAll(newMove);
+
                 // if there are bats move to random room
                 if (bats(newMove))
                 {
                     Random random = new Random();
-                    int newNumber = random.Next(1, 30);
+                    int newNumber = random.Next(1, 31);
                     player.MovePlayer(newNumber);
+                    UpdateAll(newNumber);
                 }
 
-                UpdateAll(newMove);
+                
             }
             catch
             {

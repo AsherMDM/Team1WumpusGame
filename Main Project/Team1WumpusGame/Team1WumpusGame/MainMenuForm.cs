@@ -25,7 +25,7 @@ namespace Team1WumpusGame
             this.Hide();
             
             // chooses which map to use and starts game
-            gameForm = new GameForm(random.Next(1, 5));
+            gameForm = new GameForm(random.Next(1, 6));
             gameForm.Show();
         }
 

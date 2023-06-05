@@ -20,7 +20,7 @@ namespace Team1WumpusGame
 
         public void GenerateWumpusLocation()
         {
-            int i = rnd.Next(1, 30);
+            int i = rnd.Next(1, 31);
             wumpusLocation = i;
         }
 
@@ -37,9 +37,9 @@ namespace Team1WumpusGame
 
         public void GenerateBatLocations()
         {
-            batLocations[0] = rnd.Next(1, 30);
-            batLocations[1] = rnd.Next(1, 30);
-            batLocations[2] = rnd.Next(1, 30);
+            batLocations[0] = rnd.Next(1, 31);
+            batLocations[1] = rnd.Next(1, 31);
+            batLocations[2] = rnd.Next(1, 31);
         }
 
         public int[] UpdateBatLocations(int[] locations)
@@ -55,9 +55,9 @@ namespace Team1WumpusGame
 
         public void GeneratePitLocations()
         {
-            pitLocations[0] = rnd.Next(1, 30);
-            pitLocations[1] = rnd.Next(1, 30);
-            pitLocations[2] = rnd.Next(1, 30);
+            pitLocations[0] = rnd.Next(1, 31);
+            pitLocations[1] = rnd.Next(1, 31);
+            pitLocations[2] = rnd.Next(1, 31);
         }
 
         public int[] GetPitLocations()
