@@ -30,43 +30,66 @@ namespace Team1WumpusGame
             labelCoins.Text = gameControl.passInventory()[1].ToString();
             labelArrows.Text = gameControl.passInventory()[0].ToString();
             // generate hazards
-            gameLocations.GenerateWumpusLocation();
-            gameLocations.GenerateBatLocations();
-            gameLocations.GeneratePitLocations();
+            gameControl.GenerateWumpusLocation();
+            gameControl.GenerateBatLocations();
+            gameControl.GeneratePitLocations();
             ShowHazards();
         }
 
         private void ShowHazards()
         {
-            string filename = "";
-            if (cavesystem == 1)
+            // pass wumpus, pit, bat locations 
+            int[] possMoves = gameControl.passPossibleMoves(gameControl.passPlayerLocation());
+            int wumpusLoc = gameControl.passWumpusLocation();
+            int[] batLocs = gameControl.passBatLocations();
+            int[] pitLocs = gameControl.passPitLocations();
+
+
+            if (possMoves[0] == wumpusLoc ||
+                possMoves[1] == wumpusLoc ||
+                possMoves[2] == wumpusLoc)
             {
-                filename = "1";
+                labelWumpusWarning.Visible = true;
             }
-            else if (cavesystem == 2)
+            else
             {
-                filename = "2";
+                labelWumpusWarning.Visible = false;
             }
-            else if (cavesystem == 3)
+            
+            if (possMoves[0] == batLocs[0] ||
+                possMoves[1] == batLocs[0] ||
+                possMoves[2] == batLocs[0] ||
+                possMoves[0] == batLocs[1] ||
+                possMoves[1] == batLocs[1] ||
+                possMoves[2] == batLocs[1] ||
+                possMoves[0] == batLocs[2] ||
+                possMoves[1] == batLocs[2] ||
+                possMoves[2] == batLocs[2])
             {
-                filename = "3";
+                labelBatWarning.Visible = true;
             }
-            else if (cavesystem == 4)
+            else
             {
-                filename = "4";
-            }
-            else if (cavesystem == 5)
-            {
-                filename = "5";
+                labelBatWarning.Visible = false;
             }
 
-            labelWumpusWarning.Visible = (gameControl.passWumpusLocation() == gameControl.passAdjacentCaves(filename)[0] || 
-                gameControl.passWumpusLocation() == gameControl.passAdjacentCaves(filename)[1] ||
-                gameControl.passWumpusLocation() == gameControl.passAdjacentCaves(filename)[2]);
+            if (possMoves[0] == pitLocs[0] ||
+                possMoves[1] == pitLocs[0] ||
+                possMoves[2] == pitLocs[0] ||
+                possMoves[0] == pitLocs[1] ||
+                possMoves[1] == pitLocs[1] ||
+                possMoves[2] == pitLocs[1] ||
+                possMoves[0] == pitLocs[2] ||
+                possMoves[1] == pitLocs[2] ||
+                possMoves[2] == pitLocs[2])
+            {
+                labelPitWarning.Visible = true;
+            }
+            else
+            {
+                labelPitWarning.Visible = false;
+            }
 
-            labelPitWarning.Visible = (gameControl.passPitLocations() == gameControl.passAdjacentCaves(filename));
-
-            labelBatWarning.Visible = (gameControl.passBatLocations() == gameControl.passAdjacentCaves(filename));
         }
         public void UpdateInventory()
         {
@@ -75,28 +98,10 @@ namespace Team1WumpusGame
             labelArrows.Text = gameControl.passInventory()[0].ToString();
         }
 
-
-        private void pictureBoxExit_Click(object sender, EventArgs e)
+        public void UpdateAll(int newMove)
         {
-            // Close this form and return back to the main menu
-            this.Close();
-        }
-
-        private void pictureBoxMoveRoom1_Click(object sender, EventArgs e)
-        {
-            // move player to new cave
-            int newMove = int.Parse(labelRoom1.Text);
-            this.gameControl.passNewLocation(newMove);
-
             // update current room
             labelCurrentRoom.Text = newMove.ToString();
-
-            // see if you are dead!
-            if (areYouDead(newMove))
-            {
-                gameControl.CalculateScore(false);
-                
-            }
 
             // update the new moves
             int[] possMoves = this.gameControl.passPossibleMoves(newMove);
@@ -115,8 +120,33 @@ namespace Team1WumpusGame
             // update coins
             int newCoins = 1;
             labelCoins.Text = this.gameControl.AddCoins(newCoins).ToString();
-            
+
             ShowHazards();
+        }
+
+        private void pictureBoxMoveRoom1_Click(object sender, EventArgs e)
+        {
+            // move player to new cave
+            int newMove = int.Parse(labelRoom1.Text);
+            this.gameControl.passNewLocation(newMove);
+
+            // see if you are dead
+            if (areYouDead(newMove))
+            {
+                int score = gameControl.CalculateScore(false);
+                MessageBox.Show("You died!" + "\n" + "Your score: " + score);
+                GoToMain();
+            }
+
+            // if there are bats move to random room
+            if (bats(newMove))
+            {
+                Random random = new Random();
+                int newNumber = random.Next(1, 30);
+                player.MovePlayer(newNumber);
+            }
+
+            UpdateAll(newMove);
 
         }
 
@@ -126,28 +156,23 @@ namespace Team1WumpusGame
             int newMove = int.Parse(labelRoom2.Text);
             this.gameControl.passNewLocation(newMove);
 
-            // update current room
-            labelCurrentRoom.Text = newMove.ToString();
-
-            //update possible moves
-            int[] possMoves = this.gameControl.passPossibleMoves(newMove);
-            labelRoom1.Text = possMoves[0].ToString();
-            labelRoom2.Text = possMoves[1].ToString();
-            try
+            // see if you are dead
+            if (areYouDead(newMove))
             {
-                labelRoom3.Text = possMoves[2].ToString();
-            }
-            catch
-            {
-                // if there is no third move possible blank out the label
-                labelRoom3.Text = "";
+                int score = gameControl.CalculateScore(false);
+                MessageBox.Show("You died!" + "\n" + "Your score: " + score);
+                GoToMain();
             }
 
-            // update coins
-            int newCoins = 1;
-            labelCoins.Text = this.gameControl.AddCoins(newCoins).ToString();
-            ShowHazards();
+            // if there are bats move to random room
+            if (bats(newMove))
+            {
+                Random random = new Random();
+                int newNumber = random.Next(1, 30);
+                player.MovePlayer(newNumber);
+            }
 
+            UpdateAll(newMove);
         }
 
         private void pictureBoxMoveRoom3_Click(object sender, EventArgs e)
@@ -158,26 +183,23 @@ namespace Team1WumpusGame
                 int newMove = int.Parse(labelRoom3.Text);
                 this.gameControl.passNewLocation(newMove);
 
-                // update current room
-                labelCurrentRoom.Text = newMove.ToString();
-
-                // update possible moves
-                int[] possMoves = this.gameControl.passPossibleMoves(newMove);
-                labelRoom1.Text = possMoves[0].ToString();
-                labelRoom2.Text = possMoves[1].ToString();
-                try
+                // see if you are dead
+                if (areYouDead(newMove))
                 {
-                    labelRoom3.Text = possMoves[2].ToString();
-                }
-                catch
-                {
-                    // if there is no third move possible blank out the label
-                    labelRoom3.Text = "";
+                    int score = gameControl.CalculateScore(false);
+                    MessageBox.Show("You died!" + "\n" + "Your score: " + score);
+                    GoToMain();
                 }
 
-                // update coins
-                int newCoins = 1;
-                labelCoins.Text = this.gameControl.AddCoins(newCoins).ToString();
+                // if there are bats move to random room
+                if (bats(newMove))
+                {
+                    Random random = new Random();
+                    int newNumber = random.Next(1, 30);
+                    player.MovePlayer(newNumber);
+                }
+
+                UpdateAll(newMove);
             }
             catch
             {
@@ -187,35 +209,43 @@ namespace Team1WumpusGame
             ShowHazards();
         }
 
-
-
+        public void GoToMain()
+        {
+            this.Close();
+            MainMenuForm mainMenuForm = new MainMenuForm();
+            mainMenuForm.Show();
+        }
 
         private void pictureBoxShootArrows_Click(object sender, EventArgs e)
         {
             // Shoot the arrow into the user-input location from textbox
             int[] adjacentCaves = gameControl.passPossibleMoves(cavesystem);
-            
+            int location = int.Parse(textBoxShootArrowLocation.Text);
+            int wumpusLoc = gameControl.passWumpusLocation();
+
             // check to see there are a valid amount of arrows first
             if (gameControl.passInventory()[0] > 0)
             {
                 try
                 {
-                    if (gameControl.ShootArrow(int.Parse(textBoxShootArrowLocation.Text), adjacentCaves, gameControl.passWumpusLocation()) == 1)
+                    if (gameControl.ShootArrow(location, adjacentCaves, gameControl.passWumpusLocation()) == 1)
                     {
                         //Win
                         gameControl.AddArrows(-1);
-                        player.CalculateScore(true);
-                        MessageBox.Show("You Win!");
-                        
+                        UpdateInventory();
+                        int score = gameControl.CalculateScore(true);
+                        MessageBox.Show("You Win!" + "\n" + "Your Score: " + score);
+                        GoToMain();
                     }
-                    else if (gameControl.ShootArrow(int.Parse(textBoxShootArrowLocation.Text), adjacentCaves, gameControl.passWumpusLocation()) == 0)
+                    else if (gameControl.ShootArrow(location, adjacentCaves, gameControl.passWumpusLocation()) == 0)
                     {
                         // Missed the wumpus
                         gameControl.AddArrows(-1);
+                        UpdateInventory();
                         MessageBox.Show("You Missed!");
                         
                     }
-                    else if (gameControl.ShootArrow(int.Parse(textBoxShootArrowLocation.Text), adjacentCaves, gameControl.passWumpusLocation()) == 2)
+                    else if (gameControl.ShootArrow(location, adjacentCaves, gameControl.passWumpusLocation()) == 2)
                     {
                         // If shot in invalid location
                         MessageBox.Show("You Can't Shoot There!");
@@ -253,10 +283,7 @@ namespace Team1WumpusGame
             if (result == DialogResult.Yes)
             {
                 // Closes down the form, takes you back to the main menu
-                this.Close();
-
-                MainMenuForm mainMenuForm = new MainMenuForm();
-                mainMenuForm.Show();
+                GoToMain();
             }
             else
             {
@@ -273,95 +300,34 @@ namespace Team1WumpusGame
             // Display possible moves to label
             labelRoom1.Text = possiblemoves[0].ToString();
             labelRoom2.Text = possiblemoves[1].ToString();
-            labelRoom3.Text = possiblemoves[2].ToString();            
-
-            // Generate danger locations
-            gameLocations.GenerateBatLocations();
-            gameLocations.GeneratePitLocations();
-            gameLocations.GenerateWumpusLocation();
-
-            // Generate warnings based on generated danger locations
-
+            labelRoom3.Text = possiblemoves[2].ToString();
+            ShowHazards();
         }
 
-       
         public bool areYouDead(int newMove)
         {
-            this.gameControl.passNewLocation(newMove);
-            string filename = "5";
-            if(cavesystem == 1)
+            if (newMove == gameControl.passWumpusLocation())
             {
-                filename = "";
-            }
-            else if(cavesystem == 2)
-            {
-                filename = "2";
-            }
-            else if (cavesystem == 3)
-            {
-                filename = "3";
-            }
-            else if (cavesystem == 4)
-            {
-                filename = "4";
-            }
-            else if (cavesystem == 5)
-            {
-                filename = "1";
+                return true;
             }
 
-
-            if (gameControl.passWumpusLocation() == gameControl.passAdjacentCaves(filename)[0]|| 
-                gameControl.passWumpusLocation() == gameControl.passAdjacentCaves(filename)[1])
+            if (newMove == gameControl.passPitLocations()[0] || 
+                newMove == gameControl.passPitLocations()[1] ||
+                newMove == gameControl.passPitLocations()[2])
             {
-                if(gameControl.passPlayerLocation() == gameControl.passWumpusLocation())
-                {
-                    return true;
-                }
+                return true;
             }
-
-            if(gameControl.passPitLocations() == gameControl.passAdjacentCaves(filename))
-            {
-                foreach (int pit in gameControl.passPitLocations())
-                {
-                    if(pit == gameControl.passPlayerLocation())
-                    {
-                        return true;
-                    }
-                }
-            }
+            
             return false;
-
         }
 
-        public bool bats()
+        public bool bats(int newMove)
         {
-            string filename = "5";
-            if (cavesystem == 1)
+            if (newMove == gameControl.passBatLocations()[0] ||
+                newMove == gameControl.passBatLocations()[1] ||
+                newMove == gameControl.passBatLocations()[2])
             {
-                filename = "";
-            }
-            else if (cavesystem == 2)
-            {
-                filename = "2";
-            }
-            else if (cavesystem == 3)
-            {
-                filename = "3";
-            }
-            else if (cavesystem == 4)
-            {
-                filename = "4";
-            }
-            else if (cavesystem == 5)
-            {
-                filename = "1";
-            }
-            if (gameControl.passBatLocations() == gameControl.passAdjacentCaves(filename))
-            {
-                Random random = new Random();
-                int newNumber = random.Next(1, 30);
-                player.MovePlayer(newNumber);
+                return true;
             }
             return false;
         }

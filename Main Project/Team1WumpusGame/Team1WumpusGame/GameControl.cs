@@ -4,6 +4,7 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Team1WumpusGame
 {
@@ -41,14 +42,29 @@ namespace Team1WumpusGame
             player.MovePlayer(roomNumber);
         }
 
+        public void GenerateWumpusLocation()
+        {
+            gameLocations.GenerateWumpusLocation();
+        }
+
         public int passWumpusLocation()
         {
             return gameLocations.GetWumpusLocation();
         }
 
+        public void GenerateBatLocations()
+        {
+            gameLocations.GenerateBatLocations();
+        }
+
         public int[] passBatLocations()
         {
             return gameLocations.GetBatLocations();
+        }
+
+        public void GeneratePitLocations()
+        {
+            gameLocations.GeneratePitLocations();
         }
 
         public int[] passPitLocations()

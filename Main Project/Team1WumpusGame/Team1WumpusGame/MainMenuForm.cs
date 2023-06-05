@@ -13,6 +13,7 @@ namespace Team1WumpusGame
     public partial class MainMenuForm : Form
     {
         Random random = new Random();
+        GameForm gameForm;
         public MainMenuForm()
         {
             InitializeComponent();
@@ -24,7 +25,7 @@ namespace Team1WumpusGame
             this.Hide();
             
             // chooses which map to use and starts game
-            GameForm gameForm = new GameForm(random.Next(1, 5));
+            gameForm = new GameForm(random.Next(1, 5));
             gameForm.Show();
         }
 

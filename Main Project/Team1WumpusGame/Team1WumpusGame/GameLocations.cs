@@ -8,16 +8,15 @@ namespace Team1WumpusGame
 {
     internal class GameLocations
     {
+        int wumpusLocation = 1;
+        int[] batLocations = { 0, 0, 0 };
+        int[] pitLocations = { 0, 0, 0 };
+        Random rnd = new Random();
+
         public GameLocations()
         {
 
         }
-
-        Random rnd = new Random();
-
-        int wumpusLocation = 1;
-        int[] batLocations = { 0, 0, 0 };
-        int[] pitLocations = { 0, 0, 0 };
 
         public void GenerateWumpusLocation()
         {
@@ -27,7 +26,12 @@ namespace Team1WumpusGame
 
         public int GetWumpusLocation()
         {
-            
+            return wumpusLocation;
+        }
+
+        public int UpdateWumpusLocation(int location)
+        {
+            wumpusLocation = location;
             return wumpusLocation;
         }
 
@@ -38,6 +42,11 @@ namespace Team1WumpusGame
             batLocations[2] = rnd.Next(1, 30);
         }
 
+        public int[] UpdateBatLocations(int[] locations)
+        {
+            //batLocation[] = locations[];
+            return batLocations;
+        }
         public int[] GetBatLocations()
         {
             

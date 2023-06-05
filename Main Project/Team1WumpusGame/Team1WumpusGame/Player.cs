@@ -38,7 +38,6 @@ namespace Team1WumpusGame
                 } 
                 else
                 {
-                    //inventory[0]--;
                     // if you shot the wumpus
                     if (cave == wumpusLoc)
                     {
