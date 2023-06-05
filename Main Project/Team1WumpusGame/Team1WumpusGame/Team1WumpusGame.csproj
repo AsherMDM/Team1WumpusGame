@@ -125,9 +125,11 @@
   <ItemGroup>
     <None Include="Resources\arrow2" />
     <None Include="Resources\arrow3" />
+    <None Include="Resources\arrows" />
     <None Include="Resources\batcave1.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\COIN" />
     <None Include="Resources\emptycave1.png" />
   </ItemGroup>
   <ItemGroup>
@@ -138,6 +140,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\mainmenu" />
+    <None Include="Resources\old man joe" />
     <None Include="Resources\pitcave1.png" />
   </ItemGroup>
   <ItemGroup>

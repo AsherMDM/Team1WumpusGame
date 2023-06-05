@@ -114,6 +114,7 @@ namespace Team1WumpusGame
             else if (limitChecker() == 3)
             {
                 MessageBox.Show("You didn't get enough right. ");
+                gameControl.AddCoins(-3 * newArrows);
                 returnFalse();
                 this.Close();
             }

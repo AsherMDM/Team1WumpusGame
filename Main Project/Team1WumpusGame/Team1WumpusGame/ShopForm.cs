@@ -13,7 +13,7 @@ namespace Team1WumpusGame
     public partial class ShopForm : Form
     {
         // Create new instance of game control class
-        GameControl gameControl; //= new GameControl();
+        GameControl gameControl; 
 
         public ShopForm(GameControl gC)
         {
@@ -55,7 +55,7 @@ namespace Team1WumpusGame
             else
             {                  
                 TriviaForm triviaForm = new TriviaForm(this.gameControl, newArrows);
-                triviaForm.Show();
+                triviaForm.ShowDialog();
             }
 
             labelCoins.Text = gameControl.passInventory()[1].ToString();

@@ -83,9 +83,29 @@ namespace Team1WumpusGame.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap arrows {
+            get {
+                object obj = ResourceManager.GetObject("arrows", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap batcave1 {
             get {
                 object obj = ResourceManager.GetObject("batcave1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap COIN {
+            get {
+                object obj = ResourceManager.GetObject("COIN", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -136,6 +156,16 @@ namespace Team1WumpusGame.Properties {
         internal static System.Drawing.Bitmap mainmenu {
             get {
                 object obj = ResourceManager.GetObject("mainmenu", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap old_man_joe {
+            get {
+                object obj = ResourceManager.GetObject("old man joe", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

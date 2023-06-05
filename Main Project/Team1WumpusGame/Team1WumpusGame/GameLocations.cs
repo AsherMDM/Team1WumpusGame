@@ -27,7 +27,7 @@ namespace Team1WumpusGame
 
         public int GetWumpusLocation()
         {
-            GenerateWumpusLocation();
+            
             return wumpusLocation;
         }
 
@@ -40,7 +40,7 @@ namespace Team1WumpusGame
 
         public int[] GetBatLocations()
         {
-            GenerateBatLocations();
+            
             return batLocations;
         }
 
@@ -53,7 +53,7 @@ namespace Team1WumpusGame
 
         public int[] GetPitLocations()
         {
-            GeneratePitLocations();
+            
             return pitLocations;
         }
 

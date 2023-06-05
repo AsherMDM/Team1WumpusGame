@@ -14,9 +14,10 @@ namespace Team1WumpusGame
 
         }
 
-        //   arrows & coins inventory
+        // starting arrows & coins inventory
         int[] inventory = { 3, 10 };
         int turnAmount = 0;
+        // starting location
         int playerLocation = 1;
 
         // get inventory method
@@ -25,34 +26,25 @@ namespace Team1WumpusGame
             return inventory;
         }
 
-        // updates the arrow amount
-        public void UpdateArrowAmount(int update)
-        {
-            inventory[0] += update;
-        }
-
-        // updates the coin amount
-        public void UpdateCoinAmount(int update)
-        {
-            inventory[1] += update;
-        }
-
+        // shoot arrows method
         public int ShootArrow(int caveToShoot, int[] allowedCaves, int wumpusLoc)
         {
             foreach (int cave in allowedCaves)
             {
+                // if the shooting location is not in one of the adjacent caves
                 if (cave != caveToShoot)
                 {
                     return 2;
                 } 
                 else
                 {
-                    inventory[0]--;
+                    //inventory[0]--;
+                    // if you shot the wumpus
                     if (cave == wumpusLoc)
                     {
                         return 1;
                     }
-                    else
+                    else // if you missed the wumpus
                     {
                         return 0;
                     }
@@ -61,17 +53,20 @@ namespace Team1WumpusGame
             return 3;
         }
 
+        // get player location method
         public int GetPlayerLocation()
         {
             return playerLocation;
         }
 
+        // move player location method, counts turns for score keeping
         public void MovePlayer(int newLocation)
         {
             playerLocation = newLocation;
             turnAmount++;
         }
 
+        // calculates the final score when you die/win
         public int CalculateScore(bool win)
         {
             // 100 - number of turns + gold coins + (5 * Arrows) + 50 ( if won )

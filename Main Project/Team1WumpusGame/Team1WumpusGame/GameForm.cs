@@ -21,6 +21,9 @@ namespace Team1WumpusGame
 
         int cavesystem;
 
+        
+        
+
         public GameForm(int cs)//GameControl gameControl)
         {
             this.gameControl = new GameControl();
@@ -29,6 +32,10 @@ namespace Team1WumpusGame
             // Display current coins
             labelCoins.Text = gameControl.passInventory()[1].ToString();
             labelArrows.Text = gameControl.passInventory()[0].ToString();
+            // generate hazards
+            gameLocations.GenerateWumpusLocation();
+            gameLocations.GenerateBatLocations();
+            gameLocations.GeneratePitLocations();
             ShowHazards();
         }
 
@@ -55,6 +62,7 @@ namespace Team1WumpusGame
             {
                 filename = "5";
             }
+
             labelWumpusWarning.Visible = (gameControl.passWumpusLocation() == gameControl.passAdjacentCaves(filename)[0] || 
                 gameControl.passWumpusLocation() == gameControl.passAdjacentCaves(filename)[1] ||
                 gameControl.passWumpusLocation() == gameControl.passAdjacentCaves(filename)[2]);
@@ -65,6 +73,7 @@ namespace Team1WumpusGame
         }
         public void UpdateInventory()
         {
+            // update the inventory
             labelCoins.Text = gameControl.passInventory()[1].ToString();
             labelArrows.Text = gameControl.passInventory()[0].ToString();
         }
@@ -106,7 +115,7 @@ namespace Team1WumpusGame
             // update coins
             int newCoins = 1;
             labelCoins.Text = this.gameControl.AddCoins(newCoins).ToString();
-            UpdateInventory();
+            
 
             ShowHazards();
 
@@ -175,6 +184,7 @@ namespace Team1WumpusGame
             {
                 //do nothing if there is no third cave
             }
+
             ShowHazards();
         }
 
@@ -194,18 +204,17 @@ namespace Team1WumpusGame
                     if (gameControl.ShootArrow(int.Parse(textBoxShootArrowLocation.Text), adjacentCaves, gameControl.passWumpusLocation()) == 1)
                     {
                         //Win
+                        gameControl.AddArrows(-1);
                         player.CalculateScore(true);
                         MessageBox.Show("You Win!");
                         
-                        UpdateInventory();
-
                     }
                     else if (gameControl.ShootArrow(int.Parse(textBoxShootArrowLocation.Text), adjacentCaves, gameControl.passWumpusLocation()) == 0)
                     {
                         // Missed the wumpus
+                        gameControl.AddArrows(-1);
                         MessageBox.Show("You Missed!");
                         
-                        UpdateInventory();
                     }
                     else if (gameControl.ShootArrow(int.Parse(textBoxShootArrowLocation.Text), adjacentCaves, gameControl.passWumpusLocation()) == 2)
                     {
@@ -276,24 +285,7 @@ namespace Team1WumpusGame
 
         }
 
-        //private void button2_Click(object sender, EventArgs e)
-        //{
-        //    int[] possiblemoves = gameControl.passPossibleMoves(CaveSystemReturn());
-        //    labelRoom1.Text = possiblemoves[0].ToString();
-        //    labelRoom2.Text = possiblemoves[1].ToString();
-        //    labelRoom3.Text = possiblemoves[2].ToString();
-
-        //    gameLocations.GenerateBatLocations();
-        //    gameLocations.GeneratePitLocations();
-        //    gameLocations.GenerateWumpusLocation();
-
-        //    //labelBatWarning.Visible = gameLocations.findAdjacentHazards(gameControl.passPossibleMoves(CaveSystemReturn()))[0];
-        //    //labelPitWarning.Visible = gameLocations.findAdjacentHazards(gameControl.passPossibleMoves(CaveSystemReturn()))[1];
-        //    //labelWumpusWarning.Visible = gameLocations.findAdjacentHazards(gameControl.passPossibleMoves(CaveSystemReturn()))[2];
-
-
-        //}
-
+       
         public bool areYouDead()
         {
             this.gameControl.passNewLocation(int.Parse(labelRoom1.Text));
@@ -377,24 +369,5 @@ namespace Team1WumpusGame
             return false;
         }
 
-        private void labelBatWarning_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelWumpusWarning_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelPitWarning_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelArrows_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
