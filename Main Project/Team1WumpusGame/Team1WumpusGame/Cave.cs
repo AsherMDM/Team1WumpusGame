@@ -25,6 +25,7 @@ namespace Team1WumpusGame
             adjacentCave4 = ReadFromFileCave("MapOfCave4.txt");
             adjacentCave5 = ReadFromFileCave("MapOfCave5.txt");
         }
+
         public List<int>[] ReadFromFileCave(string filename)
         {
             List<int>[] adjacentCave = new List<int>[30];

@@ -18,19 +18,23 @@ namespace Team1WumpusGame
             InitializeComponent();
         }
 
+        // starts the game and opens new game form
         private void buttonStart_Click(object sender, EventArgs e)
         {
             this.Hide();
-            //GameControl gameControl = new GameControl();
-            GameForm gameForm = new GameForm(random.Next(1, 5));//gameControl);
+            
+            // chooses which map to use and starts game
+            GameForm gameForm = new GameForm(random.Next(1, 5));
             gameForm.Show();
         }
 
+        // shows the credits
         private void buttonCredits_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Game made by Team 'Won'\nMonica, Adeline, Asher, and Rayan\nThanks to Mr.Donnelly for saving our mental state (barely)", "Credits");
         }
 
+        // fully closes the game
         private void buttonExitGame_Click(object sender, EventArgs e)
         {
             Application.Exit();

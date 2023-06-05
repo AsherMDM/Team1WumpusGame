@@ -172,7 +172,7 @@
             this.labelBatWarning.Size = new System.Drawing.Size(169, 20);
             this.labelBatWarning.TabIndex = 11;
             this.labelBatWarning.Text = "I hear something";
-            this.labelBatWarning.Click += new System.EventHandler(this.labelBatWarning_Click);
+            
             // 
             // labelPitWarning
             // 
@@ -185,7 +185,7 @@
             this.labelPitWarning.Size = new System.Drawing.Size(149, 20);
             this.labelPitWarning.TabIndex = 12;
             this.labelPitWarning.Text = "I feel a draft";
-            this.labelPitWarning.Click += new System.EventHandler(this.labelPitWarning_Click);
+            
             // 
             // labelWumpusWarning
             // 
@@ -198,7 +198,7 @@
             this.labelWumpusWarning.Size = new System.Drawing.Size(169, 20);
             this.labelWumpusWarning.TabIndex = 13;
             this.labelWumpusWarning.Text = "I smell a wumpus";
-            this.labelWumpusWarning.Click += new System.EventHandler(this.labelWumpusWarning_Click);
+            
             // 
             // labelCoins
             // 
@@ -223,7 +223,7 @@
             this.labelArrows.Size = new System.Drawing.Size(19, 20);
             this.labelArrows.TabIndex = 15;
             this.labelArrows.Text = "0";
-            this.labelArrows.Click += new System.EventHandler(this.labelArrows_Click);
+            
             // 
             // labelCurrentRoom
             // 

@@ -15,7 +15,6 @@ namespace Team1WumpusGame
         Cave cave = new Cave();
         // int caveSystem;
 
-        
         public List<Question> createQuestion()
         {
             List<Question> questions = new List<Question>();
@@ -92,6 +91,11 @@ namespace Team1WumpusGame
         {
             return cave.ReadFromFileCave("MapOfCave" + cs + ".txt")[int.Parse(cs)].ToArray();
             
+        }
+
+        public int CalculateScore(bool result)
+        {
+            return player.CalculateScore(result);
         }
     }
 }

@@ -20,11 +20,8 @@ namespace Team1WumpusGame
         GameLocations gameLocations = new GameLocations();
 
         int cavesystem;
-
         
-        
-
-        public GameForm(int cs)//GameControl gameControl)
+        public GameForm(int cs)
         {
             this.gameControl = new GameControl();
             cavesystem = cs;
@@ -78,10 +75,6 @@ namespace Team1WumpusGame
             labelArrows.Text = gameControl.passInventory()[0].ToString();
         }
 
-        public int CaveSystemReturn()
-        {
-            return cavesystem;
-        }
 
         private void pictureBoxExit_Click(object sender, EventArgs e)
         {
@@ -97,6 +90,13 @@ namespace Team1WumpusGame
 
             // update current room
             labelCurrentRoom.Text = newMove.ToString();
+
+            // see if you are dead!
+            if (areYouDead(newMove))
+            {
+                gameControl.CalculateScore(false);
+                
+            }
 
             // update the new moves
             int[] possMoves = this.gameControl.passPossibleMoves(newMove);
@@ -116,7 +116,6 @@ namespace Team1WumpusGame
             int newCoins = 1;
             labelCoins.Text = this.gameControl.AddCoins(newCoins).ToString();
             
-
             ShowHazards();
 
         }
@@ -194,7 +193,7 @@ namespace Team1WumpusGame
         private void pictureBoxShootArrows_Click(object sender, EventArgs e)
         {
             // Shoot the arrow into the user-input location from textbox
-            int[] adjacentCaves = gameControl.passPossibleMoves(CaveSystemReturn());
+            int[] adjacentCaves = gameControl.passPossibleMoves(cavesystem);
             
             // check to see there are a valid amount of arrows first
             if (gameControl.passInventory()[0] > 0)
@@ -270,7 +269,7 @@ namespace Team1WumpusGame
         private void GameForm_Load(object sender, EventArgs e)
         {
             // Get possible moves for current cave
-            int[] possiblemoves = gameControl.passPossibleMoves(CaveSystemReturn());
+            int[] possiblemoves = gameControl.passPossibleMoves(cavesystem);
             // Display possible moves to label
             labelRoom1.Text = possiblemoves[0].ToString();
             labelRoom2.Text = possiblemoves[1].ToString();
@@ -286,27 +285,27 @@ namespace Team1WumpusGame
         }
 
        
-        public bool areYouDead()
+        public bool areYouDead(int newMove)
         {
-            this.gameControl.passNewLocation(int.Parse(labelRoom1.Text));
+            this.gameControl.passNewLocation(newMove);
             string filename = "5";
-            if(CaveSystemReturn() == 1)
+            if(cavesystem == 1)
             {
                 filename = "";
             }
-            else if(CaveSystemReturn() == 2)
+            else if(cavesystem == 2)
             {
                 filename = "2";
             }
-            else if (CaveSystemReturn() == 3)
+            else if (cavesystem == 3)
             {
                 filename = "3";
             }
-            else if (CaveSystemReturn() == 4)
+            else if (cavesystem == 4)
             {
                 filename = "4";
             }
-            else if (CaveSystemReturn() == 5)
+            else if (cavesystem == 5)
             {
                 filename = "1";
             }
@@ -321,7 +320,6 @@ namespace Team1WumpusGame
                 }
             }
 
-            
             if(gameControl.passPitLocations() == gameControl.passAdjacentCaves(filename))
             {
                 foreach (int pit in gameControl.passPitLocations())
@@ -334,29 +332,28 @@ namespace Team1WumpusGame
             }
             return false;
 
-
         }
 
         public bool bats()
         {
             string filename = "5";
-            if (CaveSystemReturn() == 1)
+            if (cavesystem == 1)
             {
                 filename = "";
             }
-            else if (CaveSystemReturn() == 2)
+            else if (cavesystem == 2)
             {
                 filename = "2";
             }
-            else if (CaveSystemReturn() == 3)
+            else if (cavesystem == 3)
             {
                 filename = "3";
             }
-            else if (CaveSystemReturn() == 4)
+            else if (cavesystem == 4)
             {
                 filename = "4";
             }
-            else if (CaveSystemReturn() == 5)
+            else if (cavesystem == 5)
             {
                 filename = "1";
             }
