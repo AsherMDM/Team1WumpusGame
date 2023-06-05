@@ -29,27 +29,29 @@ namespace Team1WumpusGame
         // shoot arrows method
         public int ShootArrow(int caveToShoot, int[] allowedCaves, int wumpusLoc)
         {
+            int result = 3;
+
             foreach (int cave in allowedCaves)
             {
                 // if the shooting location is not in one of the adjacent caves
                 if (cave != caveToShoot)
                 {
-                    return 2;
+                    result = 2;
                 } 
                 else
                 {
                     // if you shot the wumpus
                     if (cave == wumpusLoc)
                     {
-                        return 1;
+                        result = 1;
                     }
                     else // if you missed the wumpus
                     {
-                        return 0;
+                        result = 0;
                     }
                 }
             }
-            return 3;
+            return result;
         }
 
         // get player location method
