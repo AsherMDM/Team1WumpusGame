@@ -15,7 +15,6 @@ namespace Team1WumpusGame
         // Create new instance of game control class
         GameControl gameControl = new GameControl();
 
-
         public ShopForm()
         {
             InitializeComponent();
@@ -53,12 +52,12 @@ namespace Team1WumpusGame
                 MessageBox.Show("You do not have enough coins to buy that many arrows.", "Sorry...");
             }
             else
-            {
-                gameControl.AddCoins(price);
-                gameControl.AddArrows(newArrows);
-                
+            {                  
                 TriviaForm triviaForm = new TriviaForm();
                 triviaForm.Show();
+                gameControl.AddCoins(price);
+                gameControl.AddArrows(newArrows);  
+
             }
 
             labelCoins.Text = gameControl.passInventory()[1].ToString();
@@ -92,5 +91,7 @@ namespace Team1WumpusGame
             labelCoins.Text = gameControl.passInventory()[1].ToString();
             labelArrows.Text = gameControl.passInventory()[0].ToString();
         }
+
+
     }
 }

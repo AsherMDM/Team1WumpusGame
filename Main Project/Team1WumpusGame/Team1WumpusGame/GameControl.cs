@@ -70,25 +70,27 @@ namespace Team1WumpusGame
             return player.GetInventory();
         }
 
-        public void updateArrows(int updateArrow)
-        {
-            player.UpdateArrowAmount(updateArrow);
-        }
+        //public void updateArrows(int updateArrow)
+        //{
+        //    player.UpdateArrowAmount(updateArrow);
+        //}
 
-        public void updateCoins(int updateCoin)
-        {
-            player.UpdateCoinAmount(updateCoin);
-        }
+        //public void updateCoins(int updateCoin)
+        //{
+        //    player.UpdateCoinAmount(updateCoin);
+        //}
 
         public int AddCoins(int newCoins)
         {
-            player.GetInventory()[1] += newCoins;
+            //player.GetInventory()[1] += newCoins;
+            player.UpdateCoinAmount(newCoins);
             return player.GetInventory()[1];
         }
 
         public int AddArrows(int newArrows)
         {
-            player.GetInventory()[0] += newArrows;
+            //player.GetInventory()[0] += newArrows;
+            player.UpdateArrowAmount(newArrows);
             return player.GetInventory()[0];
         }
 
