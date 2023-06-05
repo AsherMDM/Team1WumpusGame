@@ -40,6 +40,19 @@ namespace Team1WumpusGame
             {
                 // see how many arrows user wants
                 newArrows = int.Parse(textBoxArrowsBought.Text);
+
+                // calculate arrow price
+                int price = -3 * newArrows;
+                if (Math.Abs(price) > gameControl.passInventory()[1])
+                {
+                    MessageBox.Show("You do not have enough coins to buy that many arrows.", "Sorry...");
+                    
+                }
+                else
+                {
+                    TriviaForm triviaForm = new TriviaForm(this.gameControl, newArrows);
+                    triviaForm.ShowDialog();
+                }
             }
             catch
             {
@@ -47,17 +60,7 @@ namespace Team1WumpusGame
                 return;
             }
 
-            int price = -3 * newArrows;
-            if( Math.Abs(price) > gameControl.passInventory()[1])
-            {
-                MessageBox.Show("You do not have enough coins to buy that many arrows.", "Sorry...");
-            }
-            else
-            {                  
-                TriviaForm triviaForm = new TriviaForm(this.gameControl, newArrows);
-                triviaForm.ShowDialog();
-            }
-
+            // update labels & inventory
             labelCoins.Text = gameControl.passInventory()[1].ToString();
             labelArrows.Text = gameControl.passInventory()[0].ToString();
         }

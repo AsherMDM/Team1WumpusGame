@@ -46,12 +46,12 @@
             this.labelRoom1 = new System.Windows.Forms.Label();
             this.labelRoom2 = new System.Windows.Forms.Label();
             this.labelRoom3 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.pictureBoxMoveRoom3 = new System.Windows.Forms.PictureBox();
             this.pictureBoxMoveRoom2 = new System.Windows.Forms.PictureBox();
             this.pictureBoxMoveRoom1 = new System.Windows.Forms.PictureBox();
             this.pictureBoxGame = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxShootArrows)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBuyArrows)).BeginInit();
@@ -59,6 +59,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMoveRoom2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMoveRoom1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGame)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -198,7 +200,7 @@
             this.labelCoins.AutoSize = true;
             this.labelCoins.Font = new System.Drawing.Font("MS Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCoins.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.labelCoins.Location = new System.Drawing.Point(1023, 432);
+            this.labelCoins.Location = new System.Drawing.Point(1009, 473);
             this.labelCoins.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.labelCoins.Name = "labelCoins";
             this.labelCoins.Size = new System.Drawing.Size(22, 23);
@@ -210,7 +212,7 @@
             this.labelArrows.AutoSize = true;
             this.labelArrows.Font = new System.Drawing.Font("MS Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelArrows.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.labelArrows.Location = new System.Drawing.Point(1023, 479);
+            this.labelArrows.Location = new System.Drawing.Point(1009, 547);
             this.labelArrows.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.labelArrows.Name = "labelArrows";
             this.labelArrows.Size = new System.Drawing.Size(22, 23);
@@ -277,30 +279,6 @@
             this.labelRoom3.TabIndex = 23;
             this.labelRoom3.Text = "1";
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("MS Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label7.Location = new System.Drawing.Point(922, 432);
-            this.label7.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(70, 23);
-            this.label7.TabIndex = 24;
-            this.label7.Text = "Coins";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("MS Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label8.Location = new System.Drawing.Point(922, 479);
-            this.label8.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(82, 23);
-            this.label8.TabIndex = 25;
-            this.label8.Text = "Arrows";
-            // 
             // pictureBoxMoveRoom3
             // 
             this.pictureBoxMoveRoom3.Image = global::Team1WumpusGame.Properties.Resources.rightarrow;
@@ -348,6 +326,26 @@
             this.pictureBoxGame.TabIndex = 6;
             this.pictureBoxGame.TabStop = false;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Team1WumpusGame.Properties.Resources.COIN;
+            this.pictureBox1.Location = new System.Drawing.Point(926, 449);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(63, 62);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 24;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Team1WumpusGame.Properties.Resources.arrows;
+            this.pictureBox2.Location = new System.Drawing.Point(926, 528);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(63, 62);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 25;
+            this.pictureBox2.TabStop = false;
+            // 
             // GameForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
@@ -355,8 +353,8 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(78)))), ((int)(((byte)(91)))));
             this.CancelButton = this.buttonExit;
             this.ClientSize = new System.Drawing.Size(1242, 652);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.labelRoom3);
             this.Controls.Add(this.labelRoom2);
             this.Controls.Add(this.labelRoom1);
@@ -386,6 +384,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMoveRoom2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMoveRoom1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGame)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -414,8 +414,8 @@
         private System.Windows.Forms.Label labelRoom1;
         private System.Windows.Forms.Label labelRoom2;
         private System.Windows.Forms.Label labelRoom3;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button buttonExit;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

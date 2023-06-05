@@ -164,6 +164,20 @@ namespace Team1WumpusGame
             labelArrows.Text = gameControl.passInventory()[0].ToString();
         }
 
+        public void OutOfArrows()
+        {
+            int score = gameControl.CalculateScore(false);
+            MessageBox.Show("You ran out of arrows! Game Over!" + "\n" + "Your score: " + score);
+            GoToMain();
+        }
+
+        public void OutOfCoins()
+        {
+            int score = gameControl.CalculateScore(false);
+            MessageBox.Show("You ran out of coins! Game Over!" + "\n" + "Your score: " + score);
+            GoToMain();
+        }
+
         public void UpdateAll(int newMove)
         {
             // update current room
@@ -276,7 +290,6 @@ namespace Team1WumpusGame
                     UpdateAll(newNumber);
                 }
 
-                
             }
             catch
             {
@@ -286,6 +299,7 @@ namespace Team1WumpusGame
             ShowHazards();
         }
 
+        // go back to main menu method
         public void GoToMain()
         {
             this.Close();
@@ -293,54 +307,64 @@ namespace Team1WumpusGame
             mainMenuForm.Show();
         }
 
+        // shoot arrow method
         private void pictureBoxShootArrows_Click(object sender, EventArgs e)
         {
             // Shoot the arrow into the user-input location from textbox
             int[] adjacentCaves = gameControl.passPossibleMoves(cavesystem);
-            int location = int.Parse(textBoxShootArrowLocation.Text);
             int wumpusLoc = gameControl.passWumpusLocation();
 
-            // check to see there are a valid amount of arrows first
-            if (gameControl.passInventory()[0] > 0)
+            try
             {
-                try
+                int location = int.Parse(textBoxShootArrowLocation.Text);
+                int shootArrow = gameControl.ShootArrow(location, adjacentCaves, wumpusLoc);
+                // check to see there are a valid amount of arrows first
+                if (gameControl.passInventory()[0] > 0)
                 {
-                    if (gameControl.ShootArrow(location, adjacentCaves, gameControl.passWumpusLocation()) == 1)
+                    if (shootArrow == 1) // Win
                     {
-                        //Win
+                        
                         gameControl.AddArrows(-1);
                         UpdateInventory();
                         int score = gameControl.CalculateScore(true);
                         MessageBox.Show("You Win!" + "\n" + "Your Score: " + score);
                         GoToMain();
                     }
-                    else if (gameControl.ShootArrow(location, adjacentCaves, gameControl.passWumpusLocation()) == 0)
+                    else if (shootArrow == 0) // Missed the wumpus
                     {
-                        // Missed the wumpus
                         gameControl.AddArrows(-1);
                         UpdateInventory();
+
+                        // lose game if you ran out of arrows
+                        if (gameControl.passInventory()[0] == 0)
+                        {
+                            OutOfArrows();
+                        }
+
                         MessageBox.Show("You Missed!");
-                        
+                        gameControl.MoveWumpus();
+                        ShowHazards();
                     }
-                    else if (gameControl.ShootArrow(location, adjacentCaves, gameControl.passWumpusLocation()) == 2)
+                    else if (shootArrow == 2) // If shot in invalid location
                     {
-                        // If shot in invalid location
                         MessageBox.Show("You Can't Shoot There!");
                     }
                     else
                     {
                         MessageBox.Show("BIG ERROR");
                     }
+
                 }
-                catch
+                else
                 {
-                    // If shot in invalid location
-                    MessageBox.Show("You Can't Shoot There!");
+                    MessageBox.Show("You don't have enough arrows for that!");
+                    OutOfArrows();
                 }
             }
-            else
+            catch
             {
-                MessageBox.Show("You don't have enough arrows for that!");
+                // If shot in invalid location
+                MessageBox.Show("You Can't Shoot There!");
             }
             
         }

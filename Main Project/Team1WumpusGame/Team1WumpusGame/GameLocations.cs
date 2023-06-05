@@ -29,12 +29,6 @@ namespace Team1WumpusGame
             return wumpusLocation;
         }
 
-        public int UpdateWumpusLocation(int location)
-        {
-            wumpusLocation = location;
-            return wumpusLocation;
-        }
-
         public void GenerateBatLocations()
         {
             batLocations[0] = rnd.Next(1, 31);
@@ -42,11 +36,6 @@ namespace Team1WumpusGame
             batLocations[2] = rnd.Next(1, 31);
         }
 
-        public int[] UpdateBatLocations(int[] locations)
-        {
-            //batLocation[] = locations[];
-            return batLocations;
-        }
         public int[] GetBatLocations()
         {
             
@@ -66,8 +55,19 @@ namespace Team1WumpusGame
             return pitLocations;
         }
 
+        // move wumpus location when shot arrow and missed
         public int MoveWumpus()
         {
+            if (wumpusLocation < 29)
+            {
+                wumpusLocation += 2;
+
+            }
+            else
+            {
+                wumpusLocation -= 2; 
+            }
+            
             return wumpusLocation;
         }
 

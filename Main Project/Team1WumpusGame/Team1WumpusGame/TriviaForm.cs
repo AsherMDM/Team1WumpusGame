@@ -79,7 +79,6 @@ namespace Team1WumpusGame
 
         private void buttonSubmit_Click(object sender, EventArgs e)
         {
-
             counter++;
             if (radioButtonAnswer1.Checked && radioButtonAnswer1.Text == bob.CorrectAnswer)
             {

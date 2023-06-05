@@ -52,6 +52,11 @@ namespace Team1WumpusGame
             return gameLocations.GetWumpusLocation();
         }
 
+        public int MoveWumpus()
+        {
+            return gameLocations.MoveWumpus();
+        }
+
         public void GenerateBatLocations()
         {
             gameLocations.GenerateBatLocations();
