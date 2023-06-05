@@ -13,11 +13,12 @@ namespace Team1WumpusGame
     public partial class ShopForm : Form
     {
         // Create new instance of game control class
-        GameControl gameControl = new GameControl();
+        GameControl gameControl; //= new GameControl();
 
-        public ShopForm()
+        public ShopForm(GameControl gC)
         {
             InitializeComponent();
+            gameControl = gC;
             labelArrows.Text = gameControl.passInventory()[0].ToString();
             labelCoins.Text = gameControl.passInventory()[1].ToString();
             
@@ -53,11 +54,8 @@ namespace Team1WumpusGame
             }
             else
             {                  
-                TriviaForm triviaForm = new TriviaForm();
+                TriviaForm triviaForm = new TriviaForm(this.gameControl, newArrows);
                 triviaForm.Show();
-                gameControl.AddCoins(price);
-                gameControl.AddArrows(newArrows);  
-
             }
 
             labelCoins.Text = gameControl.passInventory()[1].ToString();

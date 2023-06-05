@@ -179,12 +179,6 @@ namespace Team1WumpusGame
         }
 
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            TriviaForm trivia = new TriviaForm();
-            trivia.ShowDialog();
-            this.Hide();
-        }
 
 
         private void pictureBoxShootArrows_Click(object sender, EventArgs e)
@@ -239,7 +233,7 @@ namespace Team1WumpusGame
         private void pictureBoxBuyArrows_Click(object sender, EventArgs e)
         {
             // Open shop form to buy arrows
-            ShopForm shop = new ShopForm();
+            ShopForm shop = new ShopForm(this.gameControl);
             shop.ShowDialog();
             labelCoins.Text = this.gameControl.passInventory()[1].ToString();
             labelArrows.Text = this.gameControl.passInventory()[0].ToString();
@@ -282,23 +276,23 @@ namespace Team1WumpusGame
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            int[] possiblemoves = gameControl.passPossibleMoves(CaveSystemReturn());
-            labelRoom1.Text = possiblemoves[0].ToString();
-            labelRoom2.Text = possiblemoves[1].ToString();
-            labelRoom3.Text = possiblemoves[2].ToString();
+        //private void button2_Click(object sender, EventArgs e)
+        //{
+        //    int[] possiblemoves = gameControl.passPossibleMoves(CaveSystemReturn());
+        //    labelRoom1.Text = possiblemoves[0].ToString();
+        //    labelRoom2.Text = possiblemoves[1].ToString();
+        //    labelRoom3.Text = possiblemoves[2].ToString();
 
-            gameLocations.GenerateBatLocations();
-            gameLocations.GeneratePitLocations();
-            gameLocations.GenerateWumpusLocation();
+        //    gameLocations.GenerateBatLocations();
+        //    gameLocations.GeneratePitLocations();
+        //    gameLocations.GenerateWumpusLocation();
 
-            //labelBatWarning.Visible = gameLocations.findAdjacentHazards(gameControl.passPossibleMoves(CaveSystemReturn()))[0];
-            //labelPitWarning.Visible = gameLocations.findAdjacentHazards(gameControl.passPossibleMoves(CaveSystemReturn()))[1];
-            //labelWumpusWarning.Visible = gameLocations.findAdjacentHazards(gameControl.passPossibleMoves(CaveSystemReturn()))[2];
+        //    //labelBatWarning.Visible = gameLocations.findAdjacentHazards(gameControl.passPossibleMoves(CaveSystemReturn()))[0];
+        //    //labelPitWarning.Visible = gameLocations.findAdjacentHazards(gameControl.passPossibleMoves(CaveSystemReturn()))[1];
+        //    //labelWumpusWarning.Visible = gameLocations.findAdjacentHazards(gameControl.passPossibleMoves(CaveSystemReturn()))[2];
 
 
-        }
+        //}
 
         public bool areYouDead()
         {

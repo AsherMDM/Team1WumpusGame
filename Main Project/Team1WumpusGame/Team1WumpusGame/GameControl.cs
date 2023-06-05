@@ -70,15 +70,6 @@ namespace Team1WumpusGame
             return player.GetInventory();
         }
 
-        //public void updateArrows(int updateArrow)
-        //{
-        //    player.UpdateArrowAmount(updateArrow);
-        //}
-
-        //public void updateCoins(int updateCoin)
-        //{
-        //    player.UpdateCoinAmount(updateCoin);
-        //}
 
         public int AddCoins(int newCoins)
         {

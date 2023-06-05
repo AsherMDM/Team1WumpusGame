@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Text;
 using System.Linq;
@@ -13,13 +14,16 @@ namespace Team1WumpusGame
 {
     public partial class TriviaForm : Form
     {
-        GameControl gameControl =  new GameControl();
+        GameControl gameControl; // =  new GameControl();
         int correctAnswers;
         int counter = 0;
+        int newArrows;
         Question bob;
 
-        public TriviaForm()
+        public TriviaForm(GameControl gc, int newArrows)
         {
+            gameControl = gc;
+            this.newArrows = newArrows;
             InitializeComponent();
 
             
@@ -101,6 +105,9 @@ namespace Team1WumpusGame
             if (limitChecker() == 2)
             {
                 MessageBox.Show("You got 2 right!");
+                gameControl.AddArrows(newArrows);
+                gameControl.AddCoins(-3 * newArrows);
+
                 returnTrue();
                 this.Close();
             }
