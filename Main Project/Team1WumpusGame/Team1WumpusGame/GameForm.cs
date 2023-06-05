@@ -20,12 +20,15 @@ namespace Team1WumpusGame
         Player player = new Player();
         GameLocations gameLocations = new GameLocations();
 
+        // random var for bats (see bottom)
         Random rnd = new Random();
 
+        // cave system (1-5)
         int cavesystem;
         
         public GameForm(int cs)
         {
+            // create game control instance and determine which cave system
             this.gameControl = new GameControl();
             cavesystem = cs;
             InitializeComponent();
@@ -41,17 +44,20 @@ namespace Team1WumpusGame
 
         public void ChangeUI()
         {
+            // update the ui depending on location
             int pl = gameControl.passPlayerLocation();
             int wump = gameControl.passWumpusLocation();
             int[] bat = gameControl.passBatLocations();
             int[] pit = gameControl.passPitLocations();
             int ui = 4;
 
+            // shows wumpus
             if (pl == wump)
             {
                 ui = 1;
             }
 
+            // shows bats
             foreach (int i in bat)
             {
                 if (pl == i)
@@ -60,6 +66,7 @@ namespace Team1WumpusGame
                 }
             }
 
+            // shows pits
             foreach (int e in pit)
             {
                 if (pl == e)
@@ -68,6 +75,7 @@ namespace Team1WumpusGame
                 }
             }
 
+             
             if (ui == 1)
             {
                 pictureBoxGame.Image = Resources.wumpuscave1;   
@@ -82,6 +90,7 @@ namespace Team1WumpusGame
             }
             else
             {
+                // if there is no hazards to be seen
                 ui = rnd.Next(4, 7);
 
                 if (ui == 4)
@@ -110,7 +119,7 @@ namespace Team1WumpusGame
             int[] batLocs = gameControl.passBatLocations();
             int[] pitLocs = gameControl.passPitLocations();
 
-
+            //determine wumpus
             if (possMoves[0] == wumpusLoc ||
                 possMoves[1] == wumpusLoc ||
                 possMoves[2] == wumpusLoc)
@@ -122,6 +131,7 @@ namespace Team1WumpusGame
                 labelWumpusWarning.Visible = false;
             }
             
+            // determine bats
             if (possMoves[0] == batLocs[0] ||
                 possMoves[1] == batLocs[0] ||
                 possMoves[2] == batLocs[0] ||
@@ -139,6 +149,7 @@ namespace Team1WumpusGame
                 labelBatWarning.Visible = false;
             }
 
+            // determine pits
             if (possMoves[0] == pitLocs[0] ||
                 possMoves[1] == pitLocs[0] ||
                 possMoves[2] == pitLocs[0] ||
@@ -166,6 +177,7 @@ namespace Team1WumpusGame
 
         public void OutOfArrows()
         {
+            // no arrows
             int score = gameControl.CalculateScore(false);
             MessageBox.Show("You ran out of arrows! Game Over!" + "\n" + "Your score: " + score);
             GoToMain();
@@ -173,6 +185,7 @@ namespace Team1WumpusGame
 
         public void OutOfCoins()
         {
+            // if you run out of coins
             int score = gameControl.CalculateScore(false);
             MessageBox.Show("You ran out of coins! Game Over!" + "\n" + "Your score: " + score);
             GoToMain();
@@ -180,9 +193,7 @@ namespace Team1WumpusGame
 
         public void UpdateAll(int newMove)
         {
-            // update current room
-            labelCurrentRoom.Text = newMove.ToString();
-
+            
             // update the new moves
             int[] possMoves = this.gameControl.passPossibleMoves(newMove);
             labelRoom1.Text = possMoves[0].ToString();
@@ -196,6 +207,9 @@ namespace Team1WumpusGame
                 // if there is no third move possible blank out the label
                 labelRoom3.Text = "";
             }
+
+            // update current room
+            labelCurrentRoom.Text = newMove.ToString();
 
             // update coins
             int newCoins = 1;
@@ -224,6 +238,7 @@ namespace Team1WumpusGame
             // if there are bats move to random room
             if (bats(newMove))
             {
+                MessageBox.Show("You ran into bats!");
                 Random random = new Random();
                 int newNumber = random.Next(1, 31);
                 player.MovePlayer(newNumber);
@@ -253,6 +268,7 @@ namespace Team1WumpusGame
             // if there are bats move to random room
             if (bats(newMove))
             {
+                MessageBox.Show("You ran into bats!");
                 Random random = new Random();
                 int newNumber = random.Next(1, 31);
                 player.MovePlayer(newNumber);
@@ -284,6 +300,7 @@ namespace Team1WumpusGame
                 // if there are bats move to random room
                 if (bats(newMove))
                 {
+                    MessageBox.Show("You ran into bats!");
                     Random random = new Random();
                     int newNumber = random.Next(1, 31);
                     player.MovePlayer(newNumber);
@@ -407,6 +424,8 @@ namespace Team1WumpusGame
 
         public bool areYouDead(int newMove)
         {
+            // determines if you die from running into wumpus or pit
+
             if (newMove == gameControl.passWumpusLocation())
             {
                 return true;
@@ -422,6 +441,7 @@ namespace Team1WumpusGame
             return false;
         }
 
+        // when you run into bats, puts you in new location
         public bool bats(int newMove)
         {
             if (newMove == gameControl.passBatLocations()[0] ||

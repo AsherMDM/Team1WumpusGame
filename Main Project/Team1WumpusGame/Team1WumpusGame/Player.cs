@@ -50,26 +50,7 @@ namespace Team1WumpusGame
             }
 
             return result;
-            //foreach (int cave in allowedCaves)
-            //{
-            //    // if the shooting location is not in one of the adjacent caves
-            //    if (cave != caveToShoot)
-            //    {
-            //        result = 2;
-            //    } 
-            //    else
-            //    {
-            //        // if you shot the wumpus
-            //        if (cave == wumpusLoc)
-            //        {
-            //            result = 1;
-            //        }
-            //        else // if you missed the wumpus
-            //        {
-            //            result = 0;
-            //        }
-            //    }
-            //}
+            
 
         }
 

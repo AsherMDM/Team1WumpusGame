@@ -8,6 +8,7 @@ namespace Team1WumpusGame
 {
     public class Question
     {
+        // creates questions and respective answer choices, along with the correct answer
         public string Ques { get; set; }
         public string Answer1 { get; set; }
         public string Answer2 { get; set; }

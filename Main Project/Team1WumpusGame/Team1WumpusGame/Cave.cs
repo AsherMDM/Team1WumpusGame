@@ -19,6 +19,7 @@ namespace Team1WumpusGame
 
         public Cave()
         {
+            // reads file and assigns data
             adjacentCave1 = ReadFromFileCave("MapOfCave1.txt");
             adjacentCave2 = ReadFromFileCave("MapOfCave2.txt");
             adjacentCave3 = ReadFromFileCave("MapOfCave3.txt");

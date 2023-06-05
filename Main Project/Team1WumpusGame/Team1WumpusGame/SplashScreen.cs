@@ -27,5 +27,6 @@ namespace Team1WumpusGame
         {
             this.Close();
         }
+
     }
 }

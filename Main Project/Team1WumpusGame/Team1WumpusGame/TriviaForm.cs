@@ -14,9 +14,11 @@ namespace Team1WumpusGame
 {
     public partial class TriviaForm : Form
     {
-        GameControl gameControl; // =  new GameControl();
+        //shows off the questions
+        GameControl gameControl; 
         int correctAnswers;
         int counter = 0;
+        //for the arrows gained
         int newArrows;
         Question bob;
 
@@ -31,11 +33,13 @@ namespace Team1WumpusGame
 
         private void TriviaForm_Load(object sender, EventArgs e)
         {
+            // generates question
             generateQuestion();
         }
         
         private void generateQuestion()
         {
+            //randomly generates questions in the questions list
             bob = gameControl.createQuestion()[counter];
 
             labelQuestion.Text = bob.Ques;
@@ -45,11 +49,8 @@ namespace Team1WumpusGame
             radioButtonAnswer4.Text = bob.Answer4;
         }
 
-        private void labelQuestion_Click(object sender, EventArgs e)
-        {
-            
-        }
 
+        //the below two methods return whether you got the questions right or wrong(we need them to return other things)
         private bool returnTrue()
         {
             return true;

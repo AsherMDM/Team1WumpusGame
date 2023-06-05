@@ -36,26 +36,28 @@
             // 
             // timerSplashScreen
             // 
-            this.timerSplashScreen.Interval = 2000;
+            this.timerSplashScreen.Interval = 4000;
             this.timerSplashScreen.Tick += new System.EventHandler(this.timerSplashScreen_Tick);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Team1WumpusGame.Properties.Resources.splash;
-            this.pictureBox1.Location = new System.Drawing.Point(-7, -6);
+            this.pictureBox1.Location = new System.Drawing.Point(-10, -9);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(638, 477);
+            this.pictureBox1.Size = new System.Drawing.Size(957, 734);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
             // SplashScreen
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(628, 469);
+            this.ClientSize = new System.Drawing.Size(942, 722);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "SplashScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SplashScreen";
